@@ -24,7 +24,7 @@ export default function Contacto() {
               <h3 className="text-manzana-white font-semibold text-lg mb-2">LinkedIn</h3>
               <p className="text-manzana-mid mb-4">Escribeme directo. Sin formularios. Sin bots.</p>
               <a
-                href="https://www.linkedin.com/company/manzana"
+                href="https://www.linkedin.com/company/111346401"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-manzana-accent hover:text-manzana-white transition-colors text-sm font-medium"
