@@ -37,10 +37,10 @@ export default function Contacto() {
               <h3 className="text-manzana-white font-semibold text-lg mb-2">Email</h3>
               <p className="text-manzana-mid mb-4">Para propuestas formales o intervenciones organizacionales.</p>
               <a
-                href="mailto:contacto@manzana.com"
+                href="mailto:supipagg@gmail.com"
                 className="inline-flex items-center gap-2 text-manzana-accent hover:text-manzana-white transition-colors text-sm font-medium"
               >
-                contacto@manzana.com →
+                supipagg@gmail.com →
               </a>
             </div>
           </div>
