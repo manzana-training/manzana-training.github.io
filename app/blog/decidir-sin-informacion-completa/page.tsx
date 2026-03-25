@@ -31,6 +31,15 @@ export default function Post() {
           </p>
         </div>
 
+        {/* Imagen */}
+        <div className="mb-12">
+          <img
+            src="/blog-decidir-sin-info.png"
+            alt="Persona frente a dos caminos en un corredor oscuro — decidir bajo presion"
+            className="w-full aspect-video object-cover"
+          />
+        </div>
+
         {/* Contenido */}
         <div className="prose prose-invert max-w-none space-y-8">
           <div className="h-px bg-white/5" />
