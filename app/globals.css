@@ -9,13 +9,13 @@ html {
 }
 
 body {
-  background-color: #0c1117;
-  color: #e0e4ea;
+  background-color: #0d1a35;
+  color: #F5F0E9;
 }
 
 ::selection {
-  background-color: #c8ff00;
-  color: #0c1117;
+  background-color: #E0C58F;
+  color: #0d1a35;
 }
 
 /* Scrollbar minimal */
@@ -23,9 +23,9 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c1117;
+  background: #0d1a35;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a3444;
+  background: #3C507D;
   border-radius: 2px;
 }

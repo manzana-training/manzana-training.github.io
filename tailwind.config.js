@@ -8,13 +8,13 @@ module.exports = {
     extend: {
       colors: {
         manzana: {
-          black: '#0c1117',
-          dark: '#131a24',
-          gray: '#1c2430',
-          mid: '#7b8a9e',
-          light: '#e0e4ea',
-          white: '#f0f2f5',
-          accent: '#c8ff00',
+          black: '#0d1a35',
+          dark: '#112250',
+          gray: '#3C507D',
+          mid: '#D9CBC2',
+          light: '#F5F0E9',
+          white: '#F5F0E9',
+          accent: '#E0C58F',
         }
       },
       fontFamily: {
