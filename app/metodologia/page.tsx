@@ -76,14 +76,14 @@ export default function Metodologia() {
             <p className="text-manzana-accent text-sm font-mono mb-3">CAPA A</p>
             <h3 className="text-2xl font-bold text-manzana-white mb-3">Posiciones</h3>
             <p className="text-manzana-mid leading-relaxed">
-              12 configuraciones tipicas de presion. Esto es lo que el cliente compra: &quot;Estoy en X situacion y me urge salir.&quot;
+              12 configuraciones tipicas de presion que se repiten en empresas reales. Cada una se entrena en una sesion.
             </p>
           </div>
           <div className="border border-white/5 p-8">
             <p className="text-manzana-accent text-sm font-mono mb-3">CAPA B</p>
             <h3 className="text-2xl font-bold text-manzana-white mb-3">Drills</h3>
             <p className="text-manzana-mid leading-relaxed">
-              15 reflejos entrenables. Esto es como entrenamos por dentro. Un escenario se resuelve con 2-4 drills.
+              15 reflejos entrenables bajo presion. Cada escenario se resuelve con 2-4 drills de repeticion guiada.
             </p>
           </div>
         </div>
