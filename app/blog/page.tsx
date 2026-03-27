@@ -30,6 +30,14 @@ const posts = [
     block: 'LIDERAZGO',
     readTime: '5 min',
   },
+  {
+    slug: 'cortar-la-infeccion',
+    title: 'Cortar la infección: cuando el talento no compensa el daño',
+    excerpt: 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.',
+    date: '2026-03-27',
+    block: 'CONTAMINACIÓN',
+    readTime: '6 min',
+  },
 ]
 
 export default function Blog() {
