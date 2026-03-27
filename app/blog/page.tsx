@@ -2,30 +2,30 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog — MANZANA',
-  description: 'Articulos sobre liderazgo bajo presion, decision en crisis, y entrenamiento ejecutivo. Sin humo motivacional.',
+  description: 'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo. Sin humo motivacional.',
 }
 
 const posts = [
   {
     slug: 'decidir-sin-informacion-completa',
-    title: 'Decidir sin informacion completa',
+    title: 'Decidir sin información completa',
     excerpt: 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.',
     date: '2026-03-24',
-    block: 'DECISION',
+    block: 'DECISIÓN',
     readTime: '5 min',
   },
   {
     slug: 'resistencia-pasiva-el-enemigo-invisible',
     title: 'Resistencia pasiva: el enemigo invisible',
-    excerpt: 'Nadie te dice que no, pero nada se mueve. Como exponer la friccion que no hace ruido pero te desgasta cada semana.',
+    excerpt: 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción que no hace ruido pero te desgasta cada semana.',
     date: '2026-03-24',
-    block: 'FRICCION',
+    block: 'FRICCIÓN',
     readTime: '6 min',
   },
   {
     slug: 'liderar-sin-estar-seguro',
     title: 'Liderar sin estar seguro',
-    excerpt: 'Tu dudas, pero el equipo necesita direccion. Liderazgo no es certeza. Es dar direccion suficiente mientras el sistema aprende.',
+    excerpt: 'Tú dudas, pero el equipo necesita dirección. Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende.',
     date: '2026-03-24',
     block: 'LIDERAZGO',
     readTime: '5 min',
@@ -46,10 +46,10 @@ export default function Blog() {
       <section className="max-w-5xl mx-auto px-6 pt-24 pb-16">
         <p className="text-manzana-accent text-sm font-mono mb-4">BLOG</p>
         <h1 className="text-4xl md:text-5xl font-bold text-manzana-white mb-6">
-          Sin humo. Sin teoria.<br />Situaciones reales.
+          Sin humo. Sin teoría.<br />Situaciones reales.
         </h1>
         <p className="text-xl text-manzana-mid max-w-2xl">
-          Cada articulo parte de una posicion de presion real. Si no hay situacion concreta, no hay articulo.
+          Cada artículo parte de una posición de presión real. Si no hay situación concreta, no hay artículo.
         </p>
       </section>
 
