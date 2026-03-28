@@ -147,6 +147,115 @@ export default function Metodologia() {
         </div>
       </section>
 
+      {/* Servicios */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <p className="text-manzana-accent text-sm font-mono mb-4">CÓMO CONTRATAR</p>
+        <h2 className="text-3xl font-bold text-manzana-white mb-4">
+          Tres formatos. Un mismo sistema.
+        </h2>
+        <p className="text-manzana-mid text-lg mb-12 max-w-2xl">
+          Elige según tu situación. Sin compromiso largo. Sin procesos eternos. Siempre partimos de un diagnóstico para recomendarte el formato que hace sentido.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Drill */}
+          <div className="border border-white/5 p-8 flex flex-col hover:border-manzana-accent/20 transition-colors">
+            <p className="text-manzana-accent text-xs font-mono mb-3">ENTRADA</p>
+            <h3 className="text-xl font-bold text-manzana-white mb-2">Drill MANZANA</h3>
+            <p className="text-manzana-mid text-sm leading-relaxed mb-6">
+              Una sesión enfocada en una situación crítica. Entrenamiento práctico con simulación y corrección en vivo.
+            </p>
+            <div className="space-y-2 text-manzana-mid/70 text-sm mt-auto">
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>40–50 minutos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>Online o presencial</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>Hasta 10 participantes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>1 situación, 1 drill, 1 entregable</span>
+              </div>
+            </div>
+            <p className="text-manzana-mid/40 text-xs mt-6 italic">
+              Ideal para probar MANZANA o resolver un problema puntual.
+            </p>
+          </div>
+
+          {/* Bloque */}
+          <div className="border border-manzana-accent/30 p-8 flex flex-col bg-manzana-dark">
+            <p className="text-manzana-accent text-xs font-mono mb-3">CORE</p>
+            <h3 className="text-xl font-bold text-manzana-white mb-2">Bloque MANZANA</h3>
+            <p className="text-manzana-mid text-sm leading-relaxed mb-6">
+              Tres sesiones enfocadas según diagnóstico. Entrenamiento progresivo sobre un bloque completo de situaciones.
+            </p>
+            <div className="space-y-2 text-manzana-mid/70 text-sm mt-auto">
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>3 sesiones de 40–50 minutos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>Online o presencial</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>Diagnóstico previo incluido</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>3 situaciones conectadas, 3 entregables</span>
+              </div>
+            </div>
+            <p className="text-manzana-mid/40 text-xs mt-6 italic">
+              Ideal para equipos de liderazgo, áreas completas u offsites.
+            </p>
+          </div>
+
+          {/* Dojo */}
+          <div className="border border-white/5 p-8 flex flex-col hover:border-manzana-accent/20 transition-colors">
+            <p className="text-manzana-accent text-xs font-mono mb-3">PREMIUM</p>
+            <h3 className="text-xl font-bold text-manzana-white mb-2">Dojo MANZANA</h3>
+            <p className="text-manzana-mid text-sm leading-relaxed mb-6">
+              Programa integral de un mes. Drills semanales, talleres inmersivos, plan operativo y seguimiento con casos reales de tu empresa.
+            </p>
+            <div className="space-y-2 text-manzana-mid/70 text-sm mt-auto">
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>4 semanas de entrenamiento</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>4 drills + 2 talleres hands-on</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>Diagnóstico estratégico + plan operativo</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-manzana-accent">→</span>
+                <span>Casos reales de tu organización</span>
+              </div>
+            </div>
+            <p className="text-manzana-mid/40 text-xs mt-6 italic">
+              Ideal para founders + core team o intervenciones organizacionales.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 border border-white/5 p-6 bg-manzana-dark">
+          <p className="text-manzana-mid text-sm leading-relaxed">
+            <span className="text-manzana-accent font-medium">¿No sabes cuál elegir?</span> Empezamos con un diagnóstico gratuito de 15 minutos. Te escucho, identifico tu situación y te recomiendo el formato que hace sentido. Sin compromiso.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="border border-manzana-accent/20 p-12 text-center">
