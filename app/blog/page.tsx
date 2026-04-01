@@ -38,6 +38,14 @@ const posts = [
     block: 'CONTAMINACIÓN',
     readTime: '6 min',
   },
+  {
+    slug: 'oxigeno-o-muerte',
+    title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo',
+    excerpt: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir.',
+    date: '2026-04-01',
+    block: 'SUPERVIVENCIA',
+    readTime: '6 min',
+  },
 ]
 
 export default function Blog() {
