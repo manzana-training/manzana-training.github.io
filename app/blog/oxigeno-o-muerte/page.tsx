@@ -1,18 +1,48 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://manzana-training.github.io'
+const SLUG = 'oxigeno-o-muerte'
+const TITLE = 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo'
+const DESCRIPTION = 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir. Entrenamiento ejecutivo bajo presión real.'
+const IMAGE = `${BASE_URL}/blog-oxigeno-o-muerte.png`
+const DATE = '2026-04-01'
+
 export const metadata: Metadata = {
-  title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo — MANZANA',
-  description: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir. Entrenamiento ejecutivo bajo presión real.',
+  title: `${TITLE} — MANZANA`,
+  description: DESCRIPTION,
+  alternates: { canonical: `${BASE_URL}/blog/${SLUG}` },
   openGraph: {
-    title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo',
+    title: TITLE,
     description: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para sobrevivir.',
     type: 'article',
+    url: `${BASE_URL}/blog/${SLUG}`,
+    images: [{ url: IMAGE, width: 1792, height: 1024, alt: TITLE }],
+    publishedTime: DATE,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [IMAGE],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: TITLE,
+  description: DESCRIPTION,
+  image: IMAGE,
+  datePublished: DATE,
+  author: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  publisher: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  mainEntityOfPage: `${BASE_URL}/blog/${SLUG}`,
 }
 
 export default function Post() {
   return (
     <article className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-6 pt-24 pb-16">
         {/* Header */}
         <div className="mb-12">

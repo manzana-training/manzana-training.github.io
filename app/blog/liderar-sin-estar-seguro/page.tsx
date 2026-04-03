@@ -1,18 +1,48 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://manzana-training.github.io'
+const SLUG = 'liderar-sin-estar-seguro'
+const TITLE = 'Liderar sin estar seguro'
+const DESCRIPTION = 'Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende. Tres movimientos para cuando dudas pero el equipo necesita rumbo.'
+const IMAGE = `${BASE_URL}/blog-liderar-sin-estar-seguro.png`
+const DATE = '2026-03-24'
+
 export const metadata: Metadata = {
-  title: 'Liderar sin estar seguro — MANZANA',
-  description: 'Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende. Tres movimientos para cuando dudas pero el equipo necesita rumbo.',
+  title: `${TITLE} — MANZANA`,
+  description: DESCRIPTION,
+  alternates: { canonical: `${BASE_URL}/blog/${SLUG}` },
   openGraph: {
-    title: 'Liderar sin estar seguro',
+    title: TITLE,
     description: 'Liderazgo no es certeza. Es dirección suficiente.',
     type: 'article',
+    url: `${BASE_URL}/blog/${SLUG}`,
+    images: [{ url: IMAGE, width: 1792, height: 1024, alt: TITLE }],
+    publishedTime: DATE,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [IMAGE],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: TITLE,
+  description: DESCRIPTION,
+  image: IMAGE,
+  datePublished: DATE,
+  author: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  publisher: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  mainEntityOfPage: `${BASE_URL}/blog/${SLUG}`,
 }
 
 export default function Post() {
   return (
     <article className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-6 pt-24 pb-16">
         {/* Header */}
         <div className="mb-12">

@@ -1,18 +1,48 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://manzana-training.github.io'
+const SLUG = 'cortar-la-infeccion'
+const TITLE = 'Cortar la infección: cuando el talento no compensa el daño'
+const DESCRIPTION = 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.'
+const IMAGE = `${BASE_URL}/blog-cortar-la-infeccion.png`
+const DATE = '2026-03-27'
+
 export const metadata: Metadata = {
-  title: 'Cortar la infección: cuando el talento no compensa el daño — MANZANA',
-  description: 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.',
+  title: `${TITLE} — MANZANA`,
+  description: DESCRIPTION,
+  alternates: { canonical: `${BASE_URL}/blog/${SLUG}` },
   openGraph: {
-    title: 'Cortar la infección: cuando el talento no compensa el daño',
+    title: TITLE,
     description: 'Una persona tóxica contamina más que diez desmotivadas.',
     type: 'article',
+    url: `${BASE_URL}/blog/${SLUG}`,
+    images: [{ url: IMAGE, width: 1792, height: 1024, alt: TITLE }],
+    publishedTime: DATE,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [IMAGE],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: TITLE,
+  description: DESCRIPTION,
+  image: IMAGE,
+  datePublished: DATE,
+  author: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  publisher: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  mainEntityOfPage: `${BASE_URL}/blog/${SLUG}`,
 }
 
 export default function Post() {
   return (
     <article className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-6 pt-24 pb-16">
         {/* Header */}
         <div className="mb-12">

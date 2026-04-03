@@ -4,15 +4,37 @@ import './globals.css'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 
+const BASE_URL = 'https://manzana-training.github.io'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
   description: 'Entrenamos líderes y equipos para actuar bajo presión real. Simulaciones prácticas, frameworks simples, resultados en semanas. No sales motivado. Sales entrenado.',
   keywords: ['liderazgo bajo presión', 'entrenamiento ejecutivo', 'decisión bajo presión', 'liderazgo empresarial', 'simulaciones ejecutivas', 'managers', 'founders'],
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
     title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
     description: 'Simulaciones prácticas para líderes que necesitan actuar ahora, no reflexionar seis meses.',
     type: 'website',
     locale: 'es_MX',
+    url: BASE_URL,
+    siteName: 'MANZANA',
+    images: [
+      {
+        url: `${BASE_URL}/blog-decidir-sin-info.png`,
+        width: 1792,
+        height: 1024,
+        alt: 'MANZANA — Entrenamiento ejecutivo bajo presión',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
+    description: 'Simulaciones prácticas para líderes que necesitan actuar ahora.',
+    images: [`${BASE_URL}/blog-decidir-sin-info.png`],
   },
   robots: {
     index: true,
@@ -73,6 +95,19 @@ export default function RootLayout({
             <p className="text-manzana-mid/50 text-xs">Actúa. Elimina lo que te impide actuar.</p>
           </div>
         </footer>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'MANZANA',
+              url: 'https://manzana-training.github.io',
+              description: 'Sistema de entrenamiento de reflejos bajo presión para líderes ejecutivos.',
+              sameAs: ['https://www.linkedin.com/company/111346401'],
+            }),
+          }}
+        />
       </body>
     </html>
   )

@@ -1,18 +1,48 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://manzana-training.github.io'
+const SLUG = 'resistencia-pasiva-el-enemigo-invisible'
+const TITLE = 'Resistencia pasiva: el enemigo invisible'
+const DESCRIPTION = 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción invisible que te desgasta cada semana y recuperar tracción.'
+const IMAGE = `${BASE_URL}/blog-resistencia-pasiva.png`
+const DATE = '2026-03-24'
+
 export const metadata: Metadata = {
-  title: 'Resistencia pasiva: el enemigo invisible — MANZANA',
-  description: 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción invisible que te desgasta cada semana y recuperar tracción.',
+  title: `${TITLE} — MANZANA`,
+  description: DESCRIPTION,
+  alternates: { canonical: `${BASE_URL}/blog/${SLUG}` },
   openGraph: {
-    title: 'Resistencia pasiva: el enemigo invisible',
+    title: TITLE,
     description: 'Nadie te dice que no, pero nada se mueve.',
     type: 'article',
+    url: `${BASE_URL}/blog/${SLUG}`,
+    images: [{ url: IMAGE, width: 1792, height: 1024, alt: TITLE }],
+    publishedTime: DATE,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [IMAGE],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: TITLE,
+  description: DESCRIPTION,
+  image: IMAGE,
+  datePublished: DATE,
+  author: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  publisher: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  mainEntityOfPage: `${BASE_URL}/blog/${SLUG}`,
 }
 
 export default function Post() {
   return (
     <article className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-6 pt-24 pb-16">
         {/* Header */}
         <div className="mb-12">

@@ -1,25 +1,41 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://manzana-training.github.io'
+
 export const metadata: Metadata = {
   title: 'Blog — MANZANA',
   description: 'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo. Sin humo motivacional.',
+  alternates: { canonical: `${BASE_URL}/blog` },
+  openGraph: {
+    title: 'Blog — MANZANA',
+    description: 'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo.',
+    type: 'website',
+    url: `${BASE_URL}/blog`,
+    images: [{ url: `${BASE_URL}/blog-oxigeno-o-muerte.png`, width: 1792, height: 1024, alt: 'Blog MANZANA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — MANZANA',
+    description: 'Artículos sobre liderazgo bajo presión. Sin humo motivacional.',
+    images: [`${BASE_URL}/blog-oxigeno-o-muerte.png`],
+  },
 }
 
 const posts = [
   {
-    slug: 'decidir-sin-informacion-completa',
-    title: 'Decidir sin información completa',
-    excerpt: 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.',
-    date: '2026-03-24',
-    block: 'DECISIÓN',
-    readTime: '5 min',
+    slug: 'oxigeno-o-muerte',
+    title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo',
+    excerpt: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir.',
+    date: '2026-04-01',
+    block: 'SUPERVIVENCIA',
+    readTime: '6 min',
   },
   {
-    slug: 'resistencia-pasiva-el-enemigo-invisible',
-    title: 'Resistencia pasiva: el enemigo invisible',
-    excerpt: 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción que no hace ruido pero te desgasta cada semana.',
-    date: '2026-03-24',
-    block: 'FRICCIÓN',
+    slug: 'cortar-la-infeccion',
+    title: 'Cortar la infección: cuando el talento no compensa el daño',
+    excerpt: 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.',
+    date: '2026-03-27',
+    block: 'CONTAMINACIÓN',
     readTime: '6 min',
   },
   {
@@ -31,20 +47,20 @@ const posts = [
     readTime: '5 min',
   },
   {
-    slug: 'cortar-la-infeccion',
-    title: 'Cortar la infección: cuando el talento no compensa el daño',
-    excerpt: 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.',
-    date: '2026-03-27',
-    block: 'CONTAMINACIÓN',
+    slug: 'resistencia-pasiva-el-enemigo-invisible',
+    title: 'Resistencia pasiva: el enemigo invisible',
+    excerpt: 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción que no hace ruido pero te desgasta cada semana.',
+    date: '2026-03-24',
+    block: 'FRICCIÓN',
     readTime: '6 min',
   },
   {
-    slug: 'oxigeno-o-muerte',
-    title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo',
-    excerpt: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir.',
-    date: '2026-04-01',
-    block: 'SUPERVIVENCIA',
-    readTime: '6 min',
+    slug: 'decidir-sin-informacion-completa',
+    title: 'Decidir sin información completa',
+    excerpt: 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.',
+    date: '2026-03-24',
+    block: 'DECISIÓN',
+    readTime: '5 min',
   },
 ]
 
@@ -73,6 +89,10 @@ export default function Blog() {
                 <span className="text-manzana-accent text-xs font-mono">{post.block}</span>
                 <span className="text-manzana-mid/40 text-xs">·</span>
                 <span className="text-manzana-mid/40 text-xs">{post.readTime}</span>
+                <span className="text-manzana-mid/40 text-xs">·</span>
+                <time className="text-manzana-mid/40 text-xs" dateTime={post.date}>
+                  {new Date(post.date + 'T12:00:00').toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </time>
               </div>
               <h2 className="text-2xl font-bold text-manzana-white group-hover:text-manzana-accent transition-colors mb-3">
                 {post.title}

@@ -1,18 +1,48 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://manzana-training.github.io'
+const SLUG = 'decidir-sin-informacion-completa'
+const TITLE = 'Decidir sin información completa'
+const DESCRIPTION = 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.'
+const IMAGE = `${BASE_URL}/blog-decidir-sin-info.png`
+const DATE = '2026-03-24'
+
 export const metadata: Metadata = {
-  title: 'Decidir sin información completa — MANZANA',
-  description: 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.',
+  title: `${TITLE} — MANZANA`,
+  description: DESCRIPTION,
+  alternates: { canonical: `${BASE_URL}/blog/${SLUG}` },
   openGraph: {
-    title: 'Decidir sin información completa',
+    title: TITLE,
     description: 'Tres movimientos para cerrar cuando los datos no alcanzan.',
     type: 'article',
+    url: `${BASE_URL}/blog/${SLUG}`,
+    images: [{ url: IMAGE, width: 1792, height: 1024, alt: TITLE }],
+    publishedTime: DATE,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [IMAGE],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: TITLE,
+  description: DESCRIPTION,
+  image: IMAGE,
+  datePublished: DATE,
+  author: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  publisher: { '@type': 'Organization', name: 'MANZANA', url: BASE_URL },
+  mainEntityOfPage: `${BASE_URL}/blog/${SLUG}`,
 }
 
 export default function Post() {
   return (
     <article className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-6 pt-24 pb-16">
         {/* Header */}
         <div className="mb-12">
