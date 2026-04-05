@@ -163,14 +163,14 @@ export default function Caso() {
               </a>
               <a
                 href="/caso-manzana-decidir.html"
-                target="_blank"
+                download="MANZANA-Caso-Decidir.html"
                 className="inline-flex items-center justify-center px-8 py-4 border border-manzana-accent/30 text-manzana-accent font-medium text-sm tracking-wide hover:border-manzana-accent hover:text-manzana-white transition-colors"
               >
-                DESCARGAR PDF
+                DESCARGAR CASO
               </a>
             </div>
             <p className="text-manzana-mid/40 text-xs mt-6">
-              El PDF es el mismo caso que acabas de leer, en formato imprimible.
+              Descarga el caso en formato imprimible. Ábrelo en tu navegador e imprime como PDF.
             </p>
           </div>
         </div>
