@@ -177,6 +177,11 @@ export default function Post() {
           <a href="/contacto" className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors">
             AGENDAR SESIÓN
           </a>
+          <p className="mt-4">
+            <a href="/diagnostico" className="text-manzana-accent hover:text-manzana-white text-sm transition-colors">
+              O haz el diagnóstico primero →
+            </a>
+          </p>
         </div>
 
         <div className="mt-12">

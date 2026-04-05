@@ -22,6 +22,12 @@ export default function Home() {
               AGENDAR SESIÓN
             </a>
             <a
+              href="/diagnostico"
+              className="inline-flex items-center justify-center px-8 py-4 border border-manzana-accent/30 text-manzana-accent font-medium text-sm tracking-wide hover:border-manzana-accent hover:text-manzana-white transition-colors"
+            >
+              HAZ EL DIAGNÓSTICO
+            </a>
+            <a
               href="/metodologia"
               className="inline-flex items-center justify-center px-8 py-4 border border-white/10 text-manzana-light font-medium text-sm tracking-wide hover:border-white/30 transition-colors"
             >
@@ -137,12 +143,20 @@ export default function Home() {
           <p className="text-manzana-mid text-lg mb-8">
             Elimina lo que te impide actuar.
           </p>
-          <a
-            href="/contacto"
-            className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
-          >
-            AGENDAR SESIÓN
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/contacto"
+              className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
+            >
+              AGENDAR SESIÓN
+            </a>
+            <a
+              href="/diagnostico"
+              className="inline-flex items-center justify-center px-8 py-4 border border-manzana-accent/30 text-manzana-accent font-medium text-sm tracking-wide hover:border-manzana-accent hover:text-manzana-white transition-colors"
+            >
+              HAZ EL DIAGNÓSTICO
+            </a>
+          </div>
         </div>
       </section>
     </div>

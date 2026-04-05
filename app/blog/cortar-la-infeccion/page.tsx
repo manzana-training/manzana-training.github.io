@@ -247,6 +247,11 @@ export default function Post() {
           >
             AGENDAR SESIÓN
           </a>
+          <p className="mt-4">
+            <a href="/diagnostico" className="text-manzana-accent hover:text-manzana-white text-sm transition-colors">
+              O haz el diagnóstico primero →
+            </a>
+          </p>
         </div>
 
         {/* Volver */}

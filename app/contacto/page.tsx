@@ -18,11 +18,73 @@ export default function Contacto() {
             Vengo a entrenarte para decidir y moverte mejor cuando las cosas se ponen difíciles.
           </p>
 
-          {/* Opciones de contacto */}
-          <div className="space-y-6">
+          {/* Formulario */}
+          <div className="border border-white/5 p-8 mb-6">
+            <h3 className="text-manzana-white font-semibold text-lg mb-6">Escríbeme directo</h3>
+            <form
+              action="https://formspree.io/f/xpwddjbq"
+              method="POST"
+              className="space-y-6"
+            >
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-manzana-mid text-sm mb-2">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full bg-manzana-black border border-white/10 text-manzana-white px-4 py-3 text-sm focus:border-manzana-accent focus:outline-none transition-colors placeholder:text-manzana-mid/30"
+                    placeholder="Tu nombre"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-manzana-mid text-sm mb-2">Empresa</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    className="w-full bg-manzana-black border border-white/10 text-manzana-white px-4 py-3 text-sm focus:border-manzana-accent focus:outline-none transition-colors placeholder:text-manzana-mid/30"
+                    placeholder="Nombre de tu empresa"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-manzana-mid text-sm mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full bg-manzana-black border border-white/10 text-manzana-white px-4 py-3 text-sm focus:border-manzana-accent focus:outline-none transition-colors placeholder:text-manzana-mid/30"
+                  placeholder="tu@empresa.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="situation" className="block text-manzana-mid text-sm mb-2">¿Qué situación necesitas resolver?</label>
+                <textarea
+                  id="situation"
+                  name="situation"
+                  rows={3}
+                  required
+                  className="w-full bg-manzana-black border border-white/10 text-manzana-white px-4 py-3 text-sm focus:border-manzana-accent focus:outline-none transition-colors resize-none placeholder:text-manzana-mid/30"
+                  placeholder="Una línea basta. Sé directo."
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
+              >
+                ENVIAR
+              </button>
+            </form>
+          </div>
+
+          {/* Opciones de contacto alternativas */}
+          <div className="grid sm:grid-cols-2 gap-6">
             <div className="border border-white/5 p-8 hover:border-manzana-accent/20 transition-colors">
               <h3 className="text-manzana-white font-semibold text-lg mb-2">LinkedIn</h3>
-              <p className="text-manzana-mid mb-4">Escríbeme directo. Sin formularios. Sin bots.</p>
+              <p className="text-manzana-mid mb-4">Sin formularios. Sin bots.</p>
               <a
                 href="https://www.linkedin.com/company/111346401"
                 target="_blank"
@@ -35,7 +97,7 @@ export default function Contacto() {
 
             <div className="border border-white/5 p-8 hover:border-manzana-accent/20 transition-colors">
               <h3 className="text-manzana-white font-semibold text-lg mb-2">Email</h3>
-              <p className="text-manzana-mid mb-4">Para propuestas formales o intervenciones organizacionales.</p>
+              <p className="text-manzana-mid mb-4">Propuestas formales.</p>
               <a
                 href="mailto:supipagg@gmail.com"
                 className="inline-flex items-center gap-2 text-manzana-accent hover:text-manzana-white transition-colors text-sm font-medium"

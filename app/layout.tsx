@@ -80,6 +80,9 @@ export default function RootLayout({
               <a href="/blog" className="text-manzana-mid hover:text-manzana-white transition-colors">
                 Blog
               </a>
+              <a href="/diagnostico" className="text-manzana-mid hover:text-manzana-white transition-colors">
+                Diagnóstico
+              </a>
               <a href="/contacto" className="text-manzana-accent hover:text-manzana-white transition-colors font-medium">
                 Contacto
               </a>
