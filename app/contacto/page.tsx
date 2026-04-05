@@ -22,7 +22,7 @@ export default function Contacto() {
           <div className="border border-white/5 p-8 mb-6">
             <h3 className="text-manzana-white font-semibold text-lg mb-6">Escríbeme directo</h3>
             <form
-              action="https://formspree.io/f/xpwddjbq"
+              action="https://formspree.io/f/xlgoaeev"
               method="POST"
               className="space-y-6"
             >
