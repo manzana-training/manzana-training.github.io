@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caso MANZANA — Decidir sin información completa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --black: #0d1a35;
+    --dark: #112250;
+    --gray: #3C507D;
+    --mid: #D9CBC2;
+    --light: #F5F0E9;
+    --accent: #E0C58F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--light);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 48px 56px;
+    background: var(--black);
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  /* Typography */
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .accent { color: var(--accent); }
+  .mid { color: var(--mid); }
+  .dim { color: rgba(217, 203, 194, 0.5); }
+
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--light);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  .subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--mid);
+    margin-bottom: 32px;
+  }
+
+  /* Components */
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.05);
+    margin: 28px 0;
+  }
+
+  .scenario-box {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 28px 32px;
+    margin: 24px 0;
+    background: var(--dark);
+  }
+
+  .scenario-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--light);
+    font-weight: 400;
+  }
+
+  .scenario-box .constraint {
+    color: var(--mid);
+    font-size: 13px;
+  }
+
+  .reaction {
+    border-left: 2px solid var(--gray);
+    padding: 16px 0 16px 20px;
+    margin-bottom: 20px;
+  }
+
+  .reaction.wrong { border-left-color: rgba(255,255,255,0.1); }
+
+  .reaction-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .reaction p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .reframe-box {
+    border: 1px solid rgba(224, 197, 143, 0.25);
+    padding: 28px 32px;
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  .reframe-box p {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--light);
+    line-height: 1.5;
+  }
+
+  .reframe-box .sub {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mid);
+    margin-top: 12px;
+  }
+
+  .trains-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .trains-item {
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 16px 20px;
+  }
+
+  .trains-item h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .trains-item p {
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .cta-box {
+    border: 1px solid rgba(224, 197, 143, 0.2);
+    padding: 28px 32px;
+    text-align: center;
+    margin-top: 28px;
+  }
+
+  .cta-box h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .cta-box p {
+    font-size: 12.5px;
+    margin-bottom: 16px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 12px 32px;
+    text-decoration: none;
+  }
+
+  .cta-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Header & Footer */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--light);
+    letter-spacing: -0.01em;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray);
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 48px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 10px;
+    color: rgba(217, 203, 194, 0.35);
+  }
+
+  .question-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .page { width: 100%; padding: 32px 24px; min-height: auto; }
+    .trains-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="header">
+    <span class="logo">MANZANA</span>
+    <span class="tag">CASO DE ENTRENAMIENTO</span>
+  </div>
+
+  <div class="label">BLOQUE A — DECISIÓN</div>
+
+  <h1>Tienes 20 minutos.<br>Los datos no cuadran.<br><span class="accent">¿Qué haces?</span></h1>
+
+  <p class="subtitle">
+    El 80% de los líderes reacciona mal cuando tiene que decidir sin información completa. No porque sean malos — porque nadie los entrenó para eso.
+  </p>
+
+  <div class="scenario-box">
+    <div class="label" style="margin-bottom:12px">EL ESCENARIO</div>
+    <p>
+      Tienes un dashboard de ventas. El director general dice que un producto clave está cayendo. Marketing dice que no. Finanzas dice que los números no cuadran.
+    </p>
+    <br>
+    <p class="constraint">
+      Sabes que hay retrasos en los datos.<br>
+      Puede haber duplicados.<br>
+      No hay una definición única de "venta" entre áreas.
+    </p>
+    <br>
+    <p>
+      En 20 minutos entras a una junta donde te van a preguntar:<br>
+      <strong style="color: var(--light)">¿Está cayendo o no? ¿Qué hacemos?</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="label">LAS 3 REACCIONES MÁS COMUNES</div>
+
+  <div class="reaction wrong">
+    <div class="reaction-number">01 — EL QUE PIDE MÁS TIEMPO</div>
+    <h3>"Necesito limpiar los datos antes de dar una respuesta."</h3>
+    <p>Suena responsable. Pero en la junta se lee como: no tengo postura. El director general decide solo — o peor, alguien con menos contexto decide por ti.</p>
+  </div>
+
+  <div class="reaction wrong">
+    <div class="reaction-number">02 — EL QUE DA UNA NO-RESPUESTA</div>
+    <h3>"Depende de cómo definas 'caída'."</h3>
+    <p>Técnicamente correcto. Políticamente inútil. El negocio necesita una dirección, no una clase de estadística. Sales de la junta sin daño, pero sin relevancia.</p>
+  </div>
+
+  <div class="reaction wrong">
+    <div class="reaction-number">03 — EL QUE ADIVINA</div>
+    <h3>"Sí, está cayendo. Hay que meter promoción."</h3>
+    <p>Rápido, decidido, seguro. Y sin fundamento. Si la "caída" era un error de datos, acabas de lanzar un descuento que no necesitabas. Actuar rápido sin marco no es decisión — es impulso.</p>
+  </div>
+
+  <div class="footer">
+    <p>manzana-training.github.io</p>
+    <p>1 / 2</p>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="header">
+    <span class="logo">MANZANA</span>
+    <span class="tag">CASO DE ENTRENAMIENTO</span>
+  </div>
+
+  <div class="label">EL REENCUADRE</div>
+
+  <div class="reframe-box">
+    <p>La pregunta no es si tienes datos suficientes.<br>La pregunta es: <span class="accent">¿cuál es el costo de no tener una postura en 20 minutos?</span></p>
+    <p class="sub">No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor.</p>
+  </div>
+
+  <p style="margin: 24px 0; font-size: 13.5px; line-height: 1.7;">
+    Un líder entrenado no busca la respuesta correcta. Construye una postura defendible con lo que tiene, asume el riesgo explícitamente y cierra una decisión que se pueda revertir si los datos cambian.
+  </p>
+  <p style="font-size: 13.5px; line-height: 1.7;">
+    Eso no es intuición. Es un reflejo que se entrena.
+  </p>
+
+  <div class="divider"></div>
+
+  <div class="label">QUÉ SE ENTRENA EN ESTA POSICIÓN</div>
+
+  <div class="trains-grid">
+    <div class="trains-item">
+      <h3>Fijar un umbral</h3>
+      <p>Definir cuánta información es "suficiente" para decidir. No perfecta — suficiente.</p>
+    </div>
+    <div class="trains-item">
+      <h3>Asumir riesgo explícito</h3>
+      <p>Decir en voz alta qué estás asumiendo y qué puede salir mal. Sin esconderlo.</p>
+    </div>
+    <div class="trains-item">
+      <h3>Cerrar en reversible</h3>
+      <p>Tomar una decisión que se pueda ajustar cuando lleguen mejores datos.</p>
+    </div>
+    <div class="trains-item">
+      <h3>Defender la postura</h3>
+      <p>Sostener tu respuesta cuando te cuestionen, sin certeza absoluta pero con marco claro.</p>
+    </div>
+  </div>
+
+  <p class="dim" style="font-size: 12px; margin: 20px 0 0 0;">
+    Esta es una de las 12 posiciones que entrena MANZANA. Cada posición se practica en una sesión con simulaciones reales, no con teoría.
+  </p>
+
+  <div class="cta-box">
+    <h2>¿En qué posición estás tú?</h2>
+    <p>Haz el diagnóstico. Te decimos qué posición estás jugando y qué tipo de entrenamiento necesitas.</p>
+    <a href="https://manzana-training.github.io/diagnostico" class="cta-button">HAZ EL DIAGNÓSTICO</a>
+    <a href="https://manzana-training.github.io/contacto" class="cta-link">O agenda una sesión directo →</a>
+  </div>
+
+  <div class="footer">
+    <p>No sales motivado. Sales entrenado.</p>
+    <p>2 / 2</p>
+  </div>
+</div>
+
+</body>
+</html>
