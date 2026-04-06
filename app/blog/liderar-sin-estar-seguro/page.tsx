@@ -174,11 +174,11 @@ export default function Post() {
         <div className="mt-16 border border-manzana-accent/20 p-8 text-center">
           <p className="text-manzana-white font-semibold mb-2">¿Estás liderando sin brújula?</p>
           <p className="text-manzana-mid text-sm mb-6">Podemos entrenar esta posición en una sesión.</p>
-          <a href="/contacto" className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors">
+          <a href="/contacto" data-track="clic_contacto" data-track-label="blog-liderar-sin-estar-seguro" className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors">
             AGENDAR SESIÓN
           </a>
           <p className="mt-4">
-            <a href="/diagnostico" className="text-manzana-accent hover:text-manzana-white text-sm transition-colors">
+            <a href="/diagnostico" data-track="clic_diagnostico" data-track-label="blog-liderar-sin-estar-seguro" className="text-manzana-accent hover:text-manzana-white text-sm transition-colors">
               O haz el diagnóstico primero →
             </a>
           </p>

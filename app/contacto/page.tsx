@@ -89,6 +89,7 @@ export default function Contacto() {
                 href="https://www.linkedin.com/company/111346401"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="clic_linkedin"
                 className="inline-flex items-center gap-2 text-manzana-accent hover:text-manzana-white transition-colors text-sm font-medium"
               >
                 Ir a LinkedIn →
@@ -100,6 +101,7 @@ export default function Contacto() {
               <p className="text-manzana-mid mb-4">Propuestas formales.</p>
               <a
                 href="mailto:supipagg@gmail.com"
+                data-track="clic_email"
                 className="inline-flex items-center gap-2 text-manzana-accent hover:text-manzana-white transition-colors text-sm font-medium"
               >
                 supipagg@gmail.com →

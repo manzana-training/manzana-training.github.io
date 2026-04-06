@@ -254,12 +254,14 @@ export default function Post() {
           </p>
           <a
             href="/contacto"
+            data-track="clic_contacto"
+            data-track-label="blog-oxigeno-o-muerte"
             className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
           >
             AGENDAR SESIÓN
           </a>
           <p className="mt-4">
-            <a href="/diagnostico" className="text-manzana-accent hover:text-manzana-white text-sm transition-colors">
+            <a href="/diagnostico" data-track="clic_diagnostico" data-track-label="blog-oxigeno-o-muerte" className="text-manzana-accent hover:text-manzana-white text-sm transition-colors">
               O haz el diagnóstico primero →
             </a>
           </p>

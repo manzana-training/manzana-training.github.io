@@ -263,6 +263,8 @@ export default function Metodologia() {
           <p className="text-manzana-mid mb-8">Resultados en semanas, no en trimestres.</p>
           <a
             href="/contacto"
+            data-track="clic_contacto"
+            data-track-label="metodologia"
             className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
           >
             AGENDAR SESIÓN

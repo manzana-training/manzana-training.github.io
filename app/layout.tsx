@@ -62,6 +62,16 @@ export default function RootLayout({
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_ID}');
+
+                // Track clicks on elements with data-track attribute
+                document.addEventListener('click', function(e) {
+                  var el = e.target.closest('[data-track]');
+                  if (el && typeof gtag === 'function') {
+                    gtag('event', el.getAttribute('data-track'), {
+                      event_label: el.getAttribute('data-track-label') || el.textContent.trim().substring(0, 50)
+                    });
+                  }
+                });
               `}
             </Script>
           </>

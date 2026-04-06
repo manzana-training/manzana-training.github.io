@@ -157,6 +157,8 @@ export default function Caso() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
                 href="/diagnostico"
+                data-track="clic_diagnostico"
+                data-track-label="caso"
                 className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
               >
                 HAZ EL DIAGNÓSTICO
@@ -164,6 +166,8 @@ export default function Caso() {
               <a
                 href="/caso-manzana-decidir.html"
                 download="MANZANA-Caso-Decidir.html"
+                data-track="descargar_caso"
+                data-track-label="caso-decidir"
                 className="inline-flex items-center justify-center px-8 py-4 border border-manzana-accent/30 text-manzana-accent font-medium text-sm tracking-wide hover:border-manzana-accent hover:text-manzana-white transition-colors"
               >
                 DESCARGAR CASO
