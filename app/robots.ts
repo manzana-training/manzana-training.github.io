@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://manzana-training.github.io/sitemap.xml',
+    sitemap: 'https://manzanatraining.com/sitemap.xml',
   }
 }

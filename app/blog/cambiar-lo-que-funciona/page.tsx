@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 const SLUG = 'cambiar-lo-que-funciona'
 const TITLE = 'Cambiar lo que funciona: cuando lo estable se vuelve trampa'
 const DESCRIPTION = 'No hay crisis visible, pero sabes que no escala. Tres movimientos para crear urgencia, probar sin romper y cerrar el cambio antes de que sea tarde.'

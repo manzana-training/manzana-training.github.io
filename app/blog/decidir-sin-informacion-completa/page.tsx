@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 const SLUG = 'decidir-sin-informacion-completa'
 const TITLE = 'Decidir sin información completa'
 const DESCRIPTION = 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.'

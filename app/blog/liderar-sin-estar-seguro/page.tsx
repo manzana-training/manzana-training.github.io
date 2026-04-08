@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 const SLUG = 'liderar-sin-estar-seguro'
 const TITLE = 'Liderar sin estar seguro'
 const DESCRIPTION = 'Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende. Tres movimientos para cuando dudas pero el equipo necesita rumbo.'

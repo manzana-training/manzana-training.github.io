@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 
 export const metadata: Metadata = {
   title: 'Blog — MANZANA',

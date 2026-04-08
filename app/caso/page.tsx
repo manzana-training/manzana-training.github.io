@@ -4,14 +4,14 @@ export const metadata: Metadata = {
   title: 'Caso MANZANA — Decidir sin información completa',
   description: 'Tienes 20 minutos, los datos no cuadran, y te van a pedir una postura. ¿Qué haces? Caso de entrenamiento gratuito.',
   alternates: {
-    canonical: 'https://manzana-training.github.io/caso',
+    canonical: 'https://manzanatraining.com/caso',
   },
   openGraph: {
     title: 'Caso MANZANA — Decidir sin información completa',
     description: 'Tienes 20 minutos, los datos no cuadran, y te van a pedir una postura. ¿Qué haces?',
     type: 'website',
     locale: 'es_MX',
-    url: 'https://manzana-training.github.io/caso',
+    url: 'https://manzanatraining.com/caso',
     siteName: 'MANZANA',
   },
 }

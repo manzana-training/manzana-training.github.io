@@ -4,7 +4,7 @@ import './globals.css'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -118,7 +118,7 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'MANZANA',
-              url: 'https://manzana-training.github.io',
+              url: 'https://manzanatraining.com',
               description: 'Sistema de entrenamiento de reflejos bajo presión para líderes ejecutivos.',
               sameAs: ['https://www.linkedin.com/company/111346401'],
             }),

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 const SLUG = 'cortar-la-infeccion'
 const TITLE = 'Cortar la infección: cuando el talento no compensa el daño'
 const DESCRIPTION = 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.'

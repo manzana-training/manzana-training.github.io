@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzana-training.github.io'
+const BASE_URL = 'https://manzanatraining.com'
 const SLUG = 'oxigeno-o-muerte'
 const TITLE = 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo'
 const DESCRIPTION = 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir. Entrenamiento ejecutivo bajo presión real.'
