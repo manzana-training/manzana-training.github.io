@@ -23,6 +23,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'cambiar-lo-que-funciona',
+    title: 'Cambiar lo que funciona: cuando lo estable se vuelve trampa',
+    excerpt: 'No hay crisis visible, pero sabes que no escala. Tres movimientos para crear urgencia, probar sin romper y cerrar el cambio antes de que sea tarde.',
+    date: '2026-04-07',
+    block: 'TRANSFORMACIÓN',
+    readTime: '6 min',
+  },
+  {
     slug: 'oxigeno-o-muerte',
     title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo',
     excerpt: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir.',
