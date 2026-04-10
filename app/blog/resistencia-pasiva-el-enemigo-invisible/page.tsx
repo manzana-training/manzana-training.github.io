@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://manzanatraining.com'
+const BASE_URL = 'https://manzanatraining.com.mx'
 const SLUG = 'resistencia-pasiva-el-enemigo-invisible'
 const TITLE = 'Resistencia pasiva: el enemigo invisible'
 const DESCRIPTION = 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción invisible que te desgasta cada semana y recuperar tracción.'

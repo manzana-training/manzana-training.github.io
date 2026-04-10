@@ -4,14 +4,14 @@ export const metadata: Metadata = {
   title: 'Diagnóstico — MANZANA',
   description: 'Identifica qué posición estás jugando y qué drill necesitas. Diagnóstico gratuito de entrenamiento ejecutivo bajo presión.',
   alternates: {
-    canonical: 'https://manzanatraining.com/diagnostico',
+    canonical: 'https://manzanatraining.com.mx/diagnostico',
   },
   openGraph: {
     title: 'Diagnóstico — MANZANA',
     description: 'Identifica qué posición estás jugando y qué drill necesitas.',
     type: 'website',
     locale: 'es_MX',
-    url: 'https://manzanatraining.com/diagnostico',
+    url: 'https://manzanatraining.com.mx/diagnostico',
     siteName: 'MANZANA',
   },
 }
