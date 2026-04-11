@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -18,7 +18,6 @@ body {
   color: #0d1a35;
 }
 
-/* Scrollbar minimal */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -29,3 +28,757 @@ body {
   background: #3C507D;
   border-radius: 2px;
 }
+
+/* ============================================================
+   MANZANA HOME REDESIGN — v13 port (2026-04-11)
+   Scoped under .manzana-home / .manzana-header / .manzana-footer
+   to avoid touching the legacy pages until phase 2.
+   ============================================================ */
+
+.manzana-home {
+  --bg: #F4F2ED;
+  --ink: #0A0A0A;
+  --ink-soft: #2A2826;
+  --gray: #A8A39A;
+  --rule: rgba(10, 10, 10, 0.12);
+  --watermark: rgba(10, 10, 10, 0.045);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.manzana-home .is-dark {
+  --bg: #0A0A0A;
+  --ink: #FFFFFF;
+  --ink-soft: rgba(255, 255, 255, 0.72);
+  --gray: rgba(255, 255, 255, 0.48);
+  --rule: rgba(255, 255, 255, 0.12);
+  --watermark: rgba(255, 255, 255, 0.06);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.manzana-home .display {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.manzana-home .display em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 144;
+}
+
+.manzana-home .meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.manzana-home section {
+  position: relative;
+  overflow: hidden;
+}
+
+.manzana-home section[data-num]::before {
+  content: attr(data-num);
+  position: absolute;
+  right: -32px;
+  top: 64px;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(180px, 28vw, 380px);
+  line-height: 0.78;
+  color: var(--watermark);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+
+.manzana-home .wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.manzana-home .section-grid {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  gap: 0;
+}
+.manzana-home .col-label { grid-column: 1 / 2; }
+.manzana-home .col-body  { grid-column: 2 / 3; }
+
+.manzana-home .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 900ms var(--ease), transform 900ms var(--ease);
+}
+.manzana-home .reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ——— HEADER (layout-level) ——— */
+.manzana-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 28px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+.manzana-header .mz-logo {
+  font-family: "Inter", -apple-system, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+}
+.manzana-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.manzana-header nav a {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+.manzana-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+.manzana-header nav a:hover::after {
+  width: 100%;
+}
+.manzana-header nav .mz-accent {
+  font-weight: 500;
+}
+.manzana-header nav .mz-accent::before {
+  content: "→ ";
+  opacity: 0.7;
+}
+
+/* ——— HERO ——— */
+.manzana-home .hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  background: #0a0a0a;
+}
+.manzana-home .hero-fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, #1a1a1a 0%, #0a0a0a 70%),
+    #0a0a0a;
+  z-index: 0;
+}
+.manzana-home .hero-fallback::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+.manzana-home .hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.85;
+}
+.manzana-home .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0) 60%);
+  z-index: 2;
+}
+.manzana-home .hero .video-label {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  z-index: 4;
+}
+.manzana-home .hero-copy {
+  position: absolute;
+  left: 48px;
+  right: 48px;
+  top: 30%;
+  color: #fff;
+  z-index: 3;
+  max-width: 62%;
+}
+.manzana-home .hero-pitch {
+  font-size: clamp(56px, 8.6vw, 124px);
+  line-height: 0.95;
+  color: #fff;
+  margin-bottom: 56px;
+}
+.manzana-home .hero-pitch .beat { display: block; }
+.manzana-home .hero-meta {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.75;
+}
+.manzana-home .hero-meta-rule {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+/* ——— TESIS (01) ——— */
+.manzana-home .tesis {
+  padding: 140px 0;
+  background: var(--bg);
+}
+.manzana-home .tesis-label { padding-top: 22px; }
+.manzana-home .tesis-text {
+  font-size: clamp(44px, 7.2vw, 116px);
+  line-height: 0.98;
+  max-width: 14ch;
+  color: var(--ink);
+}
+.manzana-home .tesis-bridge {
+  grid-column: 2 / 3;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 36;
+  font-style: italic;
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.35;
+  max-width: 32ch;
+  color: var(--ink-soft);
+  margin-top: 56px;
+  padding-left: 24px;
+  border-left: 1px solid var(--rule);
+}
+
+/* ——— QUÉ HACEMOS (02) ——— */
+.manzana-home .que-hacemos {
+  padding: 128px 0 140px;
+  background: var(--bg);
+}
+.manzana-home .que-hacemos-label { padding-top: 24px; }
+.manzana-home .que-hacemos-pull {
+  font-size: clamp(40px, 5.8vw, 88px);
+  line-height: 1.02;
+  max-width: 15ch;
+  margin-bottom: 64px;
+  color: var(--ink);
+}
+.manzana-home .que-hacemos-lead {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 36;
+  font-style: italic;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.35;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  margin-bottom: 56px;
+}
+.manzana-home .que-hacemos-body {
+  max-width: 58ch;
+}
+.manzana-home .que-hacemos-body p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.manzana-home .que-hacemos-sign {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  max-width: 58ch;
+}
+.manzana-home .que-hacemos-sign-text {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+/* ——— FRANJA ——— */
+.manzana-home .franja {
+  position: relative;
+  height: 40vh;
+  min-height: 280px;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+.manzana-home .franja-fallback {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, #1a1a1a 0%, #0a0a0a 75%);
+  z-index: 0;
+}
+.manzana-home .franja-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  z-index: 1;
+}
+.manzana-home .franja::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.25) 0%,
+    rgba(10, 10, 10, 0.55) 45%,
+    rgba(10, 10, 10, 0.92) 82%,
+    #0a0a0a 100%
+  );
+  z-index: 2;
+}
+.manzana-home .franja-label {
+  position: absolute;
+  left: 48px;
+  bottom: 48px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  z-index: 3;
+}
+
+/* ——— QUÉ OBTIENES (03) — DARK ——— */
+.manzana-home .beneficios {
+  padding: 128px 0 140px;
+}
+.manzana-home .beneficios-label { padding-top: 24px; }
+.manzana-home .beneficios-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.manzana-home .beneficio {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.manzana-home .beneficio:first-child { padding-top: 0; }
+.manzana-home .beneficio:last-child { border-bottom: none; padding-bottom: 0; }
+.manzana-home .beneficio-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding-top: 14px;
+}
+.manzana-home .beneficio-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: baseline;
+}
+.manzana-home .beneficio-title {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.05;
+  color: var(--ink);
+}
+.manzana-home .beneficio-body {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 40ch;
+}
+
+/* ——— POSICIONES (04) ——— */
+.manzana-home .posiciones {
+  padding: 128px 0 140px;
+  background: var(--bg);
+}
+.manzana-home .posiciones-label { padding-top: 24px; }
+.manzana-home .posiciones-title {
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  max-width: 18ch;
+  margin-bottom: 32px;
+  color: var(--ink);
+}
+.manzana-home .posiciones-lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 55ch;
+  margin-bottom: 80px;
+}
+.manzana-home .posiciones-list { list-style: none; margin: 0; padding: 0; }
+.manzana-home .posicion {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 32px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  transition: padding-left 300ms var(--ease);
+}
+.manzana-home .posicion:hover { padding-left: 16px; }
+.manzana-home .posicion-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.manzana-home .posicion-name {
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+.manzana-home .posicion-block {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-align: right;
+}
+.manzana-home .posiciones-link {
+  display: inline-block;
+  margin-top: 48px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ink);
+}
+.manzana-home .posiciones-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--ink);
+  transition: width 300ms var(--ease);
+}
+.manzana-home .posiciones-link:hover::after { width: 100%; }
+
+/* ——— CASO (05) ——— */
+.manzana-home .caso {
+  padding: 144px 0 160px;
+  background: var(--bg);
+}
+.manzana-home .caso-label { padding-top: 24px; }
+.manzana-home .caso-pull {
+  font-size: clamp(48px, 7vw, 112px);
+  line-height: 0.96;
+  max-width: 14ch;
+  margin-bottom: 56px;
+  color: var(--ink);
+}
+.manzana-home .caso-lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin-bottom: 48px;
+}
+.manzana-home .caso-cta {
+  display: inline-block;
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: clamp(22px, 2.2vw, 32px);
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink);
+}
+.manzana-home .caso-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--ink);
+  transition: width 300ms var(--ease);
+}
+.manzana-home .caso-cta:hover::after { width: 100%; }
+
+/* ——— CIERRE (06) — DARK ——— */
+.manzana-home .cierre {
+  position: relative;
+  padding: 144px 0;
+}
+.manzana-home .cierre-fallback {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 40%, #1a1a1a 0%, #0a0a0a 70%);
+  z-index: 0;
+}
+.manzana-home .cierre::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.5) 100%);
+  z-index: 2;
+}
+.manzana-home .cierre-inner {
+  position: relative;
+  z-index: 3;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.manzana-home .cierre-title {
+  font-size: clamp(80px, 12vw, 176px);
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+.manzana-home .cierre-sub {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.15;
+  max-width: 22ch;
+  color: var(--ink-soft);
+  margin-bottom: 80px;
+}
+.manzana-home .cierre-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+.manzana-home .cierre-cta {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: clamp(24px, 2.4vw, 36px);
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink);
+}
+.manzana-home .cierre-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: var(--ink);
+  transition: width 300ms var(--ease);
+}
+.manzana-home .cierre-cta:hover::after { width: 100%; }
+
+/* ——— FOOTER (layout-level) ——— */
+.manzana-footer {
+  padding: 64px 48px 48px;
+  background: #0a0a0a;
+  color: #fff;
+}
+.manzana-footer .footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.manzana-footer .footer-brand {
+  font-family: "Inter", -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+}
+.manzana-footer .footer-tagline {
+  margin-top: 8px;
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+}
+.manzana-footer .footer-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.manzana-footer .footer-links a {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+  text-decoration: none;
+  transition: color 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+.manzana-footer .footer-links a:hover { color: #fff; }
+.manzana-footer .footer-bottom {
+  max-width: 1400px;
+  margin: 80px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ——— RESPONSIVE ——— */
+@media (max-width: 900px) {
+  .manzana-home .beneficio-content {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .manzana-header { padding: 20px 24px; }
+  .manzana-header nav ul { gap: 18px; }
+  .manzana-header nav a { font-size: 10px; }
+  .manzana-home .wrap { padding: 0 24px; }
+  .manzana-home .hero-copy {
+    left: 24px;
+    right: 24px;
+    top: 24%;
+    max-width: 100%;
+  }
+  .manzana-home .hero-pitch { margin-bottom: 40px; }
+  .manzana-home .hero-meta { font-size: 12px; }
+  .manzana-home .tesis,
+  .manzana-home .que-hacemos,
+  .manzana-home .beneficios,
+  .manzana-home .posiciones,
+  .manzana-home .caso,
+  .manzana-home .cierre {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+  .manzana-home .tesis-bridge {
+    margin-top: 40px;
+    padding-left: 20px;
+  }
+  .manzana-home .section-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .manzana-home .col-label,
+  .manzana-home .col-body {
+    grid-column: 1 / -1;
+  }
+  .manzana-home .beneficio {
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+  .manzana-home .posicion {
+    grid-template-columns: 50px 1fr;
+  }
+  .manzana-home .posicion-block {
+    grid-column: 2;
+    text-align: left;
+    padding-top: 4px;
+  }
+  .manzana-home .cierre-inner { padding: 0 24px; }
+  .manzana-footer { padding: 48px 24px 32px; }
+  .manzana-footer .footer-inner { grid-template-columns: 1fr; }
+  .manzana-footer .footer-links { justify-content: flex-start; }
+  .manzana-footer .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .manzana-home section[data-num]::before {
+    right: -16px;
+    top: 40px;
+    font-size: clamp(120px, 36vw, 220px);
+  }
+}
+
+/* ——— HERO ENTRY ——— */
+@keyframes mz-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.manzana-home .hero-pitch .beat,
+.manzana-home .hero-meta {
+  animation: mz-rise 700ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+.manzana-home .hero-pitch .beat:nth-child(1) { animation-delay: 300ms; }
+.manzana-home .hero-pitch .beat:nth-child(2) { animation-delay: 440ms; }
+.manzana-home .hero-pitch .beat:nth-child(3) { animation-delay: 580ms; }
+.manzana-home .hero-meta { animation-delay: 720ms; }

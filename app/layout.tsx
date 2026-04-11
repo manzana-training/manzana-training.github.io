@@ -9,14 +9,24 @@ const BASE_URL = 'https://manzanatraining.com.mx'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
-  description: 'Entrenamos líderes y equipos para actuar bajo presión real. Simulaciones prácticas, frameworks simples, resultados en semanas. No sales motivado. Sales entrenado.',
-  keywords: ['liderazgo bajo presión', 'entrenamiento ejecutivo', 'decisión bajo presión', 'liderazgo empresarial', 'simulaciones ejecutivas', 'managers', 'founders'],
+  description:
+    'Entrenamos líderes y equipos para actuar bajo presión real. Drills, frameworks simples, resultados en semanas. No sales motivado. Sales entrenado.',
+  keywords: [
+    'liderazgo bajo presión',
+    'entrenamiento ejecutivo',
+    'decisión bajo presión',
+    'liderazgo empresarial',
+    'simulaciones ejecutivas',
+    'managers',
+    'founders',
+  ],
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
-    description: 'Simulaciones prácticas para líderes que necesitan actuar ahora, no reflexionar seis meses.',
+    description:
+      'Drills para líderes que necesitan actuar ahora, no reflexionar seis meses.',
     type: 'website',
     locale: 'es_MX',
     url: BASE_URL,
@@ -33,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
-    description: 'Simulaciones prácticas para líderes que necesitan actuar ahora.',
+    description: 'Drills para líderes que necesitan actuar ahora.',
     images: [`${BASE_URL}/blog-decidir-sin-info.png`],
   },
   robots: {
@@ -63,7 +73,6 @@ export default function RootLayout({
                 gtag('js', new Date());
                 gtag('config', '${GA_ID}');
 
-                // Track clicks on elements with data-track attribute
                 document.addEventListener('click', function(e) {
                   var el = e.target.closest('[data-track]');
                   if (el && typeof gtag === 'function') {
@@ -78,37 +87,44 @@ export default function RootLayout({
         )}
       </head>
       <body className="font-sans antialiased">
-        <nav className="fixed top-0 w-full z-50 bg-manzana-black/80 backdrop-blur-sm border-b border-white/5">
-          <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" className="text-manzana-white font-semibold tracking-tight text-lg">
-              MANZANA
-            </a>
-            <div className="flex items-center gap-8 text-sm">
-              <a href="/metodologia" className="text-manzana-mid hover:text-manzana-white transition-colors">
-                Metodología
-              </a>
-              <a href="/blog" className="text-manzana-mid hover:text-manzana-white transition-colors">
-                Blog
-              </a>
-              <a href="/caso" className="text-manzana-mid hover:text-manzana-white transition-colors">
-                Caso gratis
-              </a>
-              <a href="/diagnostico" className="text-manzana-mid hover:text-manzana-white transition-colors">
-                Diagnóstico
-              </a>
-              <a href="/contacto" className="text-manzana-accent hover:text-manzana-white transition-colors font-medium">
-                Contacto
-              </a>
+        <header className="manzana-header">
+          <a href="/" className="mz-logo">
+            Manzana
+          </a>
+          <nav>
+            <ul>
+              <li><a href="/metodologia">Metodología</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/caso">Caso</a></li>
+              <li><a href="/diagnostico">Diagnóstico</a></li>
+              <li>
+                <a href="/contacto" className="mz-accent">
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer className="manzana-footer">
+          <div className="footer-inner">
+            <div>
+              <div className="footer-brand">Manzana</div>
+              <div className="footer-tagline">
+                Entrenamiento ejecutivo bajo presión
+              </div>
+            </div>
+            <div className="footer-links">
+              <a href="/metodologia">Metodología</a>
+              <a href="/blog">Blog</a>
+              <a href="/caso">Caso</a>
+              <a href="/diagnostico">Diagnóstico</a>
+              <a href="/contacto">Contacto</a>
             </div>
           </div>
-        </nav>
-        <main className="pt-16">
-          {children}
-        </main>
-        <footer className="border-t border-white/5 py-12 mt-24">
-          <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-manzana-mid text-sm">MANZANA — Entrenamiento ejecutivo bajo presión</p>
-            <p className="text-manzana-mid/50 text-xs">Actúa. Elimina lo que te impide actuar.</p>
+          <div className="footer-bottom">
+            <span>Actúa. Elimina lo que te impide actuar.</span>
+            <span>© 2026 Manzana Training</span>
           </div>
         </footer>
         <script
@@ -119,7 +135,8 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'MANZANA',
               url: 'https://manzanatraining.com.mx',
-              description: 'Sistema de entrenamiento de reflejos bajo presión para líderes ejecutivos.',
+              description:
+                'Sistema de entrenamiento de reflejos bajo presión para líderes ejecutivos.',
               sameAs: ['https://www.linkedin.com/company/111346401'],
             }),
           }}
