@@ -4,14 +4,23 @@ const BASE_URL = 'https://manzanatraining.com.mx'
 
 export const metadata: Metadata = {
   title: 'Blog — MANZANA',
-  description: 'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo. Sin humo motivacional.',
+  description:
+    'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo. Sin humo motivacional.',
   alternates: { canonical: `${BASE_URL}/blog` },
   openGraph: {
     title: 'Blog — MANZANA',
-    description: 'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo.',
+    description:
+      'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo.',
     type: 'website',
     url: `${BASE_URL}/blog`,
-    images: [{ url: `${BASE_URL}/blog-oxigeno-o-muerte.png`, width: 1792, height: 1024, alt: 'Blog MANZANA' }],
+    images: [
+      {
+        url: `${BASE_URL}/blog-oxigeno-o-muerte.png`,
+        width: 1792,
+        height: 1024,
+        alt: 'Blog MANZANA',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -25,94 +34,107 @@ const posts = [
   {
     slug: 'cambiar-lo-que-funciona',
     title: 'Cambiar lo que funciona: cuando lo estable se vuelve trampa',
-    excerpt: 'No hay crisis visible, pero sabes que no escala. Tres movimientos para crear urgencia, probar sin romper y cerrar el cambio antes de que sea tarde.',
+    excerpt:
+      'No hay crisis visible, pero sabes que no escala. Tres movimientos para crear urgencia, probar sin romper y cerrar el cambio antes de que sea tarde.',
     date: '2026-04-07',
-    block: 'TRANSFORMACIÓN',
+    block: 'Transformación',
     readTime: '6 min',
   },
   {
     slug: 'oxigeno-o-muerte',
     title: 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo',
-    excerpt: 'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir.',
+    excerpt:
+      'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir.',
     date: '2026-04-01',
-    block: 'SUPERVIVENCIA',
+    block: 'Supervivencia',
     readTime: '6 min',
   },
   {
     slug: 'cortar-la-infeccion',
     title: 'Cortar la infección: cuando el talento no compensa el daño',
-    excerpt: 'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.',
+    excerpt:
+      'Una persona tóxica contamina más que diez desmotivadas. Tres movimientos para intervenir sin espectáculo y proteger al equipo.',
     date: '2026-03-27',
-    block: 'CONTAMINACIÓN',
+    block: 'Contaminación',
     readTime: '6 min',
   },
   {
     slug: 'liderar-sin-estar-seguro',
     title: 'Liderar sin estar seguro',
-    excerpt: 'Tú dudas, pero el equipo necesita dirección. Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende.',
+    excerpt:
+      'Tú dudas, pero el equipo necesita dirección. Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende.',
     date: '2026-03-24',
-    block: 'LIDERAZGO',
+    block: 'Liderazgo',
     readTime: '5 min',
   },
   {
     slug: 'resistencia-pasiva-el-enemigo-invisible',
     title: 'Resistencia pasiva: el enemigo invisible',
-    excerpt: 'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción que no hace ruido pero te desgasta cada semana.',
+    excerpt:
+      'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción que no hace ruido pero te desgasta cada semana.',
     date: '2026-03-24',
-    block: 'FRICCIÓN',
+    block: 'Fricción',
     readTime: '6 min',
   },
   {
     slug: 'decidir-sin-informacion-completa',
     title: 'Decidir sin información completa',
-    excerpt: 'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.',
+    excerpt:
+      'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.',
     date: '2026-03-24',
-    block: 'DECISIÓN',
+    block: 'Decisión',
     readTime: '5 min',
   },
 ]
 
 export default function Blog() {
   return (
-    <div className="min-h-screen">
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-16">
-        <p className="text-manzana-accent text-sm font-mono mb-4">BLOG</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-manzana-white mb-6">
-          Sin humo. Sin teoría.<br />Situaciones reales.
-        </h1>
-        <p className="text-xl text-manzana-mid max-w-2xl">
-          Cada artículo parte de una posición de presión real. Si no hay situación concreta, no hay artículo.
-        </p>
+    <div className="mz-page">
+      <section className="page-head" data-num="06">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">06 — Blog</div>
+          <div className="col-body">
+            <h1 className="page-head-title reveal">
+              Sin humo. Sin teoría. Situaciones reales.
+            </h1>
+            <p className="page-head-lead reveal">
+              Cada artículo parte de una posición de presión real. Si no hay
+              situación concreta, no hay artículo.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-16">
-        <div className="space-y-6">
-          {posts.map((post, i) => (
-            <a
-              key={i}
-              href={`/blog/${post.slug}`}
-              className="block border border-white/5 p-8 hover:border-manzana-accent/20 transition-colors group"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-manzana-accent text-xs font-mono">{post.block}</span>
-                <span className="text-manzana-mid/40 text-xs">·</span>
-                <span className="text-manzana-mid/40 text-xs">{post.readTime}</span>
-                <span className="text-manzana-mid/40 text-xs">·</span>
-                <time className="text-manzana-mid/40 text-xs" dateTime={post.date}>
-                  {new Date(post.date + 'T12:00:00').toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}
-                </time>
-              </div>
-              <h2 className="text-2xl font-bold text-manzana-white group-hover:text-manzana-accent transition-colors mb-3">
-                {post.title}
-              </h2>
-              <p className="text-manzana-mid leading-relaxed">
-                {post.excerpt}
-              </p>
-              <p className="text-manzana-accent text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                Leer →
-              </p>
+      <section className="mz-section">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">Artículos</div>
+          <div className="col-body">
+            <div className="blog-list">
+              {posts.map((post) => (
+                <a
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="blog-item reveal"
+                >
+                  <div className="blog-item-meta">
+                    <span>{post.block}</span>
+                    <span>{post.readTime}</span>
+                    <span>
+                      {new Date(post.date + 'T12:00:00').toLocaleDateString(
+                        'es-MX',
+                        { day: 'numeric', month: 'short', year: 'numeric' }
+                      )}
+                    </span>
+                  </div>
+                  <h2 className="blog-item-title">{post.title}</h2>
+                  <p className="blog-item-excerpt">{post.excerpt}</p>
+                </a>
+              ))}
+            </div>
+            <a href="/" className="mz-back">
+              ← Volver al inicio
             </a>
-          ))}
+          </div>
         </div>
       </section>
     </div>

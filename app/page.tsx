@@ -1,28 +1,6 @@
-'use client'
-
-import { useEffect } from 'react'
-
 export default function Home() {
-  useEffect(() => {
-    const els = document.querySelectorAll('.manzana-home .reveal')
-    if (!els.length) return
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in')
-            io.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.25, rootMargin: '0px 0px -10% 0px' }
-    )
-    els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
-  }, [])
-
   return (
-    <div className="manzana-home">
+    <div className="mz-page">
       {/* HERO */}
       <section className="hero">
         <div className="hero-fallback" />
@@ -126,36 +104,12 @@ export default function Home() {
           </div>
           <ul className="beneficios-list col-body">
             {[
-              {
-                num: '01',
-                title: 'Claridad para decidir',
-                body: 'Cuando los datos no alcanzan y esperar no es opción.',
-              },
-              {
-                num: '02',
-                title: 'Menos fricción',
-                body: 'Mecanismos de cierre que el equipo puede usar sin depender de ti.',
-              },
-              {
-                num: '03',
-                title: 'Criterio compartido',
-                body: 'Lenguaje común para actuar cuando todo importa.',
-              },
-              {
-                num: '04',
-                title: 'Velocidad real',
-                body: 'Decisiones que se cierran en minutos, no en semanas de juntas.',
-              },
-              {
-                num: '05',
-                title: 'Reflejos entrenados',
-                body: '15 drills que cubren el 68% de las situaciones críticas.',
-              },
-              {
-                num: '06',
-                title: 'Resultados en semanas',
-                body: 'Sin procesos eternos. Sin dependencias. Sin acompañamiento infinito.',
-              },
+              { num: '01', title: 'Claridad para decidir', body: 'Cuando los datos no alcanzan y esperar no es opción.' },
+              { num: '02', title: 'Menos fricción', body: 'Mecanismos de cierre que el equipo puede usar sin depender de ti.' },
+              { num: '03', title: 'Criterio compartido', body: 'Lenguaje común para actuar cuando todo importa.' },
+              { num: '04', title: 'Velocidad real', body: 'Decisiones que se cierran en minutos, no en semanas de juntas.' },
+              { num: '05', title: 'Reflejos entrenados', body: '15 drills que cubren el 68% de las situaciones críticas.' },
+              { num: '06', title: 'Resultados en semanas', body: 'Sin procesos eternos. Sin dependencias. Sin acompañamiento infinito.' },
             ].map((b) => (
               <li className="beneficio reveal" key={b.num}>
                 <span className="beneficio-num">{b.num}</span>
@@ -188,16 +142,8 @@ export default function Home() {
               {[
                 { num: '01', name: 'Cerrar sin aplausos', block: 'Cierre' },
                 { num: '02', name: 'Aguantar el plan', block: 'Cierre' },
-                {
-                  num: '03',
-                  name: 'Cubrir al nuevo',
-                  block: 'Aprendizaje en fuego',
-                },
-                {
-                  num: '06',
-                  name: 'Cortar la infección',
-                  block: 'Contaminación',
-                },
+                { num: '03', name: 'Cubrir al nuevo', block: 'Aprendizaje en fuego' },
+                { num: '06', name: 'Cortar la infección', block: 'Contaminación' },
                 { num: '08', name: 'Parar la sangría', block: 'Fricción' },
                 { num: '11', name: 'Oxígeno o muerte', block: 'Supervivencia' },
               ].map((p) => (

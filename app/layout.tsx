@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { RevealScript } from '../components/RevealScript'
 import './globals.css'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
@@ -106,6 +107,7 @@ export default function RootLayout({
           </nav>
         </header>
         <main>{children}</main>
+        <RevealScript />
         <footer className="manzana-footer">
           <div className="footer-inner">
             <div>

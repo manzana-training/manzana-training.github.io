@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Diagnóstico — MANZANA',
-  description: 'Identifica qué posición estás jugando y qué drill necesitas. Diagnóstico gratuito de entrenamiento ejecutivo bajo presión.',
+  description:
+    'Identifica qué posición estás jugando y qué drill necesitas. Diagnóstico gratuito de entrenamiento ejecutivo bajo presión.',
   alternates: {
     canonical: 'https://manzanatraining.com.mx/diagnostico',
   },
@@ -18,65 +19,76 @@ export const metadata: Metadata = {
 
 export default function Diagnostico() {
   return (
-    <div className="min-h-screen">
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-16">
-        <div className="max-w-2xl">
-          <p className="text-manzana-accent text-sm font-mono mb-4">DIAGNÓSTICO</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-manzana-white mb-6">
-            ¿Qué situación estás enfrentando?
-          </h1>
-          <p className="text-xl text-manzana-mid leading-relaxed mb-4">
-            Responde el diagnóstico. Te decimos qué posición estás jugando y qué tipo de entrenamiento necesitas.
-          </p>
-          <p className="text-manzana-mid/60 text-sm mb-12">
-            Sin compromiso. Sin venta automática. Solo claridad.
-          </p>
-
-          <div className="border border-manzana-accent/20 p-10">
-            <p className="text-manzana-white font-semibold text-lg mb-3">
-              Haz el diagnóstico ahora
+    <div className="mz-page">
+      <section className="page-head" data-num="07">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">07 — Diagnóstico</div>
+          <div className="col-body">
+            <h1 className="page-head-title reveal">
+              ¿Qué situación estás enfrentando?
+            </h1>
+            <p className="page-head-lead reveal">
+              Responde el diagnóstico. Te decimos qué posición estás jugando y
+              qué tipo de entrenamiento necesitas. Sin compromiso. Sin venta
+              automática. Solo claridad.
             </p>
-            <p className="text-manzana-mid text-sm mb-6">
-              Te toma unos minutos. Al terminar sabrás qué posición de presión estás jugando y qué reflejo necesitas entrenar.
-            </p>
-            <a
-              href="https://script.google.com/macros/s/AKfycbwXdtAKpeolb8O_IrbjYYbWyQ3na731aTUx1QhS5o8UH1zm9m4rOiSrGMAykOQkiRiNcg/exec"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-manzana-accent text-manzana-black font-semibold text-sm tracking-wide hover:bg-manzana-white transition-colors"
-            >
-              INICIAR DIAGNÓSTICO →
-            </a>
           </div>
+        </div>
+      </section>
 
-          {/* Qué esperar */}
-          <div className="mt-16">
-            <p className="text-manzana-accent text-sm font-mono mb-6">QUÉ ESPERAR</p>
-            <div className="space-y-4 text-manzana-mid">
-              <div className="flex items-start gap-3">
-                <span className="text-manzana-accent mt-1">—</span>
-                <p>Identificamos tu posición de presión actual</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-manzana-accent mt-1">—</span>
-                <p>Te decimos qué tipo de entrenamiento necesitas</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-manzana-accent mt-1">—</span>
-                <p>Si quieres revisarlo juntos, agendamos 15 minutos</p>
-              </div>
+      <section className="mz-section">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">Iniciar</div>
+          <div className="col-body">
+            <div className="mz-diag-box reveal">
+              <h3>Haz el diagnóstico ahora</h3>
+              <p>
+                Te toma unos minutos. Al terminar sabrás qué posición de
+                presión estás jugando y qué reflejo necesitas entrenar.
+              </p>
+              <a
+                href="https://script.google.com/macros/s/AKfycbwXdtAKpeolb8O_IrbjYYbWyQ3na731aTUx1QhS5o8UH1zm9m4rOiSrGMAykOQkiRiNcg/exec"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mz-end-cta"
+                data-track="iniciar_diagnostico"
+                data-track-label="diagnostico"
+              >
+                Iniciar diagnóstico →
+              </a>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* CTA secundario */}
-          <div className="mt-16 border border-white/5 p-8 text-center">
-            <p className="text-manzana-white font-semibold mb-2">¿Prefieres ver un ejemplo primero?</p>
-            <p className="text-manzana-mid text-sm mb-6">Lee un caso real de entrenamiento antes de hacer el diagnóstico.</p>
-            <a
-              href="/caso"
-              className="text-manzana-accent hover:text-manzana-white text-sm font-medium transition-colors"
-            >
-              Ver caso de entrenamiento →
+      <section className="mz-section">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">Qué esperar</div>
+          <div className="col-body mz-prose reveal">
+            <ul>
+              <li>Identificamos tu posición de presión actual.</li>
+              <li>Te decimos qué tipo de entrenamiento necesitas.</li>
+              <li>Si quieres revisarlo juntos, agendamos 15 minutos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mz-end">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">Alternativa</div>
+          <div className="col-body">
+            <h2 className="mz-end-title reveal">¿Prefieres ver un ejemplo primero?</h2>
+            <p className="mz-end-sub reveal">
+              Lee un caso real de entrenamiento antes de hacer el diagnóstico.
+            </p>
+            <div className="mz-end-actions">
+              <a href="/caso" className="mz-end-cta reveal">
+                Ver caso de entrenamiento →
+              </a>
+            </div>
+            <a href="/" className="mz-back">
+              ← Volver al inicio
             </a>
           </div>
         </div>
