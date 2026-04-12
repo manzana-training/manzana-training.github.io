@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Contacto() {
   return (
-    <div className="mz-page">
+    <div className="mz-page is-dark">
       <section className="page-head" data-num="08">
         <div className="wrap section-grid">
           <div className="meta col-label reveal">08 — Contacto</div>

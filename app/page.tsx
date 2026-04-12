@@ -180,6 +180,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MANIFIESTO BAND — light */}
+      <section className="manifesto-band">
+        <span className="meta reveal">Manifiesto</span>
+        <div className="triada reveal">
+          <span className="word">Sobrevive</span>
+          <span className="bar" aria-hidden="true" />
+          <span className="word">Posiciónate</span>
+          <span className="bar" aria-hidden="true" />
+          <span className="word">Cierra</span>
+        </div>
+      </section>
+
       {/* 06 CIERRE — DARK */}
       <section className="cierre is-dark" data-num="06">
         <div className="cierre-fallback" />

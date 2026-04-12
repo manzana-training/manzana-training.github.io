@@ -116,18 +116,16 @@ export default function Blog() {
                   href={`/blog/${post.slug}`}
                   className="blog-item reveal"
                 >
-                  <div className="blog-item-meta">
-                    <span>{post.block}</span>
-                    <span>{post.readTime}</span>
-                    <span>
-                      {new Date(post.date + 'T12:00:00').toLocaleDateString(
-                        'es-MX',
-                        { day: 'numeric', month: 'short', year: 'numeric' }
-                      )}
-                    </span>
-                  </div>
                   <h2 className="blog-item-title">{post.title}</h2>
-                  <p className="blog-item-excerpt">{post.excerpt}</p>
+                  <p className="blog-item-block">{post.block}</p>
+                  <span className="blog-item-stamp">
+                    {new Date(post.date + 'T12:00:00').toLocaleDateString(
+                      'es-MX',
+                      { day: 'numeric', month: 'short' }
+                    )}
+                    {' · '}
+                    {post.readTime}
+                  </span>
                 </a>
               ))}
             </div>

@@ -89,8 +89,10 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <header className="manzana-header">
-          <a href="/" className="mz-logo">
-            Manzana
+          <a href="/" className="wordmark wordmark--sm" aria-label="MANZANA">
+            <span className="half">MANZ</span>
+            <span className="bar" aria-hidden="true" />
+            <span className="half">ANA</span>
           </a>
           <nav>
             <ul>
@@ -109,21 +111,20 @@ export default function RootLayout({
         <main>{children}</main>
         <RevealScript />
         <footer className="manzana-footer">
-          <div className="footer-inner">
-            <div>
-              <div className="footer-brand">Manzana</div>
-              <div className="footer-tagline">
-                Entrenamiento ejecutivo bajo presión
-              </div>
-            </div>
-            <div className="footer-links">
-              <a href="/metodologia">Metodología</a>
-              <a href="/blog">Blog</a>
-              <a href="/caso">Caso</a>
-              <a href="/diagnostico">Diagnóstico</a>
-              <a href="/contacto">Contacto</a>
-            </div>
+          <div className="footer-cap">
+            <a href="/" className="wordmark wordmark--xl" aria-label="MANZANA">
+              <span className="half">MANZ</span>
+              <span className="bar" aria-hidden="true" />
+              <span className="half">ANA</span>
+            </a>
           </div>
+          <nav className="footer-links">
+            <a href="/metodologia">Metodología</a>
+            <a href="/blog">Blog</a>
+            <a href="/caso">Caso</a>
+            <a href="/diagnostico">Diagnóstico</a>
+            <a href="/contacto">Contacto</a>
+          </nav>
           <div className="footer-bottom">
             <span>Actúa. Elimina lo que te impide actuar.</span>
             <span>© 2026 Manzana Training</span>

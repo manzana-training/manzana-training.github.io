@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Diagnostico() {
   return (
-    <div className="mz-page">
+    <div className="mz-page is-dark">
       <section className="page-head" data-num="07">
         <div className="wrap section-grid">
           <div className="meta col-label reveal">07 — Diagnóstico</div>

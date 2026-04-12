@@ -101,7 +101,7 @@ export default function Caso() {
         </div>
       </section>
 
-      <section className="mz-section">
+      <section className="mz-section is-dark">
         <div className="wrap section-grid">
           <div className="meta col-label reveal">El reencuadre</div>
           <div className="col-body">
