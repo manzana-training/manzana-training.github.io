@@ -1480,6 +1480,247 @@ body {
   max-width: 48ch;
 }
 
+/* ——— METODOLOGÍA PAGE — hero + sections ——— */
+.mz-page .metodo-hero {
+  padding: 180px 0 120px;
+}
+.mz-page .metodo-hero .section-grid {
+  grid-template-columns: 2fr 9fr 1fr;
+}
+.mz-page .metodo-hero .col-label {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  padding-right: 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  min-height: 80px;
+}
+.mz-page .metodo-hero-title {
+  font-size: clamp(40px, 6vw, 96px);
+  line-height: 0.98;
+  max-width: 16ch;
+  margin-bottom: 40px;
+  color: var(--ink);
+}
+.mz-page .metodo-hero-lead {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 36;
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.45;
+  max-width: 48ch;
+  color: var(--ink-soft);
+  margin-bottom: 72px;
+}
+.mz-page .metodo-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding-top: 48px;
+  border-top: 1px solid var(--rule);
+}
+.mz-page .metodo-hero-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mz-page .metodo-hero-stat {
+  font-size: clamp(56px, 6vw, 88px);
+  line-height: 0.9;
+  color: var(--ink);
+}
+.mz-page .metodo-hero-stat-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--gray);
+  max-width: 20ch;
+}
+
+/* Arquitectura blocks */
+.mz-page .metodo-arch {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 48px;
+}
+.mz-page .metodo-arch-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mz-page .metodo-arch-item:first-child {
+  border-top: 1px solid var(--rule);
+}
+.mz-page .metodo-arch-letter {
+  font-size: clamp(36px, 3.6vw, 56px);
+  line-height: 1;
+  color: var(--gray);
+}
+.mz-page .metodo-arch-content h3 {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.mz-page .metodo-arch-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 55ch;
+}
+.mz-page .metodo-arch-complement {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  padding-left: 24px;
+  border-left: 1px solid var(--rule);
+}
+.mz-page .metodo-arch-complement strong {
+  color: var(--ink);
+}
+
+/* Drill groups (dark section) */
+.mz-page .metodo-drill-group {
+  margin-bottom: 72px;
+}
+.mz-page .metodo-drill-group:last-child { margin-bottom: 0; }
+.mz-page .metodo-drill-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.mz-page .metodo-drill-group-letter {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+}
+.mz-page .metodo-drill-group-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.mz-page .metodo-drill-group-lead {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--gray);
+  margin-top: 2px;
+}
+.mz-page .metodo-drill-row {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mz-page .metodo-drill-row:last-child { border-bottom: none; }
+.mz-page .metodo-drill-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+  padding-top: 4px;
+}
+.mz-page .metodo-drill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mz-page .metodo-drill-name {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.15;
+  color: var(--ink);
+}
+.mz-page .metodo-drill-focus {
+  font-size: 14px;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* Entregables grid */
+.mz-page .metodo-entregables {
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid var(--rule);
+}
+.mz-page .metodo-entregables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.mz-page .metodo-entregable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mz-page .metodo-entregable strong {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.mz-page .metodo-entregable span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* Principios grid */
+.mz-page .metodo-principios-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mz-page .metodo-principio {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mz-page .metodo-principio:first-child {
+  border-top: 1px solid var(--rule);
+}
+.mz-page .metodo-principio-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+  padding-top: 6px;
+}
+.mz-page .metodo-principio-name {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.mz-page .metodo-principio-desc {
+  font-size: 14px;
+  color: var(--gray);
+  font-style: italic;
+}
+
 /* === RESPONSIVE — generic === */
 @media (max-width: 900px) {
   .mz-page .mz-tiers { grid-template-columns: 1fr; gap: 48px; }
@@ -1518,4 +1759,19 @@ body {
     grid-row: 3;
     padding-top: 8px;
   }
+  /* Metodología responsive */
+  .mz-page .metodo-hero { padding: 120px 0 80px; }
+  .mz-page .metodo-hero .section-grid { grid-template-columns: 1fr; }
+  .mz-page .metodo-hero .col-label {
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 0 0 16px;
+    margin-bottom: 24px;
+    min-height: 0;
+  }
+  .mz-page .metodo-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .mz-page .metodo-arch-item { grid-template-columns: 50px 1fr; gap: 16px; }
+  .mz-page .metodo-entregables-grid { grid-template-columns: 1fr; gap: 32px; }
+  .mz-page .metodo-drill-row { grid-template-columns: 36px 1fr; gap: 12px; }
 }

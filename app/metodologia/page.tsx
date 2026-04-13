@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Metodología — MANZANA',
   description:
-    'Sistema de entrenamiento basado en jiu-jitsu: posiciones reales, principios simples, drills de repetición. 12 escenarios que cubren el 68% de las situaciones críticas en empresas.',
+    'Sistema de entrenamiento basado en jiu-jitsu: 12 posiciones, 15 drills, 28 principios de movimiento. Escenarios reales que cubren el 68% de las situaciones críticas en empresas.',
 }
 
 const posiciones = [
@@ -57,60 +57,159 @@ const posiciones = [
   },
 ]
 
+const drills = [
+  {
+    block: 'Decisión',
+    blockLead: 'Cuando no hay opción "correcta"',
+    items: [
+      { num: '01', name: 'Decidir con información incompleta', focus: 'Criterio, umbrales, riesgo asumible' },
+      { num: '02', name: 'Elegir entre dos malas opciones', focus: 'Jerarquía de pérdidas, trade-offs reales' },
+      { num: '03', name: 'Decidir rápido vs decidir bien', focus: 'Velocidad suficiente, no perfección' },
+      { num: '04', name: 'Sostener una decisión impopular', focus: 'Autoridad sin autoritarismo' },
+    ],
+  },
+  {
+    block: 'Poder y fricción humana',
+    blockLead: 'Cuando las personas son el obstáculo',
+    items: [
+      { num: '05', name: 'Enfrentar resistencia pasiva', focus: 'Lectura de fricción invisible' },
+      { num: '06', name: 'Negociar sin poder formal', focus: 'Influencia real, no cargo' },
+      { num: '07', name: 'Decir no cuando esperaban un sí', focus: 'Límites claros sin romper relaciones' },
+      { num: '08', name: 'Resolver conflicto sin escalarlo', focus: 'Contención, encuadre y salida limpia' },
+    ],
+  },
+  {
+    block: 'Liderazgo bajo presión',
+    blockLead: 'Cuando tú eres el que no puede fallar',
+    items: [
+      { num: '09', name: 'Liderar sin estar seguro', focus: 'Claridad suficiente, no certeza falsa' },
+      { num: '10', name: 'Tomar responsabilidad por errores ajenos', focus: 'Ownership real, no culpas' },
+      { num: '11', name: 'Sostener al equipo en crisis', focus: 'Estabilidad emocional operativa' },
+    ],
+  },
+  {
+    block: 'Transformación y cambio real',
+    blockLead: 'Cuando lo que hay ya no sirve',
+    items: [
+      { num: '12', name: 'Cambiar algo que "funciona"', focus: 'Urgencia sin pánico' },
+      { num: '13', name: 'Transformar con gente que no cree', focus: 'Acción antes que convicción' },
+      { num: '14', name: 'Digitalizar sin romantizar la tecnología', focus: 'Criterio, no stack' },
+    ],
+  },
+  {
+    block: 'Supervivencia',
+    blockLead: 'Cuando el negocio está en riesgo real',
+    items: [
+      { num: '15', name: 'Actuar cuando el negocio está en riesgo', focus: 'Foco brutal, eliminación de ruido' },
+    ],
+  },
+]
+
+const principios = [
+  { dim: '01', name: 'Control del espacio', desc: 'Dónde y con quién se decide' },
+  { dim: '02', name: 'Control del tiempo', desc: 'Ritmo y urgencia' },
+  { dim: '03', name: 'Control de energía', desc: 'Carga emocional y desgaste' },
+  { dim: '04', name: 'Control de decisión', desc: 'Cierre y definición' },
+  { dim: '05', name: 'Control de poder', desc: 'Palancas formales e informales' },
+  { dim: '06', name: 'Control narrativo', desc: 'Marco interpretativo' },
+  { dim: '07', name: 'Control de salida', desc: 'Capacidad de cortar pérdida' },
+]
+
 export default function Metodologia() {
   return (
     <div className="mz-page">
-      <section className="page-head" data-num="04">
+      {/* PAGE HEAD — DARK */}
+      <section className="metodo-hero is-dark" data-num="M">
         <div className="wrap section-grid">
-          <div className="meta col-label reveal">04 — Metodología</div>
+          <div className="meta col-label reveal" style={{ paddingTop: 22 }}>Metodología</div>
           <div className="col-body">
-            <h1 className="page-head-title reveal">
+            <h1 className="metodo-hero-title display reveal">
               Como defensa personal, pero para liderazgo.
             </h1>
-            <p className="page-head-lead reveal">
+            <p className="metodo-hero-lead reveal">
               En jiu-jitsu, el objetivo no es ser virtuoso: es sobrevivir,
-              salir, controlar, cerrar. MANZANA usa exactamente esa lógica en
-              el mundo laboral.
+              salir, controlar, cerrar. MANZANA usa exactamente esa lógica
+              en el mundo laboral.
+            </p>
+            <div className="metodo-hero-grid reveal">
+              <div className="metodo-hero-block">
+                <span className="meta">Posiciones</span>
+                <span className="metodo-hero-stat display">12</span>
+                <span className="metodo-hero-stat-desc">configuraciones de presión real</span>
+              </div>
+              <div className="metodo-hero-block">
+                <span className="meta">Drills</span>
+                <span className="metodo-hero-stat display">15</span>
+                <span className="metodo-hero-stat-desc">reflejos entrenables bajo presión</span>
+              </div>
+              <div className="metodo-hero-block">
+                <span className="meta">Principios</span>
+                <span className="metodo-hero-stat display">28</span>
+                <span className="metodo-hero-stat-desc">reglas simples de movimiento</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 01 ARQUITECTURA */}
+      <section className="mz-section" data-num="01">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">01 — Arquitectura</div>
+          <div className="col-body">
+            <h2 className="mz-section-title reveal">
+              Dos capas. Un sistema.
+            </h2>
+            <p className="mz-section-lead reveal">
+              La primera capa mapea tu situación. La segunda te entrena para resolverla.
+              No importa la industria. No importa el cargo. Importa la presión.
+            </p>
+            <div className="metodo-arch reveal">
+              <div className="metodo-arch-item">
+                <div className="metodo-arch-letter display">A</div>
+                <div className="metodo-arch-content">
+                  <h3>Posiciones</h3>
+                  <p>
+                    12 configuraciones típicas de presión que se repiten en
+                    empresas reales. Cada una se entrena en una sesión. Cubren
+                    el 68% de los escenarios críticos.
+                  </p>
+                </div>
+              </div>
+              <div className="metodo-arch-item">
+                <div className="metodo-arch-letter display">B</div>
+                <div className="metodo-arch-content">
+                  <h3>Drills</h3>
+                  <p>
+                    15 reflejos entrenables bajo presión. Cada posición se
+                    resuelve con 2-4 drills de repetición guiada. No teoría.
+                    Simulación con corrección en vivo.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p className="metodo-arch-complement reveal">
+              Complemento transversal: <strong>28 principios de movimiento</strong> —
+              reglas simples que aplican a cualquier posición o drill.
+              Como las bases del jiu-jitsu: funcionan siempre.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="mz-section">
+      {/* 02 LAS 12 POSICIONES */}
+      <section className="mz-section" data-num="02">
         <div className="wrap section-grid">
-          <div className="meta col-label reveal">Arquitectura</div>
-          <div className="col-body">
-            <div className="mz-block-row reveal">
-              <div className="mz-block-num">A</div>
-              <div className="mz-block-content">
-                <h3>Posiciones</h3>
-                <p>
-                  12 configuraciones típicas de presión que se repiten en
-                  empresas reales. Cada una se entrena en una sesión.
-                </p>
-              </div>
-            </div>
-            <div className="mz-block-row reveal">
-              <div className="mz-block-num">B</div>
-              <div className="mz-block-content">
-                <h3>Drills</h3>
-                <p>
-                  15 reflejos entrenables bajo presión. Cada escenario se
-                  resuelve con 2-4 drills de repetición guiada.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mz-section">
-        <div className="wrap section-grid">
-          <div className="meta col-label reveal">Las 12 posiciones</div>
+          <div className="meta col-label reveal">02 — Las 12 posiciones</div>
           <div className="col-body">
             <h2 className="mz-section-title reveal">
               Escenarios que cubren el 68% de los casos reales.
             </h2>
+            <p className="mz-section-lead reveal">
+              Cada posición es una configuración de presión que se repite.
+              No depende de industria. Se entrena en una sesión.
+              Aquí está el catálogo completo.
+            </p>
             {posiciones.map((block, bi) => (
               <div className="mz-block-group reveal" key={bi}>
                 <div className="mz-block-group-head">
@@ -133,19 +232,63 @@ export default function Metodologia() {
         </div>
       </section>
 
-      <section className="mz-section">
+      {/* 03 LOS 15 DRILLS — DARK */}
+      <section className="mz-section is-dark" data-num="03">
         <div className="wrap section-grid">
-          <div className="meta col-label reveal">Formato de sesión</div>
+          <div className="meta col-label reveal">03 — Los 15 drills</div>
+          <div className="col-body">
+            <h2 className="mz-section-title reveal">
+              Lo que entrenas cuando no hay tiempo para pensar.
+            </h2>
+            <p className="mz-section-lead reveal">
+              Cada drill es un reflejo. Se practica con simulación bajo presión
+              real, corrección en vivo y repetición hasta que se instala.
+            </p>
+            {drills.map((block, bi) => (
+              <div className="metodo-drill-group reveal" key={bi}>
+                <div className="metodo-drill-group-head">
+                  <span className="metodo-drill-group-letter">
+                    {String.fromCharCode(65 + bi)}
+                  </span>
+                  <div>
+                    <div className="metodo-drill-group-name">{block.block}</div>
+                    <div className="metodo-drill-group-lead">{block.blockLead}</div>
+                  </div>
+                </div>
+                {block.items.map((drill) => (
+                  <div className="metodo-drill-row" key={drill.num}>
+                    <span className="metodo-drill-num">{drill.num}</span>
+                    <div className="metodo-drill-content">
+                      <span className="metodo-drill-name">{drill.name}</span>
+                      <span className="metodo-drill-focus">{drill.focus}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 04 FORMATO DE SESIÓN */}
+      <section className="mz-section" data-num="04">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">04 — Formato de sesión</div>
           <div className="col-body">
             <h2 className="mz-section-title reveal">
               Estructura fija. Repetible. Sin depender de carisma.
             </h2>
+            <p className="mz-section-lead reveal">
+              Cada sesión sigue el mismo protocolo. No improvisa.
+              No depende de quién facilite. Funciona porque el sistema funciona.
+            </p>
             {[
-              { num: '01', title: 'Señales', desc: 'Cómo sabes que estás en esa posición.' },
-              { num: '02', title: 'Errores instintivos', desc: 'Lo que la gente hace mal por default.' },
-              { num: '03', title: 'Frames', desc: '3-5 reglas simples que te protegen.' },
-              { num: '04', title: 'Drills', desc: 'Práctica guiada con simulación y corrección.' },
-              { num: '05', title: 'Salida', desc: 'Decisión concreta + checklist operativo.' },
+              { num: '01', title: 'Señales', desc: 'Cómo sabes que estás en esa posición. Síntomas visibles, patrones repetidos, lo que la gente dice vs. lo que realmente pasa.' },
+              { num: '02', title: 'Errores instintivos', desc: 'Lo que la gente hace mal por default. Reacciones típicas que empeoran el problema.' },
+              { num: '03', title: 'Frames', desc: '3-5 reglas simples que te protegen. Principios de movimiento aplicados al escenario. Lenguaje concreto y usable.' },
+              { num: '04', title: 'Drills', desc: 'Práctica guiada con simulación y corrección en vivo. Escenario real, tiempo acotado, segundo round.' },
+              { num: '05', title: 'Salida', desc: 'Decisión concreta + checklist operativo. Qué haces mañana. Movimiento mínimo esta semana.' },
+              { num: '06', title: 'Enseñanza MANZANA', desc: 'La lección en 3 líneas. Sin adornos.' },
             ].map((s) => (
               <div className="mz-block-row reveal" key={s.num}>
                 <div className="mz-block-num">{s.num}</div>
@@ -155,13 +298,59 @@ export default function Metodologia() {
                 </div>
               </div>
             ))}
+            <div className="metodo-entregables reveal">
+              <span className="meta" style={{ display: 'block', marginBottom: 24 }}>Entregables por sesión</span>
+              <div className="metodo-entregables-grid">
+                <div className="metodo-entregable">
+                  <strong>Frames + Checklist</strong>
+                  <span>Reglas simples y acciones concretas en 1 página</span>
+                </div>
+                <div className="metodo-entregable">
+                  <strong>Mapa de decisión</strong>
+                  <span>Ruta de acción post-sesión o plan 7 días</span>
+                </div>
+                <div className="metodo-entregable">
+                  <strong>Regla de operación</strong>
+                  <span>Frase o principio instalable para el equipo</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mz-section">
+      {/* 05 PRINCIPIOS DE MOVIMIENTO */}
+      <section className="mz-section is-dark" data-num="05">
         <div className="wrap section-grid">
-          <div className="meta col-label reveal">Cómo contratar</div>
+          <div className="meta col-label reveal">05 — Principios de movimiento</div>
+          <div className="col-body">
+            <h2 className="mz-section-title reveal">
+              28 reglas simples. 7 dimensiones de control.
+            </h2>
+            <p className="mz-section-lead reveal">
+              Como las bases del jiu-jitsu: no dependen de la posición ni del
+              oponente. Aplican siempre. Son el sistema operativo detrás
+              de cada drill.
+            </p>
+            <div className="metodo-principios-grid">
+              {principios.map((p) => (
+                <div className="metodo-principio reveal" key={p.dim}>
+                  <span className="metodo-principio-num">{p.dim}</span>
+                  <div>
+                    <div className="metodo-principio-name">{p.name}</div>
+                    <div className="metodo-principio-desc">{p.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 06 CÓMO CONTRATAR */}
+      <section className="mz-section" data-num="06">
+        <div className="wrap section-grid">
+          <div className="meta col-label reveal">06 — Cómo contratar</div>
           <div className="col-body">
             <h2 className="mz-section-title reveal">
               Tres formatos. Un mismo sistema.
@@ -236,6 +425,7 @@ export default function Metodologia() {
         </div>
       </section>
 
+      {/* CIERRE */}
       <section className="mz-end">
         <div className="wrap section-grid">
           <div className="meta col-label reveal">Siguiente paso</div>
