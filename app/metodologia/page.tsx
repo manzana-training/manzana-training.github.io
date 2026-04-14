@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Metodología — MANZANA',
   description:
-    'Sistema de entrenamiento basado en jiu-jitsu: 12 posiciones, 15 drills, 28 principios de movimiento. Escenarios reales que cubren el 68% de las situaciones críticas en empresas.',
+    'Metodología de entrenamiento ejecutivo: 12 posiciones de liderazgo, 15 drills bajo presión y 28 principios de movimiento. Coaching práctico para toma de decisiones en crisis. Simulaciones que cubren el 68% de las situaciones críticas en empresas.',
 }
 
 const posiciones = [

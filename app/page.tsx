@@ -161,10 +161,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 05 CASO */}
-      <section className="caso" data-num="05">
+      {/* 05 PARA QUIÉN */}
+      <section className="para-quien" data-num="05">
         <div className="wrap section-grid">
-          <div className="meta col-label caso-label reveal">05 — Caso</div>
+          <div className="meta col-label para-quien-label reveal">05 — Para quién</div>
+          <div className="col-body">
+            <h2 className="display para-quien-title reveal">
+              No entrenamos líderes en general. Entrenamos gente en problemas concretos.
+            </h2>
+            <ul className="para-quien-list">
+              <li className="para-quien-item reveal">
+                <span className="para-quien-num">01</span>
+                <div className="para-quien-content">
+                  <h3 className="para-quien-name">El founder con la empresa en llamas</h3>
+                  <p>Caja apretada, equipo dudando, tres decisiones urgentes y ninguna buena. No necesitas un consejo. Necesitas cerrar.</p>
+                </div>
+              </li>
+              <li className="para-quien-item reveal">
+                <span className="para-quien-num">02</span>
+                <div className="para-quien-content">
+                  <h3 className="para-quien-name">El director que heredó un desmadre</h3>
+                  <p>Equipo que no se mueve, fricciones que nadie nombra, resultados que no llegan. Necesitas leer el sistema y actuar antes de que te coma.</p>
+                </div>
+              </li>
+              <li className="para-quien-item reveal">
+                <span className="para-quien-num">03</span>
+                <div className="para-quien-content">
+                  <h3 className="para-quien-name">El gerente que lidera sin certeza</h3>
+                  <p>Mandas sin saber si la decisión es correcta. Tu equipo te observa. No puedes decir "no sé" pero tampoco puedes inventar seguridad.</p>
+                </div>
+              </li>
+              <li className="para-quien-item reveal">
+                <span className="para-quien-num">04</span>
+                <div className="para-quien-content">
+                  <h3 className="para-quien-name">El líder que ya probó coaching y no sirvió</h3>
+                  <p>Te acompañaron, te escucharon, te validaron. Y el problema sigue ahí. MANZANA no te acompaña. Te entrena.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 06 ASÍ SE VE UNA SESIÓN — DARK */}
+      <section className="sesion is-dark" data-num="06">
+        <div className="wrap section-grid">
+          <div className="meta col-label sesion-label reveal">06 — Así se ve una sesión</div>
+          <div className="col-body">
+            <h2 className="display sesion-title reveal">
+              40 minutos. Un problema real. Sin discurso.
+            </h2>
+            <p className="sesion-lead reveal">
+              No es un taller. No es una plática. Es una simulación con presión real
+              donde entrenas el reflejo, no la teoría.
+            </p>
+            <div className="sesion-steps">
+              {[
+                { num: '01', title: 'Tu situación', desc: 'Traes un problema real o elegimos una posición de nuestro catálogo de 12 escenarios.' },
+                { num: '02', title: 'Señales y errores', desc: 'Identificamos las señales de presión y los errores instintivos que la gente comete por default.' },
+                { num: '03', title: 'Drill en vivo', desc: 'Simulación con tiempo acotado. Decides bajo presión real. Sin teoría previa, sin red de seguridad.' },
+                { num: '04', title: 'Frames', desc: '3-5 reglas simples que te protegen en esa posición. Lenguaje concreto que puedes usar mañana.' },
+                { num: '05', title: 'Salida', desc: 'Decisión concreta + checklist operativo. Qué haces mañana. Movimiento mínimo esta semana.' },
+              ].map((s) => (
+                <div className="sesion-step reveal" key={s.num}>
+                  <span className="sesion-step-num">{s.num}</span>
+                  <div className="sesion-step-content">
+                    <h3 className="sesion-step-title">{s.title}</h3>
+                    <p className="sesion-step-desc">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="sesion-entregables reveal">
+              <span className="meta" style={{ display: 'block', marginBottom: 24 }}>Sales con</span>
+              <div className="sesion-entregables-grid">
+                <div className="sesion-entregable">
+                  <strong>Frames + Checklist</strong>
+                  <span>Reglas y acciones en 1 página</span>
+                </div>
+                <div className="sesion-entregable">
+                  <strong>Mapa de decisión</strong>
+                  <span>Ruta de acción post-sesión</span>
+                </div>
+                <div className="sesion-entregable">
+                  <strong>Regla de operación</strong>
+                  <span>Principio instalable para tu equipo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 07 CASO */}
+      <section className="caso" data-num="07">
+        <div className="wrap section-grid">
+          <div className="meta col-label caso-label reveal">07 — Caso</div>
           <div className="col-body">
             <h2 className="display caso-pull reveal">
               Tienes 20 minutos. Los datos no cuadran. ¿Qué haces?
@@ -192,8 +284,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06 CIERRE — DARK */}
-      <section className="cierre is-dark" data-num="06">
+      {/* 08 CIERRE — DARK */}
+      <section className="cierre is-dark" data-num="08">
         <div className="cierre-fallback" />
         <div className="cierre-inner">
           <h2 className="display cierre-title reveal">Actúa.</h2>

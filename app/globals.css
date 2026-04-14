@@ -551,7 +551,137 @@ body {
 }
 .mz-page .posiciones-link:hover::after { width: 100%; }
 
-/* ——— CASO (05) ——— */
+/* ——— PARA QUIÉN (05) ——— */
+.mz-page .para-quien {
+  padding: 128px 0 140px;
+  background: var(--bg);
+}
+.mz-page .para-quien-label { padding-top: 24px; }
+.mz-page .para-quien-title {
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1.02;
+  max-width: 20ch;
+  margin-bottom: 72px;
+  color: var(--ink);
+}
+.mz-page .para-quien-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mz-page .para-quien-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mz-page .para-quien-item:first-child { padding-top: 0; }
+.mz-page .para-quien-item:last-child { border-bottom: none; padding-bottom: 0; }
+.mz-page .para-quien-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding-top: 8px;
+}
+.mz-page .para-quien-name {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.mz-page .para-quien-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+/* ——— ASÍ SE VE UNA SESIÓN (06) — DARK ——— */
+.mz-page .sesion {
+  padding: 128px 0 140px;
+}
+.mz-page .sesion-label { padding-top: 24px; }
+.mz-page .sesion-title {
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1.02;
+  max-width: 18ch;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+.mz-page .sesion-lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 55ch;
+  margin-bottom: 72px;
+}
+.mz-page .sesion-steps {
+  display: flex;
+  flex-direction: column;
+}
+.mz-page .sesion-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mz-page .sesion-step:first-child { padding-top: 0; }
+.mz-page .sesion-step:last-child { border-bottom: none; }
+.mz-page .sesion-step-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding-top: 8px;
+}
+.mz-page .sesion-step-title {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.mz-page .sesion-step-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+.mz-page .sesion-entregables {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--rule);
+}
+.mz-page .sesion-entregables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.mz-page .sesion-entregable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mz-page .sesion-entregable strong {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-size: 18px;
+  color: var(--ink);
+}
+.mz-page .sesion-entregable span {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ——— CASO (07) ——— */
 .mz-page .caso {
   padding: 144px 0 160px;
   background: var(--bg);
@@ -768,6 +898,8 @@ body {
   .mz-page .que-hacemos,
   .mz-page .beneficios,
   .mz-page .posiciones,
+  .mz-page .para-quien,
+  .mz-page .sesion,
   .mz-page .caso,
   .mz-page .cierre {
     padding-top: 88px;
@@ -797,6 +929,19 @@ body {
     grid-column: 2;
     text-align: left;
     padding-top: 4px;
+  }
+  .mz-page .para-quien-item {
+    grid-template-columns: 50px 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+  .mz-page .sesion-step {
+    grid-template-columns: 50px 1fr;
+    gap: 16px;
+  }
+  .mz-page .sesion-entregables-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
   .mz-page .cierre-inner { padding: 0 24px; }
   .manzana-footer { padding: 48px 24px 28px; }
@@ -1102,6 +1247,86 @@ body {
 .mz-page .mz-back:hover {
   color: var(--ink);
   border-bottom-color: var(--ink);
+}
+
+/* ——— EMAIL CAPTURE ——— */
+.mz-page .email-capture {
+  margin: 72px 0 0;
+  padding: 56px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  max-width: 55ch;
+}
+.mz-page .email-capture-text {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 36;
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.mz-page .email-capture-form {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+.mz-page .email-capture-input {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  padding: 14px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 200ms var(--ease);
+}
+.mz-page .email-capture-input::placeholder {
+  color: var(--gray);
+}
+.mz-page .email-capture-input:focus {
+  border-color: var(--ink);
+}
+.mz-page .email-capture-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+.mz-page .email-capture-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.mz-page .email-capture-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.mz-page .email-capture-done {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+.mz-page .email-capture-error {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #c44;
+  margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .mz-page .email-capture-form {
+    flex-direction: column;
+  }
 }
 
 /* === ARTICLE LAYOUT === */

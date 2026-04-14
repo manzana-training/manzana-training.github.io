@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contacto — MANZANA',
   description:
-    'Agenda una sesión de entrenamiento ejecutivo bajo presión. Una sesión, un problema real, sin discurso.',
+    'Agenda una sesión de coaching ejecutivo y entrenamiento de liderazgo bajo presión. Simulaciones para founders y directores en CDMX. Un problema real, sin discurso.',
 }
 
 export default function Contacto() {

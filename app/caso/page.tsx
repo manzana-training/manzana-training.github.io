@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Caso MANZANA — Decidir sin información completa',
   description:
-    'Tienes 20 minutos, los datos no cuadran, y te van a pedir una postura. ¿Qué haces? Caso de entrenamiento gratuito.',
+    'Caso práctico de entrenamiento ejecutivo: tienes 20 minutos, los datos no cuadran y te van a pedir una postura. Simulación gratuita de toma de decisiones bajo presión.',
   alternates: {
     canonical: 'https://manzanatraining.com.mx/caso',
   },

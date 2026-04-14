@@ -11,15 +11,23 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
   description:
-    'Entrenamos líderes y equipos para actuar bajo presión real. Drills, frameworks simples, resultados en semanas. No sales motivado. Sales entrenado.',
+    'Entrenamiento ejecutivo bajo presión para líderes, founders y gerentes. Simulaciones de liderazgo, coaching ejecutivo práctico y capacitación en toma de decisiones. CDMX.',
   keywords: [
-    'liderazgo bajo presión',
     'entrenamiento ejecutivo',
-    'decisión bajo presión',
-    'liderazgo empresarial',
+    'coaching ejecutivo México',
+    'liderazgo bajo presión',
+    'capacitación liderazgo empresarial',
+    'toma de decisiones bajo presión',
     'simulaciones ejecutivas',
+    'desarrollo de liderazgo',
+    'team building ejecutivo',
+    'entrenamiento gerencial',
+    'coaching para founders',
+    'liderazgo en crisis',
+    'habilidades directivas',
     'managers',
     'founders',
+    'CDMX',
   ],
   alternates: {
     canonical: BASE_URL,
@@ -27,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
     description:
-      'Drills para líderes que necesitan actuar ahora, no reflexionar seis meses.',
+      'Coaching ejecutivo práctico: simulaciones de liderazgo bajo presión para founders, directores y gerentes. Resultados en semanas, no meses. CDMX.',
     type: 'website',
     locale: 'es_MX',
     url: BASE_URL,
@@ -44,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
-    description: 'Drills para líderes que necesitan actuar ahora.',
+    description: 'Coaching ejecutivo práctico: simulaciones de liderazgo bajo presión. Resultados en semanas.',
     images: [`${BASE_URL}/blog-decidir-sin-info.png`],
   },
   robots: {
@@ -136,11 +144,25 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'MANZANA',
+              name: 'MANZANA Training',
+              alternateName: 'MANZANA',
               url: 'https://manzanatraining.com.mx',
               description:
-                'Sistema de entrenamiento de reflejos bajo presión para líderes ejecutivos.',
+                'Entrenamiento ejecutivo y coaching de liderazgo bajo presión. Simulaciones para founders, directores y gerentes. Capacitación en toma de decisiones, manejo de crisis y desarrollo de habilidades directivas en Ciudad de México.',
               sameAs: ['https://www.linkedin.com/company/111346401'],
+              areaServed: {
+                '@type': 'City',
+                name: 'Ciudad de México',
+              },
+              knowsAbout: [
+                'Coaching ejecutivo',
+                'Entrenamiento de liderazgo',
+                'Toma de decisiones bajo presión',
+                'Simulaciones ejecutivas',
+                'Desarrollo directivo',
+                'Team building',
+                'Capacitación gerencial',
+              ],
             }),
           }}
         />

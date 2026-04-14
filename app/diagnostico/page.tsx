@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Diagnóstico — MANZANA',
   description:
-    'Identifica qué posición estás jugando y qué drill necesitas. Diagnóstico gratuito de entrenamiento ejecutivo bajo presión.',
+    'Diagnóstico gratuito de liderazgo: identifica tu situación de presión y qué entrenamiento ejecutivo necesitas. Coaching personalizado para founders, directores y gerentes.',
   alternates: {
     canonical: 'https://manzanatraining.com.mx/diagnostico',
   },

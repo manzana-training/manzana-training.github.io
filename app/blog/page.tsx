@@ -5,7 +5,7 @@ const BASE_URL = 'https://manzanatraining.com.mx'
 export const metadata: Metadata = {
   title: 'Blog — MANZANA',
   description:
-    'Artículos sobre liderazgo bajo presión, decisión en crisis, y entrenamiento ejecutivo. Sin humo motivacional.',
+    'Artículos sobre liderazgo bajo presión, toma de decisiones en crisis, coaching ejecutivo y desarrollo de habilidades directivas. Sin humo motivacional.',
   alternates: { canonical: `${BASE_URL}/blog` },
   openGraph: {
     title: 'Blog — MANZANA',

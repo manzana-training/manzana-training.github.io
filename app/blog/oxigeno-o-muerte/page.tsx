@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
 const SLUG = 'oxigeno-o-muerte'
@@ -207,6 +208,8 @@ export default function Post() {
             </p>
           </div>
         </div>
+
+        <EmailCapture />
 
         <section className="mz-end">
           <div className="wrap section-grid">
