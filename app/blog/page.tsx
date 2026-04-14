@@ -32,6 +32,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'aguantar-el-plan',
+    title: 'Aguantar el plan: cuando la presión te pide cambiar de rumbo',
+    excerpt:
+      'La decisión fue correcta. Los resultados no llegan. Todos quieren cambiar de rumbo. Tres movimientos para sostener sin ceder.',
+    date: '2026-04-13',
+    block: 'Cierre',
+    readTime: '6 min',
+  },
+  {
     slug: 'cambiar-lo-que-funciona',
     title: 'Cambiar lo que funciona: cuando lo estable se vuelve trampa',
     excerpt:

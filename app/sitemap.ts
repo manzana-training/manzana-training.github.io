@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/blog/aguantar-el-plan`,
+      lastModified: new Date('2026-04-13'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/blog/cambiar-lo-que-funciona`,
       lastModified: new Date('2026-04-07'),
       changeFrequency: 'monthly',
