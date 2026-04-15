@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import Link from 'next/link'
 import { RevealScript } from '../components/RevealScript'
@@ -8,6 +8,12 @@ import './globals.css'
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 
 const BASE_URL = 'https://manzanatraining.com.mx'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

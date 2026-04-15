@@ -44,8 +44,11 @@ export function EmailCapture() {
         Deja tu email. Sin newsletter. Solo cuando publiquemos algo que valga tu tiempo.
       </p>
       <form onSubmit={handleSubmit} className="email-capture-form">
+        <label htmlFor="email-capture" className="sr-only">Email</label>
         <input
+          id="email-capture"
           type="email"
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@empresa.com"

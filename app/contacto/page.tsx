@@ -49,6 +49,7 @@ export default function Contacto() {
                     type="text"
                     id="name"
                     name="name"
+                    autoComplete="name"
                     required
                     placeholder="Tu nombre"
                   />
@@ -59,6 +60,7 @@ export default function Contacto() {
                     type="text"
                     id="company"
                     name="company"
+                    autoComplete="organization"
                     placeholder="Nombre de tu empresa"
                   />
                 </div>
@@ -69,6 +71,7 @@ export default function Contacto() {
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
                   required
                   placeholder="tu@empresa.com"
                 />

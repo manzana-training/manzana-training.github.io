@@ -170,7 +170,11 @@ button:focus-visible {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   z-index: 60;
 }
 .burger {
@@ -230,7 +234,7 @@ button:focus-visible {
 
 @media (max-width: 768px) {
   .desktop-nav { display: none; }
-  .mobile-nav-toggle { display: block; }
+  .mobile-nav-toggle { display: flex; }
 }
 
 /* ——— WORDMARK MANZ|ANA ——— */
@@ -941,9 +945,11 @@ button:focus-visible {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.48);
   text-decoration: none;
+  padding: 12px 0;
   transition: color 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 .manzana-footer .footer-links a:hover { color: #fff; }
+.manzana-footer .footer-links a:active { color: #fff; }
 .manzana-footer .footer-bottom {
   max-width: 1400px;
   margin: 32px auto 0;
@@ -1355,7 +1361,7 @@ button:focus-visible {
 .mz-page .email-capture-input {
   flex: 1;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.02em;
   padding: 14px 16px;
   border: 1px solid var(--rule);
@@ -2114,4 +2120,92 @@ button:focus-visible {
   .mz-page .metodo-arch-item { grid-template-columns: 50px 1fr; gap: 16px; }
   .mz-page .metodo-entregables-grid { grid-template-columns: 1fr; gap: 32px; }
   .mz-page .metodo-drill-row { grid-template-columns: 36px 1fr; gap: 12px; }
+}
+
+/* ——— SCREEN-READER ONLY (accesibilidad) ——— */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ——— SAFE AREA INSETS (notch / Dynamic Island / home indicator) ——— */
+.manzana-header {
+  padding-top: max(28px, env(safe-area-inset-top, 0px));
+  padding-left: max(48px, env(safe-area-inset-left, 0px));
+  padding-right: max(48px, env(safe-area-inset-right, 0px));
+}
+@media (max-width: 768px) {
+  .manzana-header {
+    padding-top: max(20px, env(safe-area-inset-top, 0px));
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
+  }
+}
+.manzana-footer {
+  padding-bottom: max(36px, env(safe-area-inset-bottom, 0px));
+}
+@media (max-width: 768px) {
+  .manzana-footer {
+    padding-bottom: max(28px, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ——— TACTILE FEEDBACK (:active states para móvil) ——— */
+.mz-page .cierre-cta:active,
+.mz-page .caso-cta:active,
+.mz-page .mz-end-cta:active,
+.mz-page .posiciones-link:active,
+.mz-page .mz-end-cta-quiet:active,
+.mz-page .mz-back:active {
+  opacity: 0.7;
+}
+.mz-page .posicion:active,
+.mz-page .blog-item:active {
+  padding-left: 16px;
+}
+.mz-page .email-capture-btn:active {
+  background: var(--ink);
+  color: var(--bg);
+}
+.mobile-nav-toggle:active {
+  opacity: 0.7;
+}
+
+/* ——— PREFERS REDUCED MOTION ——— */
+@media (prefers-reduced-motion: reduce) {
+  .mz-page .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .mz-page .reveal.in {
+    transform: none;
+  }
+  .mz-page .hero-pitch .beat,
+  .mz-page .hero-meta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .mz-page .posicion,
+  .mz-page .blog-item {
+    transition: none;
+  }
+  .mz-page .cierre-cta::after,
+  .mz-page .caso-cta::after,
+  .mz-page .mz-end-cta::after,
+  .mz-page .posiciones-link::after {
+    transition: none;
+  }
+  .burger::before,
+  .burger::after {
+    transition: none;
+  }
 }
