@@ -4,8 +4,6 @@ import { useEffect } from 'react'
 
 export function RevealScript() {
   useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>('.reveal:not(.in)')
-    if (!els.length) return
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,8 +15,21 @@ export function RevealScript() {
       },
       { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
     )
-    els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
+
+    // Observe all current .reveal elements
+    function observeAll() {
+      document.querySelectorAll<HTMLElement>('.reveal:not(.in)').forEach((el) => io.observe(el))
+    }
+    observeAll()
+
+    // Watch for new .reveal elements added to the DOM (e.g. after navigation)
+    const mo = new MutationObserver(() => observeAll())
+    mo.observe(document.body, { childList: true, subtree: true })
+
+    return () => {
+      io.disconnect()
+      mo.disconnect()
+    }
   }, [])
   return null
 }
