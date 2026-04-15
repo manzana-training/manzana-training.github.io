@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Google Fonts loaded via <link> in layout.tsx — no @import (render-blocking) */
 
 html {
   scroll-behavior: smooth;
@@ -150,6 +150,76 @@ body {
   mix-blend-mode: difference;
   color: #fff;
 }
+
+/* ——— MOBILE NAV ——— */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 60;
+}
+.burger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  transition: background 200ms;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+.burger::before { top: -7px; }
+.burger::after  { top: 7px; }
+.burger.is-open { background: transparent; }
+.burger.is-open::before { transform: translateY(7px) rotate(45deg); }
+.burger.is-open::after  { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.mobile-nav a {
+  font-family: "Fraunces", Georgia, serif;
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+  font-weight: 400;
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.mobile-nav .mz-accent {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none; }
+  .mobile-nav-toggle { display: block; }
+}
+
 /* ——— WORDMARK MANZ|ANA ——— */
 /* construido en código: Fraunces real + barra CSS de 1px.
    Hereda color (sirve para light/dark) y escala nítido. */
@@ -883,8 +953,6 @@ body {
 
 @media (max-width: 768px) {
   .manzana-header { padding: 20px 24px; }
-  .manzana-header nav ul { gap: 18px; }
-  .manzana-header nav a { font-size: 10px; }
   .mz-page .wrap { padding: 0 24px; }
   .mz-page .hero-copy {
     left: 24px;

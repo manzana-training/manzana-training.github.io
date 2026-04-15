@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { RevealScript } from '../components/RevealScript'
+import { MobileNav } from '../components/MobileNav'
 import './globals.css'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
@@ -69,6 +70,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
         {GA_ID && (
           <>
             <Script
@@ -102,7 +109,7 @@ export default function RootLayout({
             <span className="bar" aria-hidden="true" />
             <span className="half">ANA</span>
           </a>
-          <nav>
+          <nav className="desktop-nav">
             <ul>
               <li><a href="/metodologia">Metodología</a></li>
               <li><a href="/blog">Blog</a></li>
@@ -115,6 +122,7 @@ export default function RootLayout({
               </li>
             </ul>
           </nav>
+          <MobileNav />
         </header>
         <main>{children}</main>
         <RevealScript />

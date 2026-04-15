@@ -1,19 +1,12 @@
+import { LazyVideo } from '../components/LazyVideo'
+
 export default function Home() {
   return (
     <div className="mz-page">
       {/* HERO */}
       <section className="hero">
         <div className="hero-fallback" />
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+        <LazyVideo src="/videos/hero.mp4" className="hero-video" />
         <div className="video-label">Video · drill</div>
         <div className="hero-copy">
           <h1 className="hero-pitch display">
@@ -83,16 +76,7 @@ export default function Home() {
       {/* FRANJA */}
       <div className="franja">
         <div className="franja-fallback" />
-        <video
-          className="franja-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source src="/videos/franja.mp4" type="video/mp4" />
-        </video>
+        <LazyVideo src="/videos/franja.mp4" className="franja-video" />
         <div className="franja-label">Entrena</div>
       </div>
 
