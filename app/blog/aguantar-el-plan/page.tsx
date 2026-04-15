@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
@@ -6,7 +7,7 @@ const SLUG = 'aguantar-el-plan'
 const TITLE = 'Aguantar el plan: cuando la presión te pide cambiar de rumbo'
 const DESCRIPTION =
   'La decisión fue correcta. Los resultados no llegan. Todos quieren cambiar de rumbo. Tres movimientos para sostener sin ceder cuando la ansiedad empuja.'
-const IMAGE = `${BASE_URL}/blog-aguantar-el-plan.png`
+const IMAGE = `${BASE_URL}/blog-aguantar-el-plan.webp`
 const DATE = '2026-04-13'
 
 export const metadata: Metadata = {
@@ -66,8 +67,12 @@ export default function Post() {
           </p>
           <figure className="article-figure reveal">
             <img
-              src="/blog-aguantar-el-plan.png"
+              src="/blog-aguantar-el-plan.webp"
               alt="Estructura sólida resistiendo presión lateral — sostener decisiones bajo presión organizacional"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto' }}
             />
           </figure>
 
@@ -278,6 +283,14 @@ export default function Post() {
           </div>
         </div>
 
+        <nav className="article-related reveal">
+          <span className="meta">También en el blog</span>
+          <ul>
+            <li><Link href="/blog/cambiar-lo-que-funciona">Cambiar lo que funciona: cuando lo estable se vuelve trampa</Link></li>
+            <li><Link href="/blog/cortar-la-infeccion">Cortar la infección: cuando el talento no compensa el daño</Link></li>
+          </ul>
+        </nav>
+
         <EmailCapture />
 
         <section className="mz-end">
@@ -291,26 +304,26 @@ export default function Post() {
                 Podemos entrenar esta posición en una sesión.
               </p>
               <div className="mz-end-actions">
-                <a
+                <Link
                   href="/contacto"
                   className="mz-end-cta reveal"
                   data-track="clic_contacto"
                   data-track-label="blog-aguantar-el-plan"
                 >
                   Agendar sesión →
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/diagnostico"
                   className="mz-end-cta-quiet reveal"
                   data-track="clic_diagnostico"
                   data-track-label="blog-aguantar-el-plan"
                 >
                   Haz el diagnóstico →
-                </a>
+                </Link>
               </div>
-              <a href="/blog" className="mz-back">
+              <Link href="/blog" className="mz-back">
                 ← Volver al blog
-              </a>
+              </Link>
             </div>
           </div>
         </section>

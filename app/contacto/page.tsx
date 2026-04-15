@@ -1,9 +1,18 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Contacto — MANZANA',
   description:
     'Agenda una sesión de coaching ejecutivo y entrenamiento de liderazgo bajo presión. Simulaciones para founders y directores en CDMX. Un problema real, sin discurso.',
+  alternates: { canonical: 'https://manzanatraining.com.mx/contacto' },
+  openGraph: {
+    title: 'Contacto — MANZANA',
+    description: 'Agenda una sesión de entrenamiento ejecutivo bajo presión. Simulaciones para founders y directores en CDMX.',
+    type: 'website',
+    url: 'https://manzanatraining.com.mx/contacto',
+    images: [{ url: 'https://manzanatraining.com.mx/blog-decidir-sin-info.webp', width: 1792, height: 1024, alt: 'Contacto MANZANA' }],
+  },
 }
 
 export default function Contacto() {
@@ -151,9 +160,9 @@ export default function Contacto() {
                 transformación cultural de 12 meses o teoría de liderazgo.
               </p>
             </div>
-            <a href="/" className="mz-back">
+            <Link href="/" className="mz-back">
               ← Volver al inicio
-            </a>
+            </Link>
           </div>
         </div>
       </section>

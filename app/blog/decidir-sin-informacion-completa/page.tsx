@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
@@ -6,7 +7,7 @@ const SLUG = 'decidir-sin-informacion-completa'
 const TITLE = 'Decidir sin información completa'
 const DESCRIPTION =
   'No decides cuando sabes. Decides cuando el costo de no decidir ya es mayor. Tres movimientos para cerrar cuando los datos no alcanzan.'
-const IMAGE = `${BASE_URL}/blog-decidir-sin-info.png`
+const IMAGE = `${BASE_URL}/blog-decidir-sin-info.webp`
 const DATE = '2026-03-24'
 
 export const metadata: Metadata = {
@@ -64,8 +65,12 @@ export default function Post() {
           </p>
           <figure className="article-figure reveal">
             <img
-              src="/blog-decidir-sin-info.png"
+              src="/blog-decidir-sin-info.webp"
               alt="Persona frente a dos caminos en un corredor oscuro — decidir bajo presión"
+              width={1792}
+              height={1024}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto' }}
             />
           </figure>
 
@@ -144,6 +149,14 @@ export default function Post() {
           </div>
         </div>
 
+        <nav className="article-related reveal">
+          <span className="meta">También en el blog</span>
+          <ul>
+            <li><Link href="/blog/liderar-sin-estar-seguro">Liderar sin estar seguro</Link></li>
+            <li><Link href="/blog/oxigeno-o-muerte">Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo</Link></li>
+          </ul>
+        </nav>
+
         <EmailCapture />
 
         <section className="mz-end">
@@ -155,26 +168,26 @@ export default function Post() {
                 Podemos entrenarla en una sesión.
               </p>
               <div className="mz-end-actions">
-                <a
+                <Link
                   href="/contacto"
                   className="mz-end-cta reveal"
                   data-track="clic_contacto"
                   data-track-label="blog-decidir-sin-info"
                 >
                   Agendar sesión →
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/diagnostico"
                   className="mz-end-cta-quiet reveal"
                   data-track="clic_diagnostico"
                   data-track-label="blog-decidir-sin-info"
                 >
                   Haz el diagnóstico →
-                </a>
+                </Link>
               </div>
-              <a href="/blog" className="mz-back">
+              <Link href="/blog" className="mz-back">
                 ← Volver al blog
-              </a>
+              </Link>
             </div>
           </div>
         </section>

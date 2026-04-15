@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import Link from 'next/link'
 import { RevealScript } from '../components/RevealScript'
 import { MobileNav } from '../components/MobileNav'
 import './globals.css'
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     siteName: 'MANZANA',
     images: [
       {
-        url: `${BASE_URL}/blog-decidir-sin-info.png`,
+        url: `${BASE_URL}/blog-decidir-sin-info.webp`,
         width: 1792,
         height: 1024,
         alt: 'MANZANA — Entrenamiento ejecutivo bajo presión',
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
     description: 'Coaching ejecutivo práctico: simulaciones de liderazgo bajo presión. Resultados en semanas.',
-    images: [`${BASE_URL}/blog-decidir-sin-info.png`],
+    images: [`${BASE_URL}/blog-decidir-sin-info.webp`],
   },
   robots: {
     index: true,
@@ -73,7 +74,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         {GA_ID && (
@@ -104,21 +105,21 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <header className="manzana-header">
-          <a href="/" className="wordmark wordmark--sm" aria-label="MANZANA">
+          <Link href="/" className="wordmark wordmark--sm" aria-label="MANZANA">
             <span className="half">MANZ</span>
             <span className="bar" aria-hidden="true" />
             <span className="half">ANA</span>
-          </a>
+          </Link>
           <nav className="desktop-nav">
             <ul>
-              <li><a href="/metodologia">Metodología</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/caso">Caso</a></li>
-              <li><a href="/diagnostico">Diagnóstico</a></li>
+              <li><Link href="/metodologia">Metodología</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/caso">Caso</Link></li>
+              <li><Link href="/diagnostico">Diagnóstico</Link></li>
               <li>
-                <a href="/contacto" className="mz-accent">
+                <Link href="/contacto" className="mz-accent">
                   Contacto
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -128,18 +129,18 @@ export default function RootLayout({
         <RevealScript />
         <footer className="manzana-footer">
           <div className="footer-cap">
-            <a href="/" className="wordmark wordmark--xl" aria-label="MANZANA">
+            <Link href="/" className="wordmark wordmark--xl" aria-label="MANZANA">
               <span className="half">MANZ</span>
               <span className="bar" aria-hidden="true" />
               <span className="half">ANA</span>
-            </a>
+            </Link>
           </div>
           <nav className="footer-links">
-            <a href="/metodologia">Metodología</a>
-            <a href="/blog">Blog</a>
-            <a href="/caso">Caso</a>
-            <a href="/diagnostico">Diagnóstico</a>
-            <a href="/contacto">Contacto</a>
+            <Link href="/metodologia">Metodología</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/caso">Caso</Link>
+            <Link href="/diagnostico">Diagnóstico</Link>
+            <Link href="/contacto">Contacto</Link>
           </nav>
           <div className="footer-bottom">
             <span>Actúa. Elimina lo que te impide actuar.</span>

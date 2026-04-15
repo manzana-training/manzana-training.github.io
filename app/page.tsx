@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { LazyVideo } from '../components/LazyVideo'
 
 export default function Home() {
@@ -138,9 +139,9 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <a href="/metodologia" className="posiciones-link reveal">
+            <Link href="/metodologia" className="posiciones-link reveal">
               Ver las 12 posiciones →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -249,9 +250,9 @@ export default function Home() {
               Lee un caso real de entrenamiento MANZANA. El 80% de los líderes
               reacciona mal en esta situación. Descubre si tú también.
             </p>
-            <a href="/caso" className="caso-cta display reveal">
+            <Link href="/caso" className="caso-cta display reveal">
               Leer caso gratis →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -275,22 +276,22 @@ export default function Home() {
           <h2 className="display cierre-title reveal">Actúa.</h2>
           <p className="cierre-sub reveal">Elimina lo que te impide actuar.</p>
           <div className="cierre-actions">
-            <a
+            <Link
               href="/contacto"
               className="cierre-cta reveal"
               data-track="clic_contacto"
               data-track-label="cta-final"
             >
               Agendar sesión →
-            </a>
-            <a
+            </Link>
+            <Link
               href="/diagnostico"
               className="cierre-cta reveal"
               data-track="clic_diagnostico"
               data-track-label="cta-final"
             >
               Haz el diagnóstico →
-            </a>
+            </Link>
           </div>
         </div>
       </section>

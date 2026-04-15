@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
@@ -6,7 +7,7 @@ const SLUG = 'liderar-sin-estar-seguro'
 const TITLE = 'Liderar sin estar seguro'
 const DESCRIPTION =
   'Liderazgo no es certeza. Es dar dirección suficiente mientras el sistema aprende. Tres movimientos para cuando dudas pero el equipo necesita rumbo.'
-const IMAGE = `${BASE_URL}/blog-liderar-sin-estar-seguro.png`
+const IMAGE = `${BASE_URL}/blog-liderar-sin-estar-seguro.webp`
 const DATE = '2026-03-24'
 
 export const metadata: Metadata = {
@@ -63,8 +64,12 @@ export default function Post() {
           </p>
           <figure className="article-figure reveal">
             <img
-              src="/blog-liderar-sin-estar-seguro.png"
+              src="/blog-liderar-sin-estar-seguro.webp"
               alt="Figura solitaria en un puente sobre la oscuridad con linterna tenue — liderar sin certeza"
+              width={1792}
+              height={1024}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto' }}
             />
           </figure>
 
@@ -153,6 +158,14 @@ export default function Post() {
           </div>
         </div>
 
+        <nav className="article-related reveal">
+          <span className="meta">También en el blog</span>
+          <ul>
+            <li><Link href="/blog/decidir-sin-informacion-completa">Decidir sin información completa</Link></li>
+            <li><Link href="/blog/aguantar-el-plan">Aguantar el plan: cuando la presión te pide cambiar de rumbo</Link></li>
+          </ul>
+        </nav>
+
         <EmailCapture />
 
         <section className="mz-end">
@@ -164,26 +177,26 @@ export default function Post() {
                 Podemos entrenar esta posición en una sesión.
               </p>
               <div className="mz-end-actions">
-                <a
+                <Link
                   href="/contacto"
                   className="mz-end-cta reveal"
                   data-track="clic_contacto"
                   data-track-label="blog-liderar-sin-estar-seguro"
                 >
                   Agendar sesión →
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/diagnostico"
                   className="mz-end-cta-quiet reveal"
                   data-track="clic_diagnostico"
                   data-track-label="blog-liderar-sin-estar-seguro"
                 >
                   Haz el diagnóstico →
-                </a>
+                </Link>
               </div>
-              <a href="/blog" className="mz-back">
+              <Link href="/blog" className="mz-back">
                 ← Volver al blog
-              </a>
+              </Link>
             </div>
           </div>
         </section>

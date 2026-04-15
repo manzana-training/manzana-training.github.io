@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Diagnóstico — MANZANA',
@@ -83,13 +84,13 @@ export default function Diagnostico() {
               Lee un caso real de entrenamiento antes de hacer el diagnóstico.
             </p>
             <div className="mz-end-actions">
-              <a href="/caso" className="mz-end-cta reveal">
+              <Link href="/caso" className="mz-end-cta reveal">
                 Ver caso de entrenamiento →
-              </a>
+              </Link>
             </div>
-            <a href="/" className="mz-back">
+            <Link href="/" className="mz-back">
               ← Volver al inicio
-            </a>
+            </Link>
           </div>
         </div>
       </section>

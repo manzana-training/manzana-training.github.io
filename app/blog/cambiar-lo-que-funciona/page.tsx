@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
@@ -6,7 +7,7 @@ const SLUG = 'cambiar-lo-que-funciona'
 const TITLE = 'Cambiar lo que funciona: cuando lo estable se vuelve trampa'
 const DESCRIPTION =
   'No hay crisis visible, pero sabes que no escala. Tres movimientos para crear urgencia, probar sin romper y cerrar el cambio antes de que sea tarde.'
-const IMAGE = `${BASE_URL}/blog-cambiar-lo-que-funciona.png`
+const IMAGE = `${BASE_URL}/blog-cambiar-lo-que-funciona.webp`
 const DATE = '2026-04-07'
 
 export const metadata: Metadata = {
@@ -65,8 +66,12 @@ export default function Post() {
           </p>
           <figure className="article-figure reveal">
             <img
-              src="/blog-cambiar-lo-que-funciona.png"
+              src="/blog-cambiar-lo-que-funciona.webp"
               alt="Estructura dorada estática agrietándose desde adentro — cambio organizacional bajo presión"
+              width={1792}
+              height={1024}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto' }}
             />
           </figure>
 
@@ -229,6 +234,14 @@ export default function Post() {
           </div>
         </div>
 
+        <nav className="article-related reveal">
+          <span className="meta">También en el blog</span>
+          <ul>
+            <li><Link href="/blog/aguantar-el-plan">Aguantar el plan: cuando la presión te pide cambiar de rumbo</Link></li>
+            <li><Link href="/blog/oxigeno-o-muerte">Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo</Link></li>
+          </ul>
+        </nav>
+
         <EmailCapture />
 
         <section className="mz-end">
@@ -242,26 +255,26 @@ export default function Post() {
                 Podemos entrenar esta posición en una sesión.
               </p>
               <div className="mz-end-actions">
-                <a
+                <Link
                   href="/contacto"
                   className="mz-end-cta reveal"
                   data-track="clic_contacto"
                   data-track-label="blog-cambiar-lo-que-funciona"
                 >
                   Agendar sesión →
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/diagnostico"
                   className="mz-end-cta-quiet reveal"
                   data-track="clic_diagnostico"
                   data-track-label="blog-cambiar-lo-que-funciona"
                 >
                   Haz el diagnóstico →
-                </a>
+                </Link>
               </div>
-              <a href="/blog" className="mz-back">
+              <Link href="/blog" className="mz-back">
                 ← Volver al blog
-              </a>
+              </Link>
             </div>
           </div>
         </section>

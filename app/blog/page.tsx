@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/blog`,
     images: [
       {
-        url: `${BASE_URL}/blog-oxigeno-o-muerte.png`,
+        url: `${BASE_URL}/blog-oxigeno-o-muerte.webp`,
         width: 1792,
         height: 1024,
         alt: 'Blog MANZANA',
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Blog — MANZANA',
     description: 'Artículos sobre liderazgo bajo presión. Sin humo motivacional.',
-    images: [`${BASE_URL}/blog-oxigeno-o-muerte.png`],
+    images: [`${BASE_URL}/blog-oxigeno-o-muerte.webp`],
   },
 }
 
@@ -120,7 +121,7 @@ export default function Blog() {
           <div className="col-body">
             <div className="blog-list">
               {posts.map((post) => (
-                <a
+                <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
                   className="blog-item reveal"
@@ -135,12 +136,12 @@ export default function Blog() {
                     {' · '}
                     {post.readTime}
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
-            <a href="/" className="mz-back">
+            <Link href="/" className="mz-back">
               ← Volver al inicio
-            </a>
+            </Link>
           </div>
         </div>
       </section>

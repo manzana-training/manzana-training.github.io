@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
@@ -6,7 +7,7 @@ const SLUG = 'resistencia-pasiva-el-enemigo-invisible'
 const TITLE = 'Resistencia pasiva: el enemigo invisible'
 const DESCRIPTION =
   'Nadie te dice que no, pero nada se mueve. Cómo exponer la fricción invisible que te desgasta cada semana y recuperar tracción.'
-const IMAGE = `${BASE_URL}/blog-resistencia-pasiva.png`
+const IMAGE = `${BASE_URL}/blog-resistencia-pasiva.webp`
 const DATE = '2026-03-24'
 
 export const metadata: Metadata = {
@@ -63,8 +64,12 @@ export default function Post() {
           </p>
           <figure className="article-figure reveal">
             <img
-              src="/blog-resistencia-pasiva.png"
+              src="/blog-resistencia-pasiva.webp"
               alt="Figura empujando contra una pared invisible en oficina oscura — resistencia pasiva"
+              width={1792}
+              height={1024}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto' }}
             />
           </figure>
 
@@ -156,6 +161,14 @@ export default function Post() {
           </div>
         </div>
 
+        <nav className="article-related reveal">
+          <span className="meta">También en el blog</span>
+          <ul>
+            <li><Link href="/blog/cortar-la-infeccion">Cortar la infección: cuando el talento no compensa el daño</Link></li>
+            <li><Link href="/blog/cambiar-lo-que-funciona">Cambiar lo que funciona: cuando lo estable se vuelve trampa</Link></li>
+          </ul>
+        </nav>
+
         <EmailCapture />
 
         <section className="mz-end">
@@ -169,26 +182,26 @@ export default function Post() {
                 Podemos entrenar esta posición en una sesión.
               </p>
               <div className="mz-end-actions">
-                <a
+                <Link
                   href="/contacto"
                   className="mz-end-cta reveal"
                   data-track="clic_contacto"
                   data-track-label="blog-resistencia-pasiva"
                 >
                   Agendar sesión →
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/diagnostico"
                   className="mz-end-cta-quiet reveal"
                   data-track="clic_diagnostico"
                   data-track-label="blog-resistencia-pasiva"
                 >
                   Haz el diagnóstico →
-                </a>
+                </Link>
               </div>
-              <a href="/blog" className="mz-back">
+              <Link href="/blog" className="mz-back">
                 ← Volver al blog
-              </a>
+              </Link>
             </div>
           </div>
         </section>

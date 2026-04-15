@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
@@ -24,11 +25,11 @@ export function MobileNav() {
         <div className="mobile-nav-overlay" onClick={() => setOpen(false)}>
           <nav className="mobile-nav" onClick={(e) => e.stopPropagation()}>
             <ul>
-              <li><a href="/metodologia" onClick={() => setOpen(false)}>Metodología</a></li>
-              <li><a href="/blog" onClick={() => setOpen(false)}>Blog</a></li>
-              <li><a href="/caso" onClick={() => setOpen(false)}>Caso</a></li>
-              <li><a href="/diagnostico" onClick={() => setOpen(false)}>Diagnóstico</a></li>
-              <li><a href="/contacto" className="mz-accent" onClick={() => setOpen(false)}>Contacto</a></li>
+              <li><Link href="/metodologia" onClick={() => setOpen(false)}>Metodología</Link></li>
+              <li><Link href="/blog" onClick={() => setOpen(false)}>Blog</Link></li>
+              <li><Link href="/caso" onClick={() => setOpen(false)}>Caso</Link></li>
+              <li><Link href="/diagnostico" onClick={() => setOpen(false)}>Diagnóstico</Link></li>
+              <li><Link href="/contacto" className="mz-accent" onClick={() => setOpen(false)}>Contacto</Link></li>
             </ul>
           </nav>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EmailCapture } from '../../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
@@ -6,7 +7,7 @@ const SLUG = 'oxigeno-o-muerte'
 const TITLE = 'Oxígeno o muerte: cuando el negocio se está acabando y nadie quiere verlo'
 const DESCRIPTION =
   'KPIs rojos, caja que no alcanza, runway corto. Tres movimientos para dejar de planear y empezar a sobrevivir. Entrenamiento ejecutivo bajo presión real.'
-const IMAGE = `${BASE_URL}/blog-oxigeno-o-muerte.png`
+const IMAGE = `${BASE_URL}/blog-oxigeno-o-muerte.webp`
 const DATE = '2026-04-01'
 
 export const metadata: Metadata = {
@@ -64,8 +65,12 @@ export default function Post() {
           </p>
           <figure className="article-figure reveal">
             <img
-              src="/blog-oxigeno-o-muerte.png"
+              src="/blog-oxigeno-o-muerte.webp"
               alt="Llama dorada solitaria en la oscuridad — supervivencia empresarial bajo presión"
+              width={1792}
+              height={1024}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto' }}
             />
           </figure>
 
@@ -209,6 +214,14 @@ export default function Post() {
           </div>
         </div>
 
+        <nav className="article-related reveal">
+          <span className="meta">También en el blog</span>
+          <ul>
+            <li><Link href="/blog/decidir-sin-informacion-completa">Decidir sin información completa</Link></li>
+            <li><Link href="/blog/cortar-la-infeccion">Cortar la infección: cuando el talento no compensa el daño</Link></li>
+          </ul>
+        </nav>
+
         <EmailCapture />
 
         <section className="mz-end">
@@ -222,26 +235,26 @@ export default function Post() {
                 Podemos entrenar esta posición en una sesión.
               </p>
               <div className="mz-end-actions">
-                <a
+                <Link
                   href="/contacto"
                   className="mz-end-cta reveal"
                   data-track="clic_contacto"
                   data-track-label="blog-oxigeno-o-muerte"
                 >
                   Agendar sesión →
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/diagnostico"
                   className="mz-end-cta-quiet reveal"
                   data-track="clic_diagnostico"
                   data-track-label="blog-oxigeno-o-muerte"
                 >
                   Haz el diagnóstico →
-                </a>
+                </Link>
               </div>
-              <a href="/blog" className="mz-back">
+              <Link href="/blog" className="mz-back">
                 ← Volver al blog
-              </a>
+              </Link>
             </div>
           </div>
         </section>

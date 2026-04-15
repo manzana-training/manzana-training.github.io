@@ -1,9 +1,18 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Metodología — MANZANA',
   description:
     'Metodología de entrenamiento ejecutivo: 12 posiciones de liderazgo, 15 drills bajo presión y 28 principios de movimiento. Coaching práctico para toma de decisiones en crisis. Simulaciones que cubren el 68% de las situaciones críticas en empresas.',
+  alternates: { canonical: 'https://manzanatraining.com.mx/metodologia' },
+  openGraph: {
+    title: 'Metodología — MANZANA',
+    description: 'Metodología de entrenamiento ejecutivo: 12 posiciones de liderazgo, 15 drills bajo presión y 28 principios de movimiento.',
+    type: 'website',
+    url: 'https://manzanatraining.com.mx/metodologia',
+    images: [{ url: 'https://manzanatraining.com.mx/blog-decidir-sin-info.webp', width: 1792, height: 1024, alt: 'Metodología MANZANA' }],
+  },
 }
 
 const posiciones = [
@@ -437,26 +446,26 @@ export default function Metodologia() {
               Resultados en semanas, no en trimestres.
             </p>
             <div className="mz-end-actions">
-              <a
+              <Link
                 href="/contacto"
                 className="mz-end-cta reveal"
                 data-track="clic_contacto"
                 data-track-label="metodologia"
               >
                 Agendar sesión →
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/diagnostico"
                 className="mz-end-cta-quiet reveal"
                 data-track="clic_diagnostico"
                 data-track-label="metodologia"
               >
                 Haz el diagnóstico →
-              </a>
+              </Link>
             </div>
-            <a href="/" className="mz-back">
+            <Link href="/" className="mz-back">
               ← Volver al inicio
-            </a>
+            </Link>
           </div>
         </div>
       </section>

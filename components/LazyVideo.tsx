@@ -37,6 +37,7 @@ export function LazyVideo({
       loop
       playsInline
       preload="none"
+      aria-hidden="true"
     />
   )
 }
