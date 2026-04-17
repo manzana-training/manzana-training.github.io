@@ -2,7 +2,21 @@
 
 import { useState, FormEvent } from 'react'
 
-export function EmailCapture() {
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
+type EmailCaptureProps = {
+  text?: string
+  label?: string
+}
+
+const DEFAULT_TEXT =
+  'Un email al mes: una posición real, tres movimientos. Sin humo.'
+
+export function EmailCapture({ text = DEFAULT_TEXT, label }: EmailCaptureProps = {}) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
@@ -22,6 +36,13 @@ export function EmailCapture() {
       if (res.ok) {
         setStatus('sent')
         setEmail('')
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('event', 'email_capturado', {
+            event_label:
+              label ||
+              (typeof window !== 'undefined' ? window.location.pathname : 'blog'),
+          })
+        }
       } else {
         setStatus('error')
       }
@@ -40,9 +61,7 @@ export function EmailCapture() {
 
   return (
     <div className="email-capture reveal">
-      <p className="email-capture-text">
-        Deja tu email. Sin newsletter. Solo cuando publiquemos algo que valga tu tiempo.
-      </p>
+      <p className="email-capture-text">{text}</p>
       <form onSubmit={handleSubmit} className="email-capture-form">
         <label htmlFor="email-capture" className="sr-only">Email</label>
         <input

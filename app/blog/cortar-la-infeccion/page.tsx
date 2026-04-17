@@ -128,6 +128,13 @@ export default function Post() {
               de quienes sí construyen.
             </p>
 
+            <div className="mz-mid-cta reveal">
+              <p>Cortar sin espectáculo es una posición entrenable. En una sesión.</p>
+              <Link href="/contacto" data-track="clic_contacto" data-track-label="blog-cortar-la-infeccion-mid">
+                Agendar 15 min →
+              </Link>
+            </div>
+
             <div className="mz-call reveal">
               <span className="meta mz-call-label">Los 3 movimientos</span>
               <div className="mz-call-item">

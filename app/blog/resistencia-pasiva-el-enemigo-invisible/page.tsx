@@ -112,6 +112,13 @@ export default function Post() {
               En jiu-jitsu, si empujas sin ángulo, te quedas pegado.
             </p>
 
+            <div className="mz-mid-cta reveal">
+              <p>Exponer resistencia pasiva es una posición entrenable. En una sesión.</p>
+              <Link href="/contacto" data-track="clic_contacto" data-track-label="blog-resistencia-mid">
+                Agendar 15 min →
+              </Link>
+            </div>
+
             <div className="mz-call reveal">
               <span className="meta mz-call-label">Los 3 movimientos</span>
               <div className="mz-call-item">

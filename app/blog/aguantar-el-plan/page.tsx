@@ -160,6 +160,13 @@ export default function Post() {
               que improvisa.
             </p>
 
+            <div className="mz-mid-cta reveal">
+              <p>Aguantar el plan bajo presión es una posición entrenable. En una sesión.</p>
+              <Link href="/contacto" data-track="clic_contacto" data-track-label="blog-aguantar-el-plan-mid">
+                Agendar 15 min →
+              </Link>
+            </div>
+
             <div className="mz-call reveal">
               <span className="meta mz-call-label">Los 3 movimientos</span>
               <div className="mz-call-item">

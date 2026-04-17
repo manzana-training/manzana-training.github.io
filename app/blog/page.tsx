@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { EmailCapture } from '../../components/EmailCapture'
 
 const BASE_URL = 'https://manzanatraining.com.mx'
 
@@ -111,6 +112,10 @@ export default function Blog() {
               Cada artículo parte de una posición de presión real. Si no hay
               situación concreta, no hay artículo.
             </p>
+            <EmailCapture
+              text="Un artículo al mes. Cada uno una posición real."
+              label="blog-index"
+            />
           </div>
         </div>
       </section>

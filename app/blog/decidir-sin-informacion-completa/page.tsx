@@ -102,6 +102,13 @@ export default function Post() {
             </p>
             <p className="lead reveal">Aquí se pierde por inacción elegante.</p>
 
+            <div className="mz-mid-cta reveal">
+              <p>Decidir con información incompleta es una posición entrenable. En una sesión.</p>
+              <Link href="/contacto" data-track="clic_contacto" data-track-label="blog-decidir-mid">
+                Agendar 15 min →
+              </Link>
+            </div>
+
             <div className="mz-call reveal">
               <span className="meta mz-call-label">Los 3 movimientos</span>
               <div className="mz-call-item">

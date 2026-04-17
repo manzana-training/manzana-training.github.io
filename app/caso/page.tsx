@@ -167,8 +167,16 @@ export default function Caso() {
             </p>
             <div className="mz-end-actions">
               <Link
-                href="/diagnostico"
+                href="/contacto"
                 className="mz-end-cta reveal"
+                data-track="clic_contacto"
+                data-track-label="caso"
+              >
+                Agendar sesión →
+              </Link>
+              <Link
+                href="/diagnostico"
+                className="mz-end-cta-quiet reveal"
                 data-track="clic_diagnostico"
                 data-track-label="caso"
               >

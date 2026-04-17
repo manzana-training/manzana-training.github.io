@@ -143,6 +143,13 @@ export default function Post() {
             </p>
             <p className="reveal">El resultado: te quedas quieto. Hasta que ya no puedes.</p>
 
+            <div className="mz-mid-cta reveal">
+              <p>Cambiar algo que ya funciona es una posición entrenable. En una sesión.</p>
+              <Link href="/contacto" data-track="clic_contacto" data-track-label="blog-cambiar-lo-que-funciona-mid">
+                Agendar 15 min →
+              </Link>
+            </div>
+
             <div className="mz-call reveal">
               <span className="meta mz-call-label">Los 3 movimientos</span>
               <div className="mz-call-item">

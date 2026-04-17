@@ -104,6 +104,36 @@ export default function RootLayout({
                     });
                   }
                 });
+
+                (function() {
+                  var fired = {};
+                  function sendScroll(depth) {
+                    if (fired[depth] || typeof gtag !== 'function') return;
+                    fired[depth] = true;
+                    gtag('event', 'scroll_' + depth, {
+                      event_label: window.location.pathname
+                    });
+                  }
+                  function onScroll() {
+                    var doc = document.documentElement;
+                    var scrolled = (window.scrollY || window.pageYOffset) + window.innerHeight;
+                    var total = doc.scrollHeight;
+                    if (total <= window.innerHeight) return;
+                    var pct = scrolled / total;
+                    if (pct >= 0.5) sendScroll(50);
+                    if (pct >= 0.9) sendScroll(90);
+                  }
+                  var ticking = false;
+                  window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                      window.requestAnimationFrame(function() {
+                        onScroll();
+                        ticking = false;
+                      });
+                      ticking = true;
+                    }
+                  }, { passive: true });
+                })();
               `}
             </Script>
           </>

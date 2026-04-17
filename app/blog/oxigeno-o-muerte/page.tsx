@@ -137,6 +137,13 @@ export default function Post() {
               costo de no haberla dicho a tiempo.
             </p>
 
+            <div className="mz-mid-cta reveal">
+              <p>Actuar cuando el negocio está en riesgo es una posición entrenable. En una sesión.</p>
+              <Link href="/contacto" data-track="clic_contacto" data-track-label="blog-oxigeno-mid">
+                Agendar 15 min →
+              </Link>
+            </div>
+
             <div className="mz-call reveal">
               <span className="meta mz-call-label">Los 3 movimientos</span>
               <div className="mz-call-item">

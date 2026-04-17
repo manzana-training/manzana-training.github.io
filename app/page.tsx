@@ -21,6 +21,14 @@ export default function Home() {
             <br />
             Ciudad de México
           </div>
+          <Link
+            href="/contacto"
+            className="hero-cta"
+            data-track="clic_contacto"
+            data-track-label="hero"
+          >
+            Agendar 15 min →
+          </Link>
         </div>
       </section>
 
@@ -286,7 +294,7 @@ export default function Home() {
             </Link>
             <Link
               href="/diagnostico"
-              className="cierre-cta reveal"
+              className="mz-end-cta-quiet reveal"
               data-track="clic_diagnostico"
               data-track-label="cta-final"
             >

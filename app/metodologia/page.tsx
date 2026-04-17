@@ -15,13 +15,21 @@ export const metadata: Metadata = {
   },
 }
 
-const posiciones = [
+type Item = {
+  num: string
+  name: string
+  desc: string
+  phrase: string
+  slug?: string
+}
+
+const posiciones: { block: string; blockDesc: string; items: Item[] }[] = [
   {
     block: 'Cierre',
     blockDesc: 'Cuando alguien tiene que cerrar aunque duela',
     items: [
       { num: '01', name: 'Cerrar sin aplausos', desc: 'Tomar y sostener una decisión impopular que debe ocurrir.', phrase: 'Alguien tiene que cerrar.' },
-      { num: '02', name: 'Aguantar el plan', desc: 'La decisión es correcta, pero el negocio no tiene paciencia.', phrase: 'No cambiar por ansiedad.' },
+      { num: '02', name: 'Aguantar el plan', desc: 'La decisión es correcta, pero el negocio no tiene paciencia.', phrase: 'No cambiar por ansiedad.', slug: 'aguantar-el-plan' },
     ],
   },
   {
@@ -37,7 +45,7 @@ const posiciones = [
     block: 'Contaminación',
     blockDesc: 'Lo tóxico que se propaga sin hacer ruido',
     items: [
-      { num: '06', name: 'Cortar la infección', desc: 'Una persona contamina más que diez desmotivadas.', phrase: 'El talento no compensa el daño.' },
+      { num: '06', name: 'Cortar la infección', desc: 'Una persona contamina más que diez desmotivadas.', phrase: 'El talento no compensa el daño.', slug: 'cortar-la-infeccion' },
       { num: '07', name: 'Encender el mínimo viable', desc: 'Equipo apático: hacen lo mínimo, cero ownership.', phrase: 'El cheque no es cultura.' },
     ],
   },
@@ -60,18 +68,25 @@ const posiciones = [
     block: 'Supervivencia',
     blockDesc: 'Cuando ya no hay margen, solo ejecución',
     items: [
-      { num: '11', name: 'Oxígeno o muerte', desc: 'Meses de vida: caja, rentabilidad, KPIs rojos.', phrase: 'Primero sobrevivir, luego mejorar.' },
+      { num: '11', name: 'Oxígeno o muerte', desc: 'Meses de vida: caja, rentabilidad, KPIs rojos.', phrase: 'Primero sobrevivir, luego mejorar.', slug: 'oxigeno-o-muerte' },
       { num: '12', name: 'Decir no al dinero', desc: 'No hay aumentos ni crecimiento: expectativas vs realidad.', phrase: 'Decir la verdad sin perder a la gente clave.' },
     ],
   },
 ]
 
-const drills = [
+type Drill = {
+  num: string
+  name: string
+  focus: string
+  slug?: string
+}
+
+const drills: { block: string; blockLead: string; items: Drill[] }[] = [
   {
     block: 'Decisión',
     blockLead: 'Cuando no hay opción "correcta"',
     items: [
-      { num: '01', name: 'Decidir con información incompleta', focus: 'Criterio, umbrales, riesgo asumible' },
+      { num: '01', name: 'Decidir con información incompleta', focus: 'Criterio, umbrales, riesgo asumible', slug: 'decidir-sin-informacion-completa' },
       { num: '02', name: 'Elegir entre dos malas opciones', focus: 'Jerarquía de pérdidas, trade-offs reales' },
       { num: '03', name: 'Decidir rápido vs decidir bien', focus: 'Velocidad suficiente, no perfección' },
       { num: '04', name: 'Sostener una decisión impopular', focus: 'Autoridad sin autoritarismo' },
@@ -81,7 +96,7 @@ const drills = [
     block: 'Poder y fricción humana',
     blockLead: 'Cuando las personas son el obstáculo',
     items: [
-      { num: '05', name: 'Enfrentar resistencia pasiva', focus: 'Lectura de fricción invisible' },
+      { num: '05', name: 'Enfrentar resistencia pasiva', focus: 'Lectura de fricción invisible', slug: 'resistencia-pasiva-el-enemigo-invisible' },
       { num: '06', name: 'Negociar sin poder formal', focus: 'Influencia real, no cargo' },
       { num: '07', name: 'Decir no cuando esperaban un sí', focus: 'Límites claros sin romper relaciones' },
       { num: '08', name: 'Resolver conflicto sin escalarlo', focus: 'Contención, encuadre y salida limpia' },
@@ -91,7 +106,7 @@ const drills = [
     block: 'Liderazgo bajo presión',
     blockLead: 'Cuando tú eres el que no puede fallar',
     items: [
-      { num: '09', name: 'Liderar sin estar seguro', focus: 'Claridad suficiente, no certeza falsa' },
+      { num: '09', name: 'Liderar sin estar seguro', focus: 'Claridad suficiente, no certeza falsa', slug: 'liderar-sin-estar-seguro' },
       { num: '10', name: 'Tomar responsabilidad por errores ajenos', focus: 'Ownership real, no culpas' },
       { num: '11', name: 'Sostener al equipo en crisis', focus: 'Estabilidad emocional operativa' },
     ],
@@ -100,7 +115,7 @@ const drills = [
     block: 'Transformación y cambio real',
     blockLead: 'Cuando lo que hay ya no sirve',
     items: [
-      { num: '12', name: 'Cambiar algo que "funciona"', focus: 'Urgencia sin pánico' },
+      { num: '12', name: 'Cambiar algo que "funciona"', focus: 'Urgencia sin pánico', slug: 'cambiar-lo-que-funciona' },
       { num: '13', name: 'Transformar con gente que no cree', focus: 'Acción antes que convicción' },
       { num: '14', name: 'Digitalizar sin romantizar la tecnología', focus: 'Criterio, no stack' },
     ],
@@ -229,7 +244,15 @@ export default function Metodologia() {
                   <div className="mz-block-row" key={pos.num}>
                     <div className="mz-block-num">{pos.num}</div>
                     <div className="mz-block-content">
-                      <h3>{pos.name}</h3>
+                      {pos.slug ? (
+                        <h3>
+                          <Link href={`/blog/${pos.slug}`} className="mz-block-link">
+                            {pos.name} →
+                          </Link>
+                        </h3>
+                      ) : (
+                        <h3>{pos.name}</h3>
+                      )}
                       <p>{pos.desc}</p>
                       <p className="phrase">&quot;{pos.phrase}&quot;</p>
                     </div>
@@ -268,7 +291,13 @@ export default function Metodologia() {
                   <div className="metodo-drill-row" key={drill.num}>
                     <span className="metodo-drill-num">{drill.num}</span>
                     <div className="metodo-drill-content">
-                      <span className="metodo-drill-name">{drill.name}</span>
+                      {drill.slug ? (
+                        <Link href={`/blog/${drill.slug}`} className="metodo-drill-name mz-block-link">
+                          {drill.name} →
+                        </Link>
+                      ) : (
+                        <span className="metodo-drill-name">{drill.name}</span>
+                      )}
                       <span className="metodo-drill-focus">{drill.focus}</span>
                     </div>
                   </div>
