@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'soltar-el-lastre',
+    title: 'Soltar el lastre: cuando sostener cuesta más que cortar',
+    excerpt:
+      'No hay fit. Llevas meses dando margen. Tres movimientos para cortar a tiempo, sin destruir, antes de que la duda se lleve al equipo.',
+    date: '2026-04-20',
+    block: 'Aprendizaje en fuego',
+    readTime: '7 min',
+  },
+  {
     slug: 'aguantar-el-plan',
     title: 'Aguantar el plan: cuando la presión te pide cambiar de rumbo',
     excerpt:
