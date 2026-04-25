@@ -17,17 +17,17 @@ export default function Home() {
           </h1>
           <div className="hero-meta">
             <span className="hero-meta-rule" />
-            Entrenamiento ejecutivo bajo presión
+            Defensa personal para liderazgo
             <br />
-            Ciudad de México
+            12 posiciones · 15 drills · 40 min · CDMX
           </div>
           <Link
-            href="/contacto"
+            href="/diagnostico"
             className="hero-cta"
-            data-track="clic_contacto"
+            data-track="clic_diagnostico"
             data-track-label="hero"
           >
-            Agendar 15 min →
+            Haz el diagnóstico — 6 min →
           </Link>
         </div>
       </section>
@@ -97,11 +97,11 @@ export default function Home() {
           </div>
           <ul className="beneficios-list col-body">
             {[
-              { num: '01', title: 'Claridad para decidir', body: 'Cuando los datos no alcanzan y esperar no es opción.' },
-              { num: '02', title: 'Menos fricción', body: 'Mecanismos de cierre que el equipo puede usar sin depender de ti.' },
-              { num: '03', title: 'Criterio compartido', body: 'Lenguaje común para actuar cuando todo importa.' },
-              { num: '04', title: 'Velocidad real', body: 'Decisiones que se cierran en minutos, no en semanas de juntas.' },
-              { num: '05', title: 'Reflejos entrenados', body: '15 drills que cubren el 68% de las situaciones críticas.' },
+              { num: '01', title: 'Frames + Checklist', body: '3-5 reglas concretas y acciones operativas en 1 página. Listas para usar el lunes a las 9 a.m.' },
+              { num: '02', title: 'Mapa de decisión', body: 'Ruta concreta para los próximos 7 días. Qué decides, qué pospones, qué sueltas.' },
+              { num: '03', title: 'Regla de operación', body: 'Una frase instalable que tu equipo puede repetir cuando tú no estés.' },
+              { num: '04', title: 'Reflejos entrenados', body: '15 drills que cubren el 68% de las situaciones críticas. No teoría — práctica con corrección en vivo.' },
+              { num: '05', title: 'Velocidad real', body: 'Decisiones que se cierran en minutos, no en semanas de juntas y memos.' },
               { num: '06', title: 'Resultados en semanas', body: 'Sin procesos eternos. Sin dependencias. Sin acompañamiento infinito.' },
             ].map((b) => (
               <li className="beneficio reveal" key={b.num}>
@@ -246,28 +246,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 07 CASO */}
+      {/* 07 DRILL DE MUESTRA */}
       <section className="caso" data-num="07">
         <div className="wrap section-grid">
-          <div className="meta col-label caso-label reveal">07 — Caso</div>
+          <div className="meta col-label caso-label reveal">07 — Drill de muestra</div>
           <div className="col-body">
             <h2 className="display caso-pull reveal">
               Tienes 20 minutos. Los datos no cuadran. ¿Qué haces?
             </h2>
             <p className="caso-lead reveal">
-              Lee un caso real de entrenamiento MANZANA. El 80% de los líderes
-              reacciona mal en esta situación. Descubre si tú también.
+              Un ejemplo de cómo se entrena una posición en MANZANA. Mismo
+              formato que en sesión: escenario, reacciones típicas, reencuadre
+              y reflejos. Sin teoría previa.
             </p>
             <Link href="/caso" className="caso-cta display reveal">
-              Leer caso gratis →
+              Ver el drill →
             </Link>
           </div>
         </div>
       </section>
 
       {/* MANIFIESTO BAND — light */}
-      <section className="manifesto-band">
-        <span className="meta reveal">Manifiesto</span>
+      <Link href="/manifiesto" className="manifesto-band manifesto-band--link">
+        <span className="meta reveal">Manifiesto →</span>
         <div className="triada reveal">
           <span className="word">Sobrevive</span>
           <span className="bar" aria-hidden="true" />
@@ -275,7 +276,7 @@ export default function Home() {
           <span className="bar" aria-hidden="true" />
           <span className="word">Cierra</span>
         </div>
-      </section>
+      </Link>
 
       {/* 08 CIERRE — DARK */}
       <section className="cierre is-dark" data-num="08">
@@ -298,7 +299,7 @@ export default function Home() {
               data-track="clic_diagnostico"
               data-track-label="cta-final"
             >
-              Haz el diagnóstico →
+              ¿Aún no estás listo? Haz el diagnóstico — 6 min →
             </Link>
           </div>
         </div>

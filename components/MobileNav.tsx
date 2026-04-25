@@ -26,8 +26,9 @@ export function MobileNav() {
           <nav className="mobile-nav" onClick={(e) => e.stopPropagation()}>
             <ul>
               <li><Link href="/metodologia" onClick={() => setOpen(false)}>Metodología</Link></li>
+              <li><Link href="/manifiesto" onClick={() => setOpen(false)}>Manifiesto</Link></li>
               <li><Link href="/blog" onClick={() => setOpen(false)}>Blog</Link></li>
-              <li><Link href="/caso" onClick={() => setOpen(false)}>Caso</Link></li>
+              <li><Link href="/caso" onClick={() => setOpen(false)}>Ejemplo</Link></li>
               <li><Link href="/diagnostico" onClick={() => setOpen(false)}>Diagnóstico</Link></li>
               <li><Link href="/contacto" className="mz-accent" onClick={() => setOpen(false)}>Contacto</Link></li>
             </ul>

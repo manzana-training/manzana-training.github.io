@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Caso MANZANA — Decidir sin información completa',
+  title: 'Drill de muestra — Decidir sin información completa | MANZANA',
   description:
-    'Caso práctico de entrenamiento ejecutivo: tienes 20 minutos, los datos no cuadran y te van a pedir una postura. Simulación gratuita de toma de decisiones bajo presión.',
+    'Ejemplo de cómo se entrena una posición en MANZANA: tienes 20 minutos, los datos no cuadran y te van a pedir una postura. Tres reacciones típicas, el reencuadre y los reflejos que se entrenan.',
   alternates: {
     canonical: 'https://manzanatraining.com.mx/caso',
   },
   openGraph: {
-    title: 'Caso MANZANA — Decidir sin información completa',
+    title: 'Drill de muestra — Decidir sin información completa | MANZANA',
     description:
-      'Tienes 20 minutos, los datos no cuadran, y te van a pedir una postura. ¿Qué haces?',
+      'Ejemplo de cómo se entrena una posición en MANZANA. Escenario, reacciones típicas, reencuadre y reflejos.',
     type: 'website',
     locale: 'es_MX',
     url: 'https://manzanatraining.com.mx/caso',
@@ -24,15 +24,15 @@ export default function Caso() {
     <div className="mz-page">
       <section className="page-head" data-num="05">
         <div className="wrap section-grid">
-          <div className="meta col-label reveal">05 — Caso</div>
+          <div className="meta col-label reveal">Drill de muestra</div>
           <div className="col-body">
             <h1 className="page-head-title reveal">
               Tienes 20 minutos. Los datos no cuadran. ¿Qué haces?
             </h1>
             <p className="page-head-lead reveal">
-              El 80% de los líderes reacciona mal cuando tiene que decidir sin
-              información completa. No porque sean malos — porque nadie los
-              entrenó para eso.
+              Esto no es un caso real de cliente. Es un ejemplo del tipo de
+              posición que se entrena en MANZANA, con el mismo formato que usamos
+              en una sesión: escenario, reacciones típicas, reencuadre y reflejos.
             </p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Caso() {
               </div>
             ))}
             <p className="mz-prose reveal" style={{ marginTop: 32, fontSize: 14, fontStyle: 'italic', color: 'var(--gray)' }}>
-              Esta es una de las 12 posiciones que entrena MANZANA. Cada
+              Esta es una de las <Link href="/metodologia" className="mz-block-link">12 posiciones</Link> que entrena MANZANA. Cada
               posición se practica en una sesión con drills reales, no con
               teoría.
             </p>

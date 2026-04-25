@@ -2,16 +2,63 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Metodología — MANZANA',
+  title: '12 situaciones de presión que enfrenta un líder (y cómo entrenarlas) — MANZANA',
   description:
-    'Metodología de entrenamiento ejecutivo: 12 posiciones de liderazgo, 15 drills bajo presión y 28 principios de movimiento. Coaching práctico para toma de decisiones en crisis. Simulaciones que cubren el 68% de las situaciones críticas en empresas.',
+    'Catálogo completo: 12 posiciones de presión, 15 drills entrenables, 28 principios de movimiento. Cubre el 68% de los escenarios críticos. Tres formatos de contratación. Sin teoría, sin slides, sin acompañamiento eterno.',
   alternates: { canonical: 'https://manzanatraining.com.mx/metodologia' },
   openGraph: {
-    title: 'Metodología — MANZANA',
-    description: 'Metodología de entrenamiento ejecutivo: 12 posiciones de liderazgo, 15 drills bajo presión y 28 principios de movimiento.',
+    title: '12 situaciones de presión que enfrenta un líder — MANZANA',
+    description: 'Catálogo de 12 posiciones de liderazgo bajo presión, 15 drills y 28 principios. Cubre el 68% de los casos críticos.',
     type: 'website',
     url: 'https://manzanatraining.com.mx/metodologia',
     images: [{ url: 'https://manzanatraining.com.mx/blog-decidir-sin-info.webp', width: 1792, height: 1024, alt: 'Metodología MANZANA' }],
+  },
+}
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Entrenamiento ejecutivo bajo presión',
+  provider: {
+    '@type': 'Organization',
+    name: 'MANZANA Training',
+    url: 'https://manzanatraining.com.mx',
+  },
+  areaServed: { '@type': 'City', name: 'Ciudad de México' },
+  description:
+    'Sistema de entrenamiento de reflejos para liderazgo bajo presión. 12 posiciones, 15 drills, 28 principios. Tres formatos: sesión individual, bloque de 3 sesiones, programa de 4 semanas.',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Formatos MANZANA',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Drill MANZANA',
+          description:
+            'Sesión individual de 40-50 minutos con simulación bajo presión y entregable concreto.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Bloque MANZANA',
+          description:
+            'Tres sesiones progresivas con diagnóstico previo. Equipos de liderazgo, áreas u offsites.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Dojo MANZANA',
+          description:
+            'Programa integral de 4 semanas: drills, talleres y plan operativo con casos reales.',
+        },
+      },
+    ],
   },
 }
 
@@ -142,6 +189,10 @@ const principios = [
 export default function Metodologia() {
   return (
     <div className="mz-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* PAGE HEAD — DARK */}
       <section className="metodo-hero is-dark" data-num="M">
         <div className="wrap section-grid">

@@ -892,6 +892,20 @@ button:focus-visible {
   transform: scaleY(0.92);
   transform-origin: center;
 }
+/* Variante con link a /manifiesto */
+.mz-page a.manifesto-band {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.mz-page a.manifesto-band:hover {
+  background: color-mix(in srgb, var(--bg) 92%, var(--ink) 8%);
+}
+.mz-page a.manifesto-band:hover .meta {
+  color: var(--ink);
+}
 .mz-page .cierre-title {
   font-size: clamp(80px, 12vw, 176px);
   line-height: 0.9;

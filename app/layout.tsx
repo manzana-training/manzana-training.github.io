@@ -17,33 +17,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
+  title: 'MANZANA — Defensa personal para decidir bajo presión',
   description:
-    'Entrenamiento ejecutivo bajo presión para líderes, founders y gerentes. Simulaciones de liderazgo, coaching ejecutivo práctico y capacitación en toma de decisiones. CDMX.',
-  keywords: [
-    'entrenamiento ejecutivo',
-    'coaching ejecutivo México',
-    'liderazgo bajo presión',
-    'capacitación liderazgo empresarial',
-    'toma de decisiones bajo presión',
-    'simulaciones ejecutivas',
-    'desarrollo de liderazgo',
-    'team building ejecutivo',
-    'entrenamiento gerencial',
-    'coaching para founders',
-    'liderazgo en crisis',
-    'habilidades directivas',
-    'managers',
-    'founders',
-    'CDMX',
-  ],
+    'Defensa personal para liderazgo: 12 posiciones, 15 drills, sin teoría. Entrenamiento de reflejos para founders, directores y gerentes que tienen que decidir cuando todo arde. Sesiones de 40 min. CDMX.',
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
+    title: 'MANZANA — Defensa personal para decidir bajo presión',
     description:
-      'Coaching ejecutivo práctico: simulaciones de liderazgo bajo presión para founders, directores y gerentes. Resultados en semanas, no meses. CDMX.',
+      'No es coaching. No es consultoría. Es entrenamiento. 12 posiciones, 15 drills, resultados en semanas. CDMX.',
     type: 'website',
     locale: 'es_MX',
     url: BASE_URL,
@@ -59,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MANZANA — Entrenamiento ejecutivo bajo presión',
-    description: 'Coaching ejecutivo práctico: simulaciones de liderazgo bajo presión. Resultados en semanas.',
+    title: 'MANZANA — Defensa personal para decidir bajo presión',
+    description: 'No es coaching. No es consultoría. Es entrenamiento. 12 posiciones, 15 drills, resultados en semanas.',
     images: [`${BASE_URL}/blog-decidir-sin-info.webp`],
   },
   robots: {
@@ -149,8 +132,9 @@ export default function RootLayout({
           <nav className="desktop-nav">
             <ul>
               <li><Link href="/metodologia">Metodología</Link></li>
+              <li><Link href="/manifiesto">Manifiesto</Link></li>
               <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/caso">Caso</Link></li>
+              <li><Link href="/caso">Ejemplo</Link></li>
               <li><Link href="/diagnostico">Diagnóstico</Link></li>
               <li>
                 <Link href="/contacto" className="mz-accent">
@@ -173,8 +157,9 @@ export default function RootLayout({
           </div>
           <nav className="footer-links">
             <Link href="/metodologia">Metodología</Link>
+            <Link href="/manifiesto">Manifiesto</Link>
             <Link href="/blog">Blog</Link>
-            <Link href="/caso">Caso</Link>
+            <Link href="/caso">Ejemplo</Link>
             <Link href="/diagnostico">Diagnóstico</Link>
             <Link href="/contacto">Contacto</Link>
           </nav>
