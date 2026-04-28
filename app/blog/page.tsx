@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'romper-el-monopolio',
+    title: 'Romper el monopolio: cuando la información es poder',
+    excerpt:
+      'Tres personas saben todo. El resto opera a ciegas. Tres movimientos para redistribuir información sin volverla caos ni perder el control.',
+    date: '2026-04-27',
+    block: 'Opacidad',
+    readTime: '7 min',
+  },
+  {
     slug: 'soltar-el-lastre',
     title: 'Soltar el lastre: cuando sostener cuesta más que cortar',
     excerpt:
