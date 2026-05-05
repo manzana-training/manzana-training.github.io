@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'romper-la-burocracia-precoz',
+    title: 'Romper la burocracia precoz: cuando tu startup se mueve como corporativo',
+    excerpt:
+      'Empezó con una junta. Después fueron tres. Ahora no se decide nada sin un comité. Tres movimientos para cortar el ritual antes de que se trague la velocidad.',
+    date: '2026-05-04',
+    block: 'Fricción',
+    readTime: '7 min',
+  },
+  {
     slug: 'romper-el-monopolio',
     title: 'Romper el monopolio: cuando la información es poder',
     excerpt:

@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/blog/romper-la-burocracia-precoz`,
+      lastModified: new Date('2026-05-04'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/blog/romper-el-monopolio`,
       lastModified: new Date('2026-04-27'),
       changeFrequency: 'monthly',
