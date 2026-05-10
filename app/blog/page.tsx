@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'decir-no-al-dinero',
+    title: 'Decir no al dinero: cuando piden aumento y no hay',
+    excerpt:
+      'Tu mejor ingeniera pide aumento. No hay con qué. Tres movimientos para decir la verdad sin perder a la gente clave ni prometer un futuro que no llega.',
+    date: '2026-05-10',
+    block: 'Supervivencia',
+    readTime: '7 min',
+  },
+  {
     slug: 'romper-la-burocracia-precoz',
     title: 'Romper la burocracia precoz: cuando tu startup se mueve como corporativo',
     excerpt:
