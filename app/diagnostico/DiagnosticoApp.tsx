@@ -619,18 +619,26 @@ function ResultView({
         <span className="meta">Lo que te corresponde</span>
         <div className="diag-offer">
           <div className="diag-offer-head">
-            <h3 className="diag-offer-name">{archetype.offer}</h3>
+            <h3 className="diag-offer-name">{archetype.offer} MANZANA</h3>
             <span className="diag-offer-price">{archetype.offerPrice}</span>
           </div>
           <p className="diag-offer-copy">{archetype.offerCopy}</p>
           <div className="diag-actions">
             <Link
-              href="/contacto"
+              href="/agendar"
               className="mz-end-cta"
-              data-track="clic_contacto"
+              data-track="inicio_pago"
               data-track-label={`diagnostico-${archetype.id}`}
             >
-              Agendar conversación de revisión →
+              Pagar y reservar →
+            </Link>
+            <Link
+              href="/contacto"
+              className="mz-end-cta-quiet"
+              data-track="clic_contacto"
+              data-track-label={`diagnostico-${archetype.id}-talk-first`}
+            >
+              Prefiero hablar primero →
             </Link>
           </div>
         </div>

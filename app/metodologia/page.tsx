@@ -26,36 +26,21 @@ const serviceJsonLd = {
   },
   areaServed: { '@type': 'City', name: 'Ciudad de México' },
   description:
-    'Sistema de entrenamiento de reflejos para liderazgo bajo presión. 12 posiciones, 15 drills, 28 principios. Tres formatos: sesión individual, bloque de 3 sesiones, programa de 4 semanas.',
+    'Sistema de entrenamiento de reflejos para liderazgo bajo presión. 12 posiciones, 15 drills, 28 principios. Sesión individual con drill en vivo y Case Brief PDF; programas extendidos disponibles bajo conversación.',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Formatos MANZANA',
     itemListElement: [
       {
         '@type': 'Offer',
+        price: '1500',
+        priceCurrency: 'MXN',
+        url: 'https://manzanatraining.com.mx/agendar',
         itemOffered: {
           '@type': 'Service',
           name: 'Drill MANZANA',
           description:
-            'Sesión individual de 40-50 minutos con simulación bajo presión y entregable concreto.',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Bloque MANZANA',
-          description:
-            'Tres sesiones progresivas con diagnóstico previo. Equipos de liderazgo, áreas u offsites.',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Dojo MANZANA',
-          description:
-            'Programa integral de 4 semanas: drills, talleres y plan operativo con casos reales.',
+            'Sesión individual de 40 min vía Google Meet con drill en vivo, segundo round con corrección y Case Brief PDF post-sesión.',
         },
       },
     ],
@@ -442,73 +427,100 @@ export default function Metodologia() {
           <div className="meta col-label reveal">06 — Cómo contratar</div>
           <div className="col-body">
             <h2 className="mz-section-title reveal">
-              Tres formatos. Un mismo sistema.
+              Una sesión. Una posición. Un Case Brief.
             </h2>
             <p className="mz-section-lead reveal">
-              Elige según tu situación. Sin compromiso largo. Sin procesos
-              eternos. Siempre partimos de un diagnóstico para recomendarte el
-              formato que hace sentido.
+              Empezamos por una sesión individual sobre una situación real que
+              estás jugando hoy. Si necesitas algo más profundo —programas
+              extendidos para equipos completos o intervenciones
+              organizacionales— hablamos.
             </p>
-            <div className="mz-tiers">
+            <div className="mz-tiers" style={{ gridTemplateColumns: '1fr', maxWidth: 640 }}>
               <div className="mz-tier reveal">
                 <div className="mz-tier-tag">Entrada</div>
                 <div className="mz-tier-name">Drill MANZANA</div>
                 <p className="mz-tier-desc">
-                  Una sesión enfocada en una situación crítica. Entrenamiento
-                  práctico con simulación y corrección en vivo.
+                  Una sesión 1:1 sobre tu posición específica, con drill en
+                  vivo, segundo round con corrección, y Case Brief PDF en
+                  formato HBS/Wharton entregado en 48 horas.
                 </p>
                 <ul className="mz-tier-bullets">
-                  <li>40–50 minutos</li>
-                  <li>Online o presencial</li>
-                  <li>Hasta 10 participantes</li>
-                  <li>1 situación, 1 drill, 1 entregable</li>
+                  <li>40 minutos vía Google Meet</li>
+                  <li>1 situación real — la tuya, no un caso de manual</li>
+                  <li>Drill con corrección en vivo + segundo round</li>
+                  <li>Case Brief PDF (HBS/Wharton) en 48h</li>
+                  <li>Frames + plan 7 días + regla instalable</li>
                 </ul>
-                <p className="mz-tier-note">
-                  Ideal para probar MANZANA o resolver un problema puntual.
-                </p>
-              </div>
-
-              <div className="mz-tier reveal">
-                <div className="mz-tier-tag">Core</div>
-                <div className="mz-tier-name">Bloque MANZANA</div>
-                <p className="mz-tier-desc">
-                  Tres sesiones enfocadas según diagnóstico. Entrenamiento
-                  progresivo sobre un bloque completo de situaciones.
-                </p>
-                <ul className="mz-tier-bullets">
-                  <li>3 sesiones de 40–50 minutos</li>
-                  <li>Online o presencial</li>
-                  <li>Diagnóstico previo incluido</li>
-                  <li>3 situaciones conectadas, 3 entregables</li>
-                </ul>
-                <p className="mz-tier-note">
-                  Ideal para equipos de liderazgo, áreas completas u offsites.
-                </p>
-              </div>
-
-              <div className="mz-tier reveal">
-                <div className="mz-tier-tag">Premium</div>
-                <div className="mz-tier-name">Dojo MANZANA</div>
-                <p className="mz-tier-desc">
-                  Programa integral de un mes. Drills semanales, talleres
-                  inmersivos, plan operativo y seguimiento con casos reales de
-                  tu empresa.
-                </p>
-                <ul className="mz-tier-bullets">
-                  <li>4 semanas de entrenamiento</li>
-                  <li>4 drills + 2 talleres hands-on</li>
-                  <li>Diagnóstico estratégico + plan operativo</li>
-                  <li>Casos reales de tu organización</li>
-                </ul>
-                <p className="mz-tier-note">
-                  Ideal para founders + core team o intervenciones organizacionales.
-                </p>
+                <div
+                  style={{
+                    marginTop: 24,
+                    padding: '20px 0',
+                    borderTop: '1px solid var(--rule)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'baseline',
+                    flexWrap: 'wrap',
+                    gap: 12,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: 11,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      color: 'var(--gray)',
+                    }}
+                  >
+                    Precio
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--serif)',
+                      fontSize: 32,
+                      color: 'var(--ink)',
+                    }}
+                  >
+                    $1,500 MXN
+                  </span>
+                </div>
+                <div style={{ marginTop: 20 }}>
+                  <Link
+                    href="/agendar"
+                    className="mz-end-cta"
+                    data-track="inicio_pago"
+                    data-track-label="metodologia-drill"
+                  >
+                    Pagar y reservar →
+                  </Link>
+                </div>
               </div>
             </div>
             <p className="mz-prose reveal" style={{ marginTop: 56, fontStyle: 'italic', color: 'var(--gray)' }}>
-              ¿No sabes cuál elegir? Empezamos con un diagnóstico gratuito de 15
-              minutos. Te escucho, identifico tu situación y te recomiendo el
-              formato que hace sentido. Sin compromiso.
+              Para equipos completos, programas extendidos o intervenciones
+              organizacionales —Bloque de varias sesiones o Dojo de varias
+              semanas—{' '}
+              <Link
+                href="/contacto"
+                style={{ color: 'var(--ink-soft)', textDecoration: 'underline' }}
+                data-track="clic_contacto"
+                data-track-label="metodologia-extended"
+              >
+                hablamos directo
+              </Link>
+              . Cotización por caso.
+            </p>
+            <p className="mz-prose reveal" style={{ marginTop: 24, fontStyle: 'italic', color: 'var(--gray)' }}>
+              ¿No sabes qué posición estás jugando? Empieza con el{' '}
+              <Link
+                href="/diagnostico"
+                style={{ color: 'var(--ink-soft)', textDecoration: 'underline' }}
+                data-track="clic_diagnostico"
+                data-track-label="metodologia"
+              >
+                diagnóstico gratuito
+              </Link>
+              . Te identifica el arquetipo y te dice qué entrenar.
             </p>
           </div>
         </div>
@@ -527,12 +539,12 @@ export default function Metodologia() {
             </p>
             <div className="mz-end-actions">
               <Link
-                href="/contacto"
+                href="/agendar"
                 className="mz-end-cta reveal"
-                data-track="clic_contacto"
-                data-track-label="metodologia"
+                data-track="inicio_pago"
+                data-track-label="metodologia-end"
               >
-                Agendar sesión →
+                Pagar y reservar →
               </Link>
               <Link
                 href="/diagnostico"

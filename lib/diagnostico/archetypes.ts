@@ -1,4 +1,4 @@
-export type Offer = 'Drill' | 'Bloque' | 'Dojo'
+export type Offer = 'Drill'
 
 export type Archetype = {
   id: string
@@ -11,6 +11,9 @@ export type Archetype = {
   offerCopy: string
 }
 
+const COMMON_OFFER_COPY =
+  'Una sesión 1:1 de 40 min vía Google Meet sobre tu posición específica, con drill en vivo. Incluye Case Brief PDF (formato HBS/Wharton aplicado a tu caso) en las 48h siguientes.'
+
 export const ARCHETYPES: Record<string, Archetype> = {
   apagafuegos: {
     id: 'apagafuegos',
@@ -19,9 +22,9 @@ export const ARCHETYPES: Record<string, Archetype> = {
     longDiagnosis:
       'Vives operando en modo combate todo el tiempo porque la estructura del negocio no está absorbiendo decisiones de forma repetible. Cada incendio te toca apagarlo a ti porque el sistema no tiene reflejos propios. Esto se sostiene un trimestre, dos cuando mucho. Después colapsa o te quemas.',
     recommendedTs: ['T11', 'T12', 'T10'],
-    offer: 'Dojo',
-    offerPrice: '$60,000 MXN',
-    offerCopy: 'Programa de 6-12 semanas para reescribir reflejos operativos completos.',
+    offer: 'Drill',
+    offerPrice: '$1,500 MXN',
+    offerCopy: COMMON_OFFER_COPY,
   },
   paralisis: {
     id: 'paralisis',
@@ -30,9 +33,9 @@ export const ARCHETYPES: Record<string, Archetype> = {
     longDiagnosis:
       'Sabes lo que hay que hacer. El equipo también. Pero nada se cierra. Las decisiones se relitigan, se posponen esperando información perfecta, vuelven a la mesa en la siguiente junta. El costo de no decidir ya es mayor que el de decidir mal.',
     recommendedTs: ['T1', 'T2', 'T3'],
-    offer: 'Bloque',
-    offerPrice: '$19,500 MXN',
-    offerCopy: 'Tres sesiones para instalar el reflejo de cerrar decisiones bajo ambigüedad.',
+    offer: 'Drill',
+    offerPrice: '$1,500 MXN',
+    offerCopy: COMMON_OFFER_COPY,
   },
   politica: {
     id: 'politica',
@@ -41,9 +44,9 @@ export const ARCHETYPES: Record<string, Archetype> = {
     longDiagnosis:
       'Las decisiones reales no se toman en las juntas formales. Se toman en pasillos, en chats laterales, en cafés. Tú llegas a un acuerdo y se deshace antes de la siguiente reunión. La estructura formal no manda — manda la política informal.',
     recommendedTs: ['T6', 'T8', 'T5'],
-    offer: 'Bloque',
-    offerPrice: '$19,500 MXN',
-    offerCopy: 'Tres sesiones para recuperar control de foros, canales y palancas de poder.',
+    offer: 'Drill',
+    offerPrice: '$1,500 MXN',
+    offerCopy: COMMON_OFFER_COPY,
   },
   heroismo: {
     id: 'heroismo',
@@ -52,9 +55,9 @@ export const ARCHETYPES: Record<string, Archetype> = {
     longDiagnosis:
       'El negocio funciona porque tú (o dos o tres personas) lo cargan a pulmón. Si te enfermas un mes, todo se cae. Si tomas vacaciones, los problemas se acumulan esperando tu regreso. La energía es finita; el sistema te está cobrando intereses cada semana.',
     recommendedTs: ['T11', 'T10', 'T7'],
-    offer: 'Bloque',
-    offerPrice: '$19,500 MXN',
-    offerCopy: 'Tres sesiones para devolver el peso al sistema y dejar de cargarlo solo.',
+    offer: 'Drill',
+    offerPrice: '$1,500 MXN',
+    offerCopy: COMMON_OFFER_COPY,
   },
   sistema_solido: {
     id: 'sistema_solido',
@@ -64,8 +67,8 @@ export const ARCHETYPES: Record<string, Archetype> = {
       'El negocio tiene huesos. Las decisiones se toman, se ejecutan, se cierran. Lo que tienes es un punto específico de fricción que no escala: una conversación que evitas, una posición que no tienes entrenada, un reflejo que falla solo en el momento de presión. No necesitas un rediseño — necesitas un drill.',
     recommendedTs: ['T1', 'T5', 'T9'],
     offer: 'Drill',
-    offerPrice: '$7,000 MXN',
-    offerCopy: 'Una sesión individual de 40-50 min para entrenar la posición puntual.',
+    offerPrice: '$1,500 MXN',
+    offerCopy: COMMON_OFFER_COPY,
   },
   friccion_moderada: {
     id: 'friccion_moderada',
@@ -74,9 +77,9 @@ export const ARCHETYPES: Record<string, Archetype> = {
     longDiagnosis:
       'Ni colapso ni excelencia. El sistema funciona, con costo. Hay 2-3 posiciones donde la presión te encuentra sin reflejo y termina costando más de lo que debería. La buena noticia: son entrenables. La mala: ignorarlas las convierte en cualquiera de los arquetipos anteriores en 12-18 meses.',
     recommendedTs: [],
-    offer: 'Bloque',
-    offerPrice: '$19,500 MXN',
-    offerCopy: 'Tres sesiones sobre las posiciones específicas que te están costando hoy.',
+    offer: 'Drill',
+    offerPrice: '$1,500 MXN',
+    offerCopy: COMMON_OFFER_COPY,
   },
 }
 
