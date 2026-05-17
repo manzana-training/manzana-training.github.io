@@ -2291,3 +2291,539 @@ button:focus-visible {
     transition: none;
   }
 }
+
+/* ============================================================
+   DIAGNOSTICO — multi-step in-site (2026-05-17)
+   Scoped under .mz-page .diag
+   ============================================================ */
+
+.mz-page .diag {
+  max-width: 760px;
+  margin: 0;
+}
+
+.mz-page .diag-progress {
+  height: 2px;
+  background: var(--rule);
+  margin: 0 0 40px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.mz-page .diag-progress-bar {
+  height: 100%;
+  background: var(--ink);
+  transition: width .35s cubic-bezier(.4,0,.2,1);
+}
+
+.mz-page .diag-step {
+  display: block;
+}
+
+.mz-page .diag-h2 {
+  font-family: var(--serif);
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+
+.mz-page .diag-sub {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+.mz-page .diag-hint {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  margin: 0 0 28px;
+}
+
+.mz-page .diag-lead {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0 0 20px;
+  font-weight: 400;
+}
+
+.mz-page .diag-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.mz-page .diag-bullets li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  border-top: 1px solid var(--rule);
+}
+
+.mz-page .diag-bullets li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.mz-page .diag-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gray);
+}
+
+/* Context form */
+.mz-page .diag-field {
+  margin: 0 0 24px;
+}
+
+.mz-page .diag-field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin: 0 0 8px;
+}
+
+.mz-page .diag-field input,
+.mz-page .diag-field select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  outline: none;
+  transition: border-color .15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.mz-page .diag-field select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='none' stroke='%230A0A0A' stroke-width='1.5' d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px;
+}
+
+.mz-page .diag-field input:focus,
+.mz-page .diag-field select:focus {
+  border-color: var(--ink);
+}
+
+/* Questions */
+.mz-page .diag-qs {
+  margin: 0 0 8px;
+}
+
+.mz-page .diag-q {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.mz-page .diag-q:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.mz-page .diag-q-head {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0 0 12px;
+}
+
+.mz-page .diag-q-num,
+.mz-page .diag-q-key {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+}
+
+.mz-page .diag-q-text {
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+
+/* Likert segmented 1-5 */
+.mz-page .diag-likert {
+  display: flex;
+  gap: 0;
+}
+
+.mz-page .diag-likert-btn {
+  flex: 1;
+  padding: 14px 0;
+  border: 1px solid var(--rule);
+  border-left-width: 0;
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.mz-page .diag-likert-btn:first-child {
+  border-left-width: 1px;
+}
+
+.mz-page .diag-likert-btn:hover {
+  background: rgba(10, 10, 10, 0.04);
+}
+
+.mz-page .diag-likert-btn.is-selected {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.mz-page .diag-likert-btn.is-selected + .diag-likert-btn {
+  border-left-color: var(--ink);
+}
+
+/* Vignettes choice A/B/C/D */
+.mz-page .diag-q-vignette .diag-q-text {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.mz-page .diag-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mz-page .diag-choice-btn {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.mz-page .diag-choice-btn:hover {
+  border-color: var(--ink);
+}
+
+.mz-page .diag-choice-btn.is-selected {
+  border-color: var(--ink);
+  background: rgba(10, 10, 10, 0.04);
+}
+
+.mz-page .diag-choice-letter {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  width: 18px;
+  color: var(--gray);
+}
+
+.mz-page .diag-choice-btn.is-selected .diag-choice-letter {
+  color: var(--ink);
+}
+
+.mz-page .diag-choice-text {
+  flex: 1;
+}
+
+.mz-page .diag-divider {
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+
+.mz-page .diag-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.mz-page .diag-error {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #B91C1C;
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  border-left: 2px solid #B91C1C;
+  background: rgba(185, 28, 28, 0.05);
+}
+
+/* Result view */
+.mz-page .diag-result {
+  margin: 0;
+}
+
+.mz-page .diag-result-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+  display: block;
+  margin: 0 0 12px;
+}
+
+.mz-page .diag-result-name {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 24px;
+  font-weight: 400;
+}
+
+.mz-page .diag-result-diagnosis {
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 48px;
+  max-width: 60ch;
+}
+
+.mz-page .diag-bars {
+  margin: 0 0 56px;
+  display: grid;
+  gap: 20px;
+}
+
+.mz-page .diag-bar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 8px;
+}
+
+.mz-page .diag-bar-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.mz-page .diag-bar-value {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.mz-page .diag-bar-track {
+  height: 3px;
+  background: var(--rule);
+  overflow: hidden;
+}
+
+.mz-page .diag-bar-fill {
+  height: 100%;
+  transition: width .6s cubic-bezier(.4,0,.2,1);
+}
+
+.mz-page .diag-bar-fill.is-low {
+  background: #B91C1C;
+}
+.mz-page .diag-bar-fill.is-mid {
+  background: var(--gray);
+}
+.mz-page .diag-bar-fill.is-high {
+  background: var(--ink);
+}
+
+.mz-page .diag-result-block {
+  padding: 48px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.mz-page .diag-result-block .meta {
+  display: block;
+  margin: 0 0 24px;
+}
+
+.mz-page .diag-positions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mz-page .diag-position {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.mz-page .diag-position:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.mz-page .diag-position-head {
+  margin: 0 0 12px;
+}
+
+.mz-page .diag-position-block {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+  margin: 0 0 6px;
+}
+
+.mz-page .diag-position-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+  font-weight: 400;
+}
+
+.mz-page .diag-position-frame {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.mz-page .diag-position-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: opacity .15s ease;
+}
+
+.mz-page .diag-position-link:hover {
+  opacity: 0.7;
+}
+
+/* Offer */
+.mz-page .diag-result-offer .diag-offer {
+  padding: 32px;
+  border: 1px solid var(--ink);
+  margin-top: 8px;
+}
+
+.mz-page .diag-offer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+
+.mz-page .diag-offer-name {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0;
+  font-weight: 400;
+}
+
+.mz-page .diag-offer-price {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.mz-page .diag-offer-copy {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+}
+
+.mz-page .diag-result-foot {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin: 32px 0 0;
+}
+
+.mz-page .diag-result-foot strong {
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .mz-page .diag-h2 {
+    font-size: 24px;
+  }
+  .mz-page .diag-q {
+    padding: 22px 0;
+  }
+  .mz-page .diag-q-text {
+    font-size: 16px;
+  }
+  .mz-page .diag-q-vignette .diag-q-text {
+    font-size: 17px;
+  }
+  .mz-page .diag-likert-btn {
+    padding: 16px 0;
+    font-size: 15px;
+  }
+  .mz-page .diag-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .mz-page .diag-actions .mz-end-cta,
+  .mz-page .diag-actions .mz-end-cta-quiet {
+    text-align: center;
+  }
+  .mz-page .diag-result-offer .diag-offer {
+    padding: 24px;
+  }
+  .mz-page .diag-result-block {
+    padding: 36px 0;
+  }
+}
