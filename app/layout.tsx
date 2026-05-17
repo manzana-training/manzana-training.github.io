@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: 'MANZANA — Defensa personal para decidir bajo presión',
   description:
-    'Defensa personal para liderazgo: 12 posiciones, 15 drills, sin teoría. Entrenamiento de reflejos para founders, directores y gerentes que tienen que decidir cuando todo arde. Sesiones de 40 min. CDMX.',
+    'Defensa personal para liderazgo: 12 posiciones, 15 drills, sin teoría. Entrenamiento de reflejos para founders, directores y gerentes que tienen que decidir cuando todo arde. Sesiones de 45 min. CDMX.',
   alternates: {
     canonical: BASE_URL,
   },

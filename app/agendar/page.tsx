@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: 'Agendar sesión — MANZANA',
   description:
-    'Drill MANZANA: sesión 1:1 de 40 min vía Google Meet sobre una posición específica de presión, con drill en vivo y Case Brief PDF post-sesión. $1,500 MXN.',
+    'Drill MANZANA: sesión 1:1 de 45 min vía Google Meet sobre una posición específica de presión, con drill en vivo y Case Brief PDF post-sesión. $1,500 MXN.',
   alternates: { canonical: 'https://manzanatraining.com.mx/agendar' },
   openGraph: {
     title: 'Agendar sesión — MANZANA',
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: DRILL_NAME,
   description:
-    'Sesión 1:1 de 40 min vía Google Meet sobre una posición específica de presión, con drill en vivo. Incluye Case Brief PDF en formato HBS/Wharton.',
+    'Sesión 1:1 de 45 min vía Google Meet sobre una posición específica de presión, con drill en vivo. Incluye Case Brief PDF en formato HBS/Wharton.',
   brand: { '@type': 'Brand', name: 'MANZANA' },
   offers: {
     '@type': 'Offer',
@@ -56,7 +56,7 @@ export default function Agendar() {
               Una sesión sobre la posición que estás jugando hoy.
             </h1>
             <p className="page-head-lead reveal">
-              40 minutos. Una situación real. Drill en vivo con corrección, no
+              45 minutos. Una situación real. Drill en vivo con corrección, no
               consejos genéricos. Te llevas un Case Brief en PDF con frames,
               plan 7 días y la regla operable para tu equipo.
             </p>
@@ -188,7 +188,7 @@ export default function Agendar() {
                 ¿cuándo fue la última vez? ¿qué hiciste? ¿qué resultado?
               </li>
               <li>
-                <strong>4. Sesión 40 min.</strong> Estructura fija. Sin
+                <strong>4. Sesión 45 min.</strong> Estructura fija. Sin
                 presentaciones. Sin teoría. Drill en vivo, corrección,
                 segundo round, salida concreta.
               </li>

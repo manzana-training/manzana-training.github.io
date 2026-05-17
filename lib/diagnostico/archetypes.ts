@@ -12,7 +12,7 @@ export type Archetype = {
 }
 
 const COMMON_OFFER_COPY =
-  'Una sesión 1:1 de 40 min vía Google Meet sobre tu posición específica, con drill en vivo. Incluye Case Brief PDF (formato HBS/Wharton aplicado a tu caso) en las 48h siguientes.'
+  'Una sesión 1:1 de 45 min vía Google Meet sobre tu posición específica, con drill en vivo. Incluye Case Brief PDF (formato HBS/Wharton aplicado a tu caso) en las 48h siguientes.'
 
 export const ARCHETYPES: Record<string, Archetype> = {
   apagafuegos: {

@@ -38,7 +38,7 @@ export default function Pagado() {
               <h3>Agenda tu sesión</h3>
               <p>
                 Elige fecha y hora. Te llega confirmación por email con el
-                link de Google Meet. La sesión es de 40 minutos, 1:1.
+                link de Google Meet. La sesión es de 45 minutos, 1:1.
               </p>
               {bookingLive ? (
                 <a

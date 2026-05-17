@@ -19,7 +19,7 @@ export default function Home() {
             <span className="hero-meta-rule" />
             Defensa personal para liderazgo
             <br />
-            12 posiciones · 15 drills · 40 min · CDMX
+            12 posiciones · 15 drills · 45 min · CDMX
           </div>
           <Link
             href="/diagnostico"
@@ -202,7 +202,7 @@ export default function Home() {
           <div className="meta col-label sesion-label reveal">06 — Así se ve una sesión</div>
           <div className="col-body">
             <h2 className="display sesion-title reveal">
-              40 minutos. Un problema real. Sin discurso.
+              45 minutos. Un problema real. Sin discurso.
             </h2>
             <p className="sesion-lead reveal">
               No es un taller. No es una plática. Es una simulación con presión real

@@ -40,7 +40,7 @@ const serviceJsonLd = {
           '@type': 'Service',
           name: 'Drill MANZANA',
           description:
-            'Sesión individual de 40 min vía Google Meet con drill en vivo, segundo round con corrección y Case Brief PDF post-sesión.',
+            'Sesión individual de 45 min vía Google Meet con drill en vivo, segundo round con corrección y Case Brief PDF post-sesión.',
         },
       },
     ],
@@ -445,7 +445,7 @@ export default function Metodologia() {
                   formato HBS/Wharton entregado en 48 horas.
                 </p>
                 <ul className="mz-tier-bullets">
-                  <li>40 minutos vía Google Meet</li>
+                  <li>45 minutos vía Google Meet</li>
                   <li>1 situación real — la tuya, no un caso de manual</li>
                   <li>Drill con corrección en vivo + segundo round</li>
                   <li>Case Brief PDF (HBS/Wharton) en 48h</li>
