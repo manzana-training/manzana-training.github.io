@@ -72,28 +72,17 @@ export default function Agendar() {
               <div className="mz-tier reveal">
                 <div className="mz-tier-tag">{DRILL_TAGLINE}</div>
                 <div className="mz-tier-name">{DRILL_NAME}</div>
-                <p className="mz-tier-desc">
-                  Una sesión 1:1 sobre tu posición específica de presión, con
-                  drill en vivo. Estructura fija: señales → errores instintivos
-                  → frames → drill con corrección → salida.
-                </p>
-                <ul className="mz-tier-bullets">
-                  <li>{DRILL_DURATION}</li>
-                  <li>1 posición real — la tuya, no un caso de manual</li>
-                  <li>Drill con corrección en vivo + segundo round</li>
-                  <li>Case Brief PDF (HBS/Wharton) en 48h</li>
-                  <li>Frames + plan 7 días + regla instalable</li>
-                </ul>
                 <div
                   style={{
-                    marginTop: 32,
-                    padding: '24px 0',
+                    marginTop: 20,
+                    padding: '20px 0',
                     borderTop: '1px solid var(--rule)',
+                    borderBottom: '1px solid var(--rule)',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'baseline',
                     flexWrap: 'wrap',
-                    gap: 16,
+                    gap: 12,
                   }}
                 >
                   <span
@@ -110,14 +99,14 @@ export default function Agendar() {
                   <span
                     style={{
                       fontFamily: 'var(--serif)',
-                      fontSize: 36,
+                      fontSize: 26,
                       color: 'var(--ink)',
                     }}
                   >
                     {DRILL_PRICE_LABEL}
                   </span>
                 </div>
-                <div style={{ marginTop: 24 }}>
+                <div style={{ marginTop: 20, marginBottom: 24 }}>
                   {live ? (
                     <a
                       href={STRIPE_DRILL_LINK}
@@ -162,6 +151,18 @@ export default function Agendar() {
                     </>
                   )}
                 </div>
+                <p className="mz-tier-desc">
+                  Una sesión 1:1 sobre tu posición específica de presión, con
+                  drill en vivo. Estructura fija: señales → errores instintivos
+                  → frames → drill con corrección → salida.
+                </p>
+                <ul className="mz-tier-bullets">
+                  <li>{DRILL_DURATION}</li>
+                  <li>1 posición real — la tuya, no un caso de manual</li>
+                  <li>Drill con corrección en vivo + segundo round</li>
+                  <li>Case Brief PDF (HBS/Wharton) en 48h</li>
+                  <li>Frames + plan 7 días + regla instalable</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -171,33 +172,79 @@ export default function Agendar() {
       <section className="mz-section">
         <div className="wrap section-grid">
           <div className="meta col-label reveal">Cómo funciona</div>
-          <div className="col-body mz-prose">
-            <ul className="reveal">
-              <li>
-                <strong>1. Pagas y reservas.</strong> Stripe procesa el pago en
-                el momento. Se te redirige a la página de reserva.
-              </li>
-              <li>
-                <strong>2. Agendas tu slot.</strong> Eliges fecha y hora en el
-                calendario. Te llega confirmación por email con el link de
-                Google Meet.
-              </li>
-              <li>
-                <strong>3. Recibes preparación.</strong> 24h antes te llegan 4
-                preguntas cortas: ¿qué situación específica vas a entrenar?
-                ¿cuándo fue la última vez? ¿qué hiciste? ¿qué resultado?
-              </li>
-              <li>
-                <strong>4. Sesión 45 min.</strong> Estructura fija. Sin
-                presentaciones. Sin teoría. Drill en vivo, corrección,
-                segundo round, salida concreta.
-              </li>
-              <li>
-                <strong>5. Case Brief en 48h.</strong> PDF de 3-4 páginas con
-                tu caso documentado en formato Harvard/Wharton: contexto,
-                decisión, frames, plan 7 días, regla instalable.
-              </li>
-            </ul>
+          <div className="col-body">
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: '32px 40px',
+              }}
+            >
+              {[
+                {
+                  n: '01',
+                  t: 'Pagas y reservas',
+                  d: 'Stripe procesa el pago en el momento. Se te redirige a la página de reserva.',
+                },
+                {
+                  n: '02',
+                  t: 'Agendas tu slot',
+                  d: 'Eliges fecha y hora en el calendario. Te llega confirmación por email con el link de Google Meet.',
+                },
+                {
+                  n: '03',
+                  t: 'Recibes preparación',
+                  d: '24h antes te llegan 4 preguntas cortas para llegar con la situación concreta lista.',
+                },
+                {
+                  n: '04',
+                  t: `Sesión ${DRILL_DURATION.split(' ')[0]} min`,
+                  d: 'Estructura fija. Sin presentaciones. Sin teoría. Drill en vivo, corrección, segundo round, salida concreta.',
+                },
+                {
+                  n: '05',
+                  t: 'Case Brief en 48h',
+                  d: 'PDF de 3-4 páginas en formato Harvard/Wharton: contexto, decisión, frames, plan 7 días, regla instalable.',
+                },
+              ].map((step) => (
+                <div key={step.n} className="reveal">
+                  <div
+                    style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: 11,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      color: 'var(--gray)',
+                      marginBottom: 8,
+                    }}
+                  >
+                    {step.n}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--serif)',
+                      fontSize: 20,
+                      color: 'var(--ink)',
+                      margin: '0 0 8px',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {step.t}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--sans)',
+                      fontSize: 15,
+                      lineHeight: 1.55,
+                      color: 'var(--ink)',
+                      margin: 0,
+                    }}
+                  >
+                    {step.d}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
