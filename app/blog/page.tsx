@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'encender-el-minimo-viable',
+    title: 'Encender el mínimo viable: cuando el equipo solo viene por el cheque',
+    excerpt:
+      'El equipo cumple. Nadie propone. Nadie empuja. Tres movimientos para encender ownership real sin discursos motivacionales ni amenazas.',
+    date: '2026-05-17',
+    block: 'Contaminación',
+    readTime: '7 min',
+  },
+  {
     slug: 'decir-no-al-dinero',
     title: 'Decir no al dinero: cuando piden aumento y no hay',
     excerpt:
