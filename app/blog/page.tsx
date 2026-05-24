@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'cerrar-sin-aplausos',
+    title: 'Cerrar sin aplausos: decidir sin buscar consenso',
+    excerpt:
+      'Tomaste la decisión. Nadie la celebra. Hay silencio. Tres movimientos para sostener sin sobreexplicar ni buscar la aprobación que no va a llegar.',
+    date: '2026-05-24',
+    block: 'Cierre',
+    readTime: '8 min',
+  },
+  {
     slug: 'encender-el-minimo-viable',
     title: 'Encender el mínimo viable: cuando el equipo solo viene por el cheque',
     excerpt:
