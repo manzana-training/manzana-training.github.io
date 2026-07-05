@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'resetear-sin-quebrar',
+    title: 'Resetear sin quebrar: cuando tu mejor gente comete un error caro',
+    excerpt:
+      'Tu persona clave tomó una mala decisión que costó dinero. Todos miran cómo respondes. Tres movimientos para corregir sin destruir la confianza ni la carrera.',
+    date: '2026-07-05',
+    block: 'Aprendizaje en fuego',
+    readTime: '7 min',
+  },
+  {
     slug: 'cerrar-sin-aplausos',
     title: 'Cerrar sin aplausos: decidir sin buscar consenso',
     excerpt:
