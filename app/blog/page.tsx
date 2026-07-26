@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'parar-la-sangria',
+    title: 'Parar la sangría: cuando nada sale bien sin ti',
+    excerpt:
+      'Los mismos errores cada semana. Ya lo explicaste tres veces y sigue pasando. Tres movimientos para cambiar discurso por sistema y dejar de ser el control de calidad.',
+    date: '2026-07-26',
+    block: 'Fricción',
+    readTime: '7 min',
+  },
+  {
     slug: 'resetear-sin-quebrar',
     title: 'Resetear sin quebrar: cuando tu mejor gente comete un error caro',
     excerpt:
