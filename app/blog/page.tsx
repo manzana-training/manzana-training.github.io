@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'cubrir-al-nuevo',
+    title: 'Cubrir al nuevo: el manager que ascendiste está expuesto',
+    excerpt:
+      'Lo ascendiste hace cinco semanas y las primeras señales se ven mal. Tres movimientos para darle margen sin soltarlo: mandato con fecha, respaldo en público, evaluación tarde.',
+    date: '2026-08-02',
+    block: 'Aprendizaje en fuego',
+    readTime: '7 min',
+  },
+  {
     slug: 'parar-la-sangria',
     title: 'Parar la sangría: cuando nada sale bien sin ti',
     excerpt:
