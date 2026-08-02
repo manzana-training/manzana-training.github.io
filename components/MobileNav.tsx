@@ -30,7 +30,8 @@ export function MobileNav() {
               <li><Link href="/blog" onClick={() => setOpen(false)}>Blog</Link></li>
               <li><Link href="/caso" onClick={() => setOpen(false)}>Ejemplo</Link></li>
               <li><Link href="/diagnostico" onClick={() => setOpen(false)}>Diagnóstico</Link></li>
-              <li><Link href="/contacto" className="mz-accent" onClick={() => setOpen(false)}>Contacto</Link></li>
+              <li><Link href="/contacto" onClick={() => setOpen(false)}>Contacto</Link></li>
+              <li><Link href="/agendar" className="mz-accent" data-track="clic_agendar" data-track-label="mobile-nav" onClick={() => setOpen(false)}>Agendar</Link></li>
             </ul>
           </nav>
         </div>

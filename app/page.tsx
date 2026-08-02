@@ -242,6 +242,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className="reveal" style={{ marginTop: 56 }}>
+              <Link
+                href="/agendar"
+                className="caso-cta display"
+                data-track="clic_agendar"
+                data-track-label="sesion"
+              >
+                Agendar el drill · $1,500 →
+              </Link>
+              <p className="meta" style={{ marginTop: 20 }}>
+                45 min · Google Meet · Case Brief en 48h
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -286,12 +299,12 @@ export default function Home() {
           <p className="cierre-sub reveal">Elimina lo que te impide actuar.</p>
           <div className="cierre-actions">
             <Link
-              href="/contacto"
+              href="/agendar"
               className="cierre-cta reveal"
-              data-track="clic_contacto"
+              data-track="clic_agendar"
               data-track-label="cta-final"
             >
-              Agendar sesión →
+              Agendar el drill · $1,500 →
             </Link>
             <Link
               href="/diagnostico"

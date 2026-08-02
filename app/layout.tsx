@@ -136,9 +136,15 @@ export default function RootLayout({
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/caso">Ejemplo</Link></li>
               <li><Link href="/diagnostico">Diagnóstico</Link></li>
+              <li><Link href="/contacto">Contacto</Link></li>
               <li>
-                <Link href="/contacto" className="mz-accent">
-                  Contacto
+                <Link
+                  href="/agendar"
+                  className="mz-accent"
+                  data-track="clic_agendar"
+                  data-track-label="header"
+                >
+                  Agendar
                 </Link>
               </li>
             </ul>
@@ -162,6 +168,9 @@ export default function RootLayout({
             <Link href="/caso">Ejemplo</Link>
             <Link href="/diagnostico">Diagnóstico</Link>
             <Link href="/contacto">Contacto</Link>
+            <Link href="/agendar" data-track="clic_agendar" data-track-label="footer">
+              Agendar
+            </Link>
           </nav>
           <div className="footer-bottom">
             <span>Actúa. Elimina lo que te impide actuar.</span>

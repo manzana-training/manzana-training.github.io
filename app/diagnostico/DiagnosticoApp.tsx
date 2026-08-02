@@ -58,6 +58,7 @@ export function DiagnosticoApp() {
   const [stepError, setStepError] = useState('')
   const [result, setResult] = useState<DiagnosticResult | null>(null)
   const [errorMsg, setErrorMsg] = useState('')
+  const [leadSent, setLeadSent] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -107,6 +108,28 @@ export function DiagnosticoApp() {
     return keys.filter((k) => !answers[k])
   }
 
+  // El contacto se envía en cuanto el contexto es válido, no al final.
+  // Si alguien abandona en la pregunta 20, el lead ya está guardado.
+  function sendLead(ctx: ContextData) {
+    if (leadSent) return
+    setLeadSent(true)
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        email: ctx.email,
+        nombre: ctx.nombre,
+        _subject: `Lead diagnóstico (empezado) — ${ctx.nombre}`,
+        _replyto: ctx.email,
+        estado: 'Contexto completo. Diagnóstico todavía sin terminar.',
+        posicion: ctx.posicion,
+        entorno: ctx.entorno,
+        session_id: sessionId,
+      }),
+    }).catch(() => null)
+    track('lead_capturado', 'diagnostico-contexto')
+  }
+
   function goNext() {
     setStepError('')
     if (step === 'intro') {
@@ -121,6 +144,7 @@ export function DiagnosticoApp() {
       if (!posicion) return setStepError('Indica desde qué posición respondes.')
       if (!entorno) return setStepError('Indica el entorno.')
       track('diagnostico_contexto_completo')
+      sendLead(context)
       setStep('struct')
       return
     }

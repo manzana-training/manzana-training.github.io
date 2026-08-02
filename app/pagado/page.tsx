@@ -71,8 +71,11 @@ export default function Pagado() {
                       color: 'var(--gray)',
                     }}
                   >
-                    Si llegaste aquí y no ves el calendario, escríbenos a
-                    contacto@manzanatraining.com.mx y agendamos manualmente.
+                    Si llegaste aquí y no ves el calendario, escríbeme a{' '}
+                    <a href="mailto:supipagg@gmail.com" style={{ color: 'inherit' }}>
+                      supipagg@gmail.com
+                    </a>{' '}
+                    y agendamos manualmente.
                   </p>
                 </>
               )}
