@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     url: 'https://manzanatraining.com.mx/caso',
     siteName: 'MANZANA',
+    images: [
+      {
+        url: 'https://manzanatraining.com.mx/blog-decidir-sin-info.webp',
+        width: 1792,
+        height: 1024,
+        alt: 'MANZANA — Drill de muestra',
+      },
+    ],
   },
 }
 
