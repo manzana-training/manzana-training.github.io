@@ -2835,6 +2835,9 @@ button:focus-visible {
    pulsa suave. Todo respeta prefers-reduced-motion.
    ============================================================ */
 .mz-page .encuesta .diag-q-text {
+  font-family: var(--serif);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 144;
+  font-weight: 400;
   font-size: clamp(26px, 3vw, 38px);
   line-height: 1.15;
   letter-spacing: -0.02em;
