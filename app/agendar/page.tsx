@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://manzanatraining.com.mx/agendar',
     siteName: 'MANZANA',
+    images: [
+      {
+        url: 'https://manzanatraining.com.mx/blog-decidir-sin-info.webp',
+        width: 1792,
+        height: 1024,
+        alt: 'MANZANA — Drill de decisión bajo presión',
+      },
+    ],
   },
 }
 

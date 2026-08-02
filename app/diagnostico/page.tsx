@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     url: 'https://manzanatraining.com.mx/diagnostico',
     siteName: 'MANZANA',
+    images: [
+      {
+        url: 'https://manzanatraining.com.mx/blog-decidir-sin-info.webp',
+        width: 1792,
+        height: 1024,
+        alt: 'MANZANA — Diagnóstico de posición bajo presión',
+      },
+    ],
   },
 }
 

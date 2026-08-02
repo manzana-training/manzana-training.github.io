@@ -246,7 +246,7 @@ function computePosition(picked: number[]): { block: BlockKey; position: Positio
 
 // ---------- Componente ----------
 
-type Phase = 'preguntas' | 'resultado'
+type Phase = 'preguntas' | 'leyendo' | 'resultado'
 
 export function EncuestaApp() {
   const [idx, setIdx] = useState(0)
@@ -321,9 +321,19 @@ export function EncuestaApp() {
     }
     const res = computePosition(next)
     setResult(res)
-    setPhase('resultado')
     track('encuesta_completada', res.position.slug)
     sendToSheet({ ...payloadBase(res, next), email: '' })
+    // Pausa breve antes del veredicto: le da peso al resultado.
+    // Con prefers-reduced-motion se muestra directo.
+    const reduce =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) {
+      setPhase('resultado')
+    } else {
+      setPhase('leyendo')
+      window.setTimeout(() => setPhase('resultado'), 1100)
+    }
   }
 
   function goBack() {
@@ -364,11 +374,24 @@ export function EncuestaApp() {
 
   // ---------- Render ----------
 
+  if (phase === 'leyendo') {
+    return (
+      <div className="diag encuesta">
+        <div className="diag-progress" aria-hidden="true">
+          <div className="diag-progress-bar" style={{ width: '100%' }} />
+        </div>
+        <p className="encuesta-leyendo meta" role="status">
+          Leyendo tu posición…
+        </p>
+      </div>
+    )
+  }
+
   if (phase === 'resultado' && result) {
     const p = result.position
     return (
-      <div className="diag">
-        <div className="diag-result">
+      <div className="diag encuesta">
+        <div className="diag-result encuesta-result">
           <span className="diag-result-label meta">Estás jugando</span>
           <h2 className="diag-result-name display">{p.name}</h2>
           <p className="diag-result-diagnosis">{p.frame}</p>
@@ -453,7 +476,7 @@ export function EncuestaApp() {
   const progress = Math.round((idx / QUESTIONS.length) * 100)
 
   return (
-    <div className="diag">
+    <div className="diag encuesta">
       <div className="diag-progress" aria-label={`Pregunta ${idx + 1} de ${QUESTIONS.length}`}>
         <div className="diag-progress-bar" style={{ width: `${Math.max(progress, 6)}%` }} />
       </div>
@@ -464,7 +487,7 @@ export function EncuestaApp() {
             {idx + 1}/{QUESTIONS.length}
           </span>
         </div>
-        <p className="diag-q-text">{q.text}</p>
+        <p className="diag-q-text display">{q.text}</p>
         <div className="diag-choice" role="radiogroup" aria-label={q.text}>
           {q.opts.map((opt, i) => (
             <button
