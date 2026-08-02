@@ -1,18 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { DiagnosticoApp } from './DiagnosticoApp'
+import { EncuestaApp } from './EncuestaApp'
 
 export const metadata: Metadata = {
   title: 'Diagnóstico — MANZANA',
   description:
-    'Diagnóstico gratuito de liderazgo bajo presión: identifica qué posición estás jugando, qué reflejo necesitas entrenar y qué tipo de intervención te corresponde. Sin venta automática.',
+    '¿Qué posición de presión estás jugando hoy? Seis preguntas, menos de un minuto. Te decimos qué reflejo entrenar, sin registro y sin venta automática.',
   alternates: {
     canonical: 'https://manzanatraining.com.mx/diagnostico',
   },
   openGraph: {
     title: 'Diagnóstico — MANZANA',
     description:
-      'Identifica qué posición de presión estás jugando hoy y qué reflejo necesitas entrenar.',
+      '¿Qué posición de presión estás jugando hoy? Seis preguntas, menos de un minuto.',
     type: 'website',
     locale: 'es_MX',
     url: 'https://manzanatraining.com.mx/diagnostico',
@@ -31,9 +31,9 @@ export default function Diagnostico() {
               ¿Qué posición estás jugando hoy?
             </h1>
             <p className="page-head-lead reveal">
-              No mide personalidad. Mide movimiento. Te decimos qué reflejo
-              entrenar y qué tipo de intervención te corresponde — sin venta
-              automática, sin discurso.
+              Seis preguntas. Menos de un minuto. No mide personalidad: mide
+              dónde te está llegando el golpe y qué reflejo entrenar. Sin
+              registro, sin venta automática.
             </p>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Diagnostico() {
         <div className="wrap section-grid">
           <div className="meta col-label reveal">Evaluación</div>
           <div className="col-body">
-            <DiagnosticoApp />
+            <EncuestaApp />
           </div>
         </div>
       </section>

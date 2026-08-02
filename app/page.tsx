@@ -27,7 +27,7 @@ export default function Home() {
             data-track="clic_diagnostico"
             data-track-label="hero"
           >
-            Haz el diagnóstico — 6 min →
+            Haz el diagnóstico — 1 min →
           </Link>
         </div>
       </section>
@@ -312,7 +312,7 @@ export default function Home() {
               data-track="clic_diagnostico"
               data-track-label="cta-final"
             >
-              ¿Aún no estás listo? Haz el diagnóstico — 6 min →
+              ¿Aún no estás listo? Haz el diagnóstico — 1 min →
             </Link>
           </div>
         </div>

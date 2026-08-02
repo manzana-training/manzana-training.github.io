@@ -194,7 +194,7 @@ export default function Manifiesto() {
                 data-track="clic_diagnostico"
                 data-track-label="manifiesto"
               >
-                Haz el diagnóstico — 6 min →
+                Haz el diagnóstico — 1 min →
               </Link>
               <Link
                 href="/contacto"

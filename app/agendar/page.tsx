@@ -194,7 +194,7 @@ export default function Agendar() {
                 {
                   n: '03',
                   t: 'Recibes preparación',
-                  d: '24h antes te llegan 4 preguntas cortas para llegar con la situación concreta lista.',
+                  d: 'Al pagar te llega el diagnóstico completo (10-15 min) para llegar con tu situación mapeada, no con teoría.',
                 },
                 {
                   n: '04',
@@ -271,7 +271,7 @@ export default function Agendar() {
               Haz el diagnóstico antes. Te decimos qué entrenar.
             </h2>
             <p className="mz-end-sub reveal">
-              40 preguntas. 10 minutos. Sale recomendación concreta.
+              Seis preguntas. Un minuto. Sale recomendación concreta.
             </p>
             <div className="mz-end-actions">
               <Link

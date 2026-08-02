@@ -32,7 +32,7 @@ export default function Pagado() {
 
       <section className="mz-section">
         <div className="wrap section-grid">
-          <div className="meta col-label reveal">Paso 1 de 1</div>
+          <div className="meta col-label reveal">Paso 1 de 2</div>
           <div className="col-body">
             <div className="mz-diag-box reveal">
               <h3>Agenda tu sesión</h3>
@@ -86,14 +86,38 @@ export default function Pagado() {
 
       <section className="mz-section">
         <div className="wrap section-grid">
+          <div className="meta col-label reveal">Paso 2 de 2</div>
+          <div className="col-body">
+            <div className="mz-diag-box reveal">
+              <h3>Responde el diagnóstico de preparación</h3>
+              <p>
+                10 a 15 minutos. Tus respuestas me llegan directo y con eso
+                llegamos a la sesión con tu situación mapeada, no con teoría.
+                Si no lo respondes, igual hacemos la sesión — toma 5 min de la
+                misma sesión.
+              </p>
+              <Link
+                href="/diagnostico-completo"
+                className="mz-end-cta"
+                data-track="diagnostico_prep_abierto"
+                data-track-label="pagado"
+              >
+                Abrir el diagnóstico →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mz-section">
+        <div className="wrap section-grid">
           <div className="meta col-label reveal">Qué esperar</div>
           <div className="col-body mz-prose">
             <ul className="reveal">
               <li>
-                <strong>24h antes de la sesión:</strong> recibes 4 preguntas
-                cortas para que llegues con la situación concreta lista. Si
-                no respondes, igual hacemos la sesión — toma 5 min de la
-                misma sesión.
+                <strong>Antes de la sesión:</strong> respondes el diagnóstico
+                de preparación (paso 2, aquí arriba). Con eso llego a tu
+                sesión sabiendo qué posición juegas, no adivinándola.
               </li>
               <li>
                 <strong>Día de la sesión:</strong> conectas al link de Google
